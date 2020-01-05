@@ -19,13 +19,15 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>47</string>
+	<string>142</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSBluetoothAlwaysUsageDescription</key>
 	<string>Protoype needs access to Bluetooth to connect to the host PC</string>
 	<key>NSBluetoothPeripheralUsageDescription</key>
 	<string>Protoype needs access to Bluetooth to connect to the host PC</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Prototype needs access to the camera to perform the ARKit eye tracking demo</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

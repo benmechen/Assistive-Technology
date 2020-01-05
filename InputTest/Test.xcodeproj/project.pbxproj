@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B514C62B23BE9E2600E93966 /* ARKitPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B514C62A23BE9E2600E93966 /* ARKitPageViewController.swift */; };
+		B514C62D23BEA54000E93966 /* EyeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B514C62C23BEA54000E93966 /* EyeViewController.swift */; };
 		B5168EF8237AE47800E6BA93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5168EF7237AE47800E6BA93 /* AppDelegate.swift */; };
 		B5168EFC237AE47800E6BA93 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5168EFB237AE47800E6BA93 /* ViewController.swift */; };
 		B5168EFF237AE47900E6BA93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5168EFD237AE47900E6BA93 /* Main.storyboard */; };
@@ -15,8 +17,15 @@
 		B5168F0F237AE48100E6BA93 /* TestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5168F0E237AE48100E6BA93 /* TestTests.swift */; };
 		B5168F1A237AE48100E6BA93 /* TestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5168F19237AE48100E6BA93 /* TestUITests.swift */; };
 		B5168F28237AE64C00E6BA93 /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5168F27237AE64C00E6BA93 /* SwipeViewController.swift */; };
+		B528840B23BFC94E00CE6847 /* UIView+Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B528840A23BFC94E00CE6847 /* UIView+Triangle.swift */; };
+		B5328D7F23C1300F00E1DEC0 /* Collection+Average.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5328D7E23C1300F00E1DEC0 /* Collection+Average.swift */; };
+		B5719A1123ABE93E00D7C1C6 /* FaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5719A1023ABE93E00D7C1C6 /* FaceViewController.swift */; };
+		B57752BB23C212FB00E85883 /* SCNVector3+Length+Minus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57752BA23C212FB00E85883 /* SCNVector3+Length+Minus.swift */; };
 		B5AF4718237C2DEE00CD27E9 /* GyroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AF4717237C2DEE00CD27E9 /* GyroViewController.swift */; };
+		B5C70F0723B28F9600DB5A6A /* SCNReferenceNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C70F0623B28F9600DB5A6A /* SCNReferenceNode.swift */; };
+		B5C70F0A23B290B700DB5A6A /* Models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = B5C70F0923B290B700DB5A6A /* Models.scnassets */; };
 		B5DD48C12383357700DB023A /* BluetoothViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DD48C02383357700DB023A /* BluetoothViewController.swift */; };
+		B5F00D4923C208B5007D8CC6 /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F00D4823C208B5007D8CC6 /* Direction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B514C62A23BE9E2600E93966 /* ARKitPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARKitPageViewController.swift; sourceTree = "<group>"; };
+		B514C62C23BEA54000E93966 /* EyeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeViewController.swift; sourceTree = "<group>"; };
 		B5168EF4237AE47800E6BA93 /* Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5168EF7237AE47800E6BA93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5168EFB237AE47800E6BA93 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -51,8 +62,15 @@
 		B5168F19237AE48100E6BA93 /* TestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUITests.swift; sourceTree = "<group>"; };
 		B5168F1B237AE48100E6BA93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5168F27237AE64C00E6BA93 /* SwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeViewController.swift; sourceTree = "<group>"; };
+		B528840A23BFC94E00CE6847 /* UIView+Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Triangle.swift"; sourceTree = "<group>"; };
+		B5328D7E23C1300F00E1DEC0 /* Collection+Average.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Average.swift"; sourceTree = "<group>"; };
+		B5719A1023ABE93E00D7C1C6 /* FaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceViewController.swift; sourceTree = "<group>"; };
+		B57752BA23C212FB00E85883 /* SCNVector3+Length+Minus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNVector3+Length+Minus.swift"; sourceTree = "<group>"; };
 		B5AF4717237C2DEE00CD27E9 /* GyroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GyroViewController.swift; sourceTree = "<group>"; };
+		B5C70F0623B28F9600DB5A6A /* SCNReferenceNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCNReferenceNode.swift; sourceTree = "<group>"; };
+		B5C70F0923B290B700DB5A6A /* Models.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Models.scnassets; sourceTree = "<group>"; };
 		B5DD48C02383357700DB023A /* BluetoothViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothViewController.swift; sourceTree = "<group>"; };
+		B5F00D4823C208B5007D8CC6 /* Direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +121,8 @@
 		B5168EF6237AE47800E6BA93 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				B5C70F0823B290A200DB5A6A /* Resources */,
+				B5C70F0523B28F7700DB5A6A /* Utilities */,
 				B5168EF7237AE47800E6BA93 /* AppDelegate.swift */,
 				B5168EFB237AE47800E6BA93 /* ViewController.swift */,
 				B5168EFD237AE47900E6BA93 /* Main.storyboard */,
@@ -112,6 +132,9 @@
 				B5168F27237AE64C00E6BA93 /* SwipeViewController.swift */,
 				B5AF4717237C2DEE00CD27E9 /* GyroViewController.swift */,
 				B5DD48C02383357700DB023A /* BluetoothViewController.swift */,
+				B5719A1023ABE93E00D7C1C6 /* FaceViewController.swift */,
+				B514C62C23BEA54000E93966 /* EyeViewController.swift */,
+				B514C62A23BE9E2600E93966 /* ARKitPageViewController.swift */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -132,6 +155,26 @@
 				B5168F1B237AE48100E6BA93 /* Info.plist */,
 			);
 			path = TestUITests;
+			sourceTree = "<group>";
+		};
+		B5C70F0523B28F7700DB5A6A /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B5C70F0623B28F9600DB5A6A /* SCNReferenceNode.swift */,
+				B528840A23BFC94E00CE6847 /* UIView+Triangle.swift */,
+				B5328D7E23C1300F00E1DEC0 /* Collection+Average.swift */,
+				B5F00D4823C208B5007D8CC6 /* Direction.swift */,
+				B57752BA23C212FB00E85883 /* SCNVector3+Length+Minus.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		B5C70F0823B290A200DB5A6A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B5C70F0923B290B700DB5A6A /* Models.scnassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5168F04237AE48000E6BA93 /* LaunchScreen.storyboard in Resources */,
+				B5C70F0A23B290B700DB5A6A /* Models.scnassets in Resources */,
 				B5168F01237AE48000E6BA93 /* Assets.xcassets in Resources */,
 				B5168EFF237AE47900E6BA93 /* Main.storyboard in Resources */,
 			);
@@ -287,11 +331,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B528840B23BFC94E00CE6847 /* UIView+Triangle.swift in Sources */,
 				B5168EFC237AE47800E6BA93 /* ViewController.swift in Sources */,
+				B57752BB23C212FB00E85883 /* SCNVector3+Length+Minus.swift in Sources */,
+				B514C62D23BEA54000E93966 /* EyeViewController.swift in Sources */,
+				B5C70F0723B28F9600DB5A6A /* SCNReferenceNode.swift in Sources */,
 				B5168EF8237AE47800E6BA93 /* AppDelegate.swift in Sources */,
+				B5328D7F23C1300F00E1DEC0 /* Collection+Average.swift in Sources */,
+				B5719A1123ABE93E00D7C1C6 /* FaceViewController.swift in Sources */,
 				B5DD48C12383357700DB023A /* BluetoothViewController.swift in Sources */,
 				B5AF4718237C2DEE00CD27E9 /* GyroViewController.swift in Sources */,
 				B5168F28237AE64C00E6BA93 /* SwipeViewController.swift in Sources */,
+				B514C62B23BE9E2600E93966 /* ARKitPageViewController.swift in Sources */,
+				B5F00D4923C208B5007D8CC6 /* Direction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
