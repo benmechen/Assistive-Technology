@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B5E8C7CC23E07DE90099E555 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E8C7CB23E07DE90099E555 /* AppDelegate.swift */; };
-		B5E8C7D023E07DE90099E555 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E8C7CF23E07DE90099E555 /* ViewController.swift */; };
+		B5E8C7D023E07DE90099E555 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E8C7CF23E07DE90099E555 /* View.swift */; };
 		B5E8C7D323E07DE90099E555 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5E8C7D123E07DE90099E555 /* Main.storyboard */; };
 		B5E8C7D523E07DEC0099E555 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5E8C7D423E07DEC0099E555 /* Assets.xcassets */; };
 		B5E8C7D823E07DEC0099E555 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5E8C7D623E07DEC0099E555 /* LaunchScreen.storyboard */; };
@@ -36,7 +36,7 @@
 /* Begin PBXFileReference section */
 		B5E8C7C823E07DE90099E555 /* Assistive Technology.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Assistive Technology.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5E8C7CB23E07DE90099E555 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B5E8C7CF23E07DE90099E555 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B5E8C7CF23E07DE90099E555 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		B5E8C7D223E07DE90099E555 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B5E8C7D423E07DEC0099E555 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B5E8C7D723E07DEC0099E555 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -97,8 +97,11 @@
 		B5E8C7CA23E07DE90099E555 /* Assistive Technology */ = {
 			isa = PBXGroup;
 			children = (
+				B5E8C7FE23E0868D0099E555 /* ViewModels */,
+				B5E8C7FD23E086850099E555 /* Views */,
+				B5E8C7FC23E0867A0099E555 /* Models */,
+				B5E8C7FF23E086990099E555 /* Utilities */,
 				B5E8C7CB23E07DE90099E555 /* AppDelegate.swift */,
-				B5E8C7CF23E07DE90099E555 /* ViewController.swift */,
 				B5E8C7D123E07DE90099E555 /* Main.storyboard */,
 				B5E8C7D423E07DEC0099E555 /* Assets.xcassets */,
 				B5E8C7D623E07DEC0099E555 /* LaunchScreen.storyboard */,
@@ -123,6 +126,35 @@
 				B5E8C7EF23E07DEC0099E555 /* Info.plist */,
 			);
 			path = "Assistive TechnologyUITests";
+			sourceTree = "<group>";
+		};
+		B5E8C7FC23E0867A0099E555 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B5E8C7FD23E086850099E555 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B5E8C7CF23E07DE90099E555 /* View.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B5E8C7FE23E0868D0099E555 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B5E8C7FF23E086990099E555 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,7 +288,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5E8C7D023E07DE90099E555 /* ViewController.swift in Sources */,
+				B5E8C7D023E07DE90099E555 /* View.swift in Sources */,
 				B5E8C7CC23E07DE90099E555 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

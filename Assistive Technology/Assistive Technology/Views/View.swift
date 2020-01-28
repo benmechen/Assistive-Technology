@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  View.swift
 //  Assistive Technology
 //
 //  Created by Ben Mechen on 28/01/2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class View: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
