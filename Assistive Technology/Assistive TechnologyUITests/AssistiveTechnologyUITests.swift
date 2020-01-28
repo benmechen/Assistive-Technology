@@ -1,5 +1,5 @@
 //
-//  Assistive_TechnologyUITests.swift
+//  AssistiveTechnologyUITests.swift
 //  Assistive TechnologyUITests
 //
 //  Created by Ben Mechen on 28/01/2020.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class Assistive_TechnologyUITests: XCTestCase {
+class AssistiveTechnologyUITests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.

@@ -8,13 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		B5E8C7CC23E07DE90099E555 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E8C7CB23E07DE90099E555 /* AppDelegate.swift */; };
-		B5E8C7CE23E07DE90099E555 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E8C7CD23E07DE90099E555 /* SceneDelegate.swift */; };
 		B5E8C7D023E07DE90099E555 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E8C7CF23E07DE90099E555 /* ViewController.swift */; };
 		B5E8C7D323E07DE90099E555 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5E8C7D123E07DE90099E555 /* Main.storyboard */; };
 		B5E8C7D523E07DEC0099E555 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5E8C7D423E07DEC0099E555 /* Assets.xcassets */; };
 		B5E8C7D823E07DEC0099E555 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5E8C7D623E07DEC0099E555 /* LaunchScreen.storyboard */; };
-		B5E8C7E323E07DEC0099E555 /* Assistive_TechnologyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E8C7E223E07DEC0099E555 /* Assistive_TechnologyTests.swift */; };
-		B5E8C7EE23E07DEC0099E555 /* Assistive_TechnologyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E8C7ED23E07DEC0099E555 /* Assistive_TechnologyUITests.swift */; };
+		B5E8C7E323E07DEC0099E555 /* AssistiveTechnologyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E8C7E223E07DEC0099E555 /* AssistiveTechnologyTests.swift */; };
+		B5E8C7EE23E07DEC0099E555 /* AssistiveTechnologyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E8C7ED23E07DEC0099E555 /* AssistiveTechnologyUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,17 +36,16 @@
 /* Begin PBXFileReference section */
 		B5E8C7C823E07DE90099E555 /* Assistive Technology.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Assistive Technology.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5E8C7CB23E07DE90099E555 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B5E8C7CD23E07DE90099E555 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B5E8C7CF23E07DE90099E555 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B5E8C7D223E07DE90099E555 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B5E8C7D423E07DEC0099E555 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B5E8C7D723E07DEC0099E555 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B5E8C7D923E07DEC0099E555 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5E8C7DE23E07DEC0099E555 /* Assistive TechnologyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Assistive TechnologyTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B5E8C7E223E07DEC0099E555 /* Assistive_TechnologyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assistive_TechnologyTests.swift; sourceTree = "<group>"; };
+		B5E8C7E223E07DEC0099E555 /* AssistiveTechnologyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistiveTechnologyTests.swift; sourceTree = "<group>"; };
 		B5E8C7E423E07DEC0099E555 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5E8C7E923E07DEC0099E555 /* Assistive TechnologyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Assistive TechnologyUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B5E8C7ED23E07DEC0099E555 /* Assistive_TechnologyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assistive_TechnologyUITests.swift; sourceTree = "<group>"; };
+		B5E8C7ED23E07DEC0099E555 /* AssistiveTechnologyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistiveTechnologyUITests.swift; sourceTree = "<group>"; };
 		B5E8C7EF23E07DEC0099E555 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,7 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				B5E8C7CB23E07DE90099E555 /* AppDelegate.swift */,
-				B5E8C7CD23E07DE90099E555 /* SceneDelegate.swift */,
 				B5E8C7CF23E07DE90099E555 /* ViewController.swift */,
 				B5E8C7D123E07DE90099E555 /* Main.storyboard */,
 				B5E8C7D423E07DEC0099E555 /* Assets.xcassets */,
@@ -113,7 +110,7 @@
 		B5E8C7E123E07DEC0099E555 /* Assistive TechnologyTests */ = {
 			isa = PBXGroup;
 			children = (
-				B5E8C7E223E07DEC0099E555 /* Assistive_TechnologyTests.swift */,
+				B5E8C7E223E07DEC0099E555 /* AssistiveTechnologyTests.swift */,
 				B5E8C7E423E07DEC0099E555 /* Info.plist */,
 			);
 			path = "Assistive TechnologyTests";
@@ -122,7 +119,7 @@
 		B5E8C7EC23E07DEC0099E555 /* Assistive TechnologyUITests */ = {
 			isa = PBXGroup;
 			children = (
-				B5E8C7ED23E07DEC0099E555 /* Assistive_TechnologyUITests.swift */,
+				B5E8C7ED23E07DEC0099E555 /* AssistiveTechnologyUITests.swift */,
 				B5E8C7EF23E07DEC0099E555 /* Info.plist */,
 			);
 			path = "Assistive TechnologyUITests";
@@ -261,7 +258,6 @@
 			files = (
 				B5E8C7D023E07DE90099E555 /* ViewController.swift in Sources */,
 				B5E8C7CC23E07DE90099E555 /* AppDelegate.swift in Sources */,
-				B5E8C7CE23E07DE90099E555 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,7 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5E8C7E323E07DEC0099E555 /* Assistive_TechnologyTests.swift in Sources */,
+				B5E8C7E323E07DEC0099E555 /* AssistiveTechnologyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,7 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5E8C7EE23E07DEC0099E555 /* Assistive_TechnologyUITests.swift in Sources */,
+				B5E8C7EE23E07DEC0099E555 /* AssistiveTechnologyUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,10 +437,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.team30.Assistive-Technology";
+				PRODUCT_BUNDLE_IDENTIFIER = com.team30.AssistiveTechnology;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -459,10 +455,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.team30.Assistive-Technology";
+				PRODUCT_BUNDLE_IDENTIFIER = com.team30.AssistiveTechnology;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
