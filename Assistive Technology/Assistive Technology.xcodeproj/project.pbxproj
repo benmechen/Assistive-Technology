@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B559342C23E1EF31003D18EE /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = B559342B23E1EF31003D18EE /* Result.swift */; };
+		B559342E23E2380A003D18EE /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B559342D23E2380A003D18EE /* ViewModel.swift */; };
+		B5C3C67923E8382D00C18700 /* ConnectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C3C67823E8382D00C18700 /* ConnectionService.swift */; };
 		B5E8C7CC23E07DE90099E555 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E8C7CB23E07DE90099E555 /* AppDelegate.swift */; };
 		B5E8C7D023E07DE90099E555 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E8C7CF23E07DE90099E555 /* View.swift */; };
 		B5E8C7D323E07DE90099E555 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5E8C7D123E07DE90099E555 /* Main.storyboard */; };
@@ -14,6 +17,7 @@
 		B5E8C7D823E07DEC0099E555 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5E8C7D623E07DEC0099E555 /* LaunchScreen.storyboard */; };
 		B5E8C7E323E07DEC0099E555 /* AssistiveTechnologyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E8C7E223E07DEC0099E555 /* AssistiveTechnologyTests.swift */; };
 		B5E8C7EE23E07DEC0099E555 /* AssistiveTechnologyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E8C7ED23E07DEC0099E555 /* AssistiveTechnologyUITests.swift */; };
+		B5F82CAE23E1EE6500C44FB3 /* ConnectionServiceErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F82CAD23E1EE6500C44FB3 /* ConnectionServiceErrors.swift */; };
 		C094C2B363D4C704021998F8 /* Pods_Assistive_Technology_Assistive_TechnologyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A8F5BEDBEFD1B87024162F9 /* Pods_Assistive_Technology_Assistive_TechnologyUITests.framework */; };
 		F03217AEB938C7248F9F86B4 /* Pods_Assistive_Technology.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB699B034D12C952C80BC371 /* Pods_Assistive_Technology.framework */; };
 		FAD8DD7E4B865B6BA59441CC /* Pods_Assistive_TechnologyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06AF7BF457F3358ABD4896BA /* Pods_Assistive_TechnologyTests.framework */; };
@@ -44,6 +48,9 @@
 		877097609324216D347D483E /* Pods-Assistive Technology-Assistive TechnologyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assistive Technology-Assistive TechnologyUITests.debug.xcconfig"; path = "Target Support Files/Pods-Assistive Technology-Assistive TechnologyUITests/Pods-Assistive Technology-Assistive TechnologyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		95735DFDF843F6674FFD07B2 /* Pods-Assistive TechnologyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assistive TechnologyTests.release.xcconfig"; path = "Target Support Files/Pods-Assistive TechnologyTests/Pods-Assistive TechnologyTests.release.xcconfig"; sourceTree = "<group>"; };
 		9A8F5BEDBEFD1B87024162F9 /* Pods_Assistive_Technology_Assistive_TechnologyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Assistive_Technology_Assistive_TechnologyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B559342B23E1EF31003D18EE /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		B559342D23E2380A003D18EE /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		B5C3C67823E8382D00C18700 /* ConnectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionService.swift; sourceTree = "<group>"; };
 		B5E8C7C823E07DE90099E555 /* Assistive Technology.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Assistive Technology.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5E8C7CB23E07DE90099E555 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5E8C7CF23E07DE90099E555 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
@@ -57,6 +64,7 @@
 		B5E8C7E923E07DEC0099E555 /* Assistive TechnologyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Assistive TechnologyUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5E8C7ED23E07DEC0099E555 /* AssistiveTechnologyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistiveTechnologyUITests.swift; sourceTree = "<group>"; };
 		B5E8C7EF23E07DEC0099E555 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5F82CAD23E1EE6500C44FB3 /* ConnectionServiceErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionServiceErrors.swift; sourceTree = "<group>"; };
 		CC03798B5997C903062B663E /* Pods-Assistive Technology-Assistive TechnologyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assistive Technology-Assistive TechnologyUITests.release.xcconfig"; path = "Target Support Files/Pods-Assistive Technology-Assistive TechnologyUITests/Pods-Assistive Technology-Assistive TechnologyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EB699B034D12C952C80BC371 /* Pods_Assistive_Technology.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Assistive_Technology.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -99,7 +107,6 @@
 				7517F2BF7EEC897FC4667E63 /* Pods-Assistive TechnologyTests.debug.xcconfig */,
 				95735DFDF843F6674FFD07B2 /* Pods-Assistive TechnologyTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -138,6 +145,7 @@
 		B5E8C7CA23E07DE90099E555 /* Assistive Technology */ = {
 			isa = PBXGroup;
 			children = (
+				B5F82CAC23E1EE4F00C44FB3 /* Errors */,
 				B5E8C7FE23E0868D0099E555 /* ViewModels */,
 				B5E8C7FD23E086850099E555 /* Views */,
 				B5E8C7FC23E0867A0099E555 /* Models */,
@@ -187,6 +195,7 @@
 		B5E8C7FE23E0868D0099E555 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				B559342D23E2380A003D18EE /* ViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -194,8 +203,18 @@
 		B5E8C7FF23E086990099E555 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				B5C3C67823E8382D00C18700 /* ConnectionService.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		B5F82CAC23E1EE4F00C44FB3 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				B5F82CAD23E1EE6500C44FB3 /* ConnectionServiceErrors.swift */,
+				B559342B23E1EF31003D18EE /* Result.swift */,
+			);
+			path = Errors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,7 +228,7 @@
 				B5E8C7C423E07DE90099E555 /* Sources */,
 				B5E8C7C523E07DE90099E555 /* Frameworks */,
 				B5E8C7C623E07DE90099E555 /* Resources */,
-				331AEC1A19ED48CE6FAF6B9B /* [CP] Embed Pods Frameworks */,
+				31C0868FEC1695D73C163D64 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -247,7 +266,7 @@
 				B5E8C7E523E07DEC0099E555 /* Sources */,
 				B5E8C7E623E07DEC0099E555 /* Frameworks */,
 				B5E8C7E723E07DEC0099E555 /* Resources */,
-				2C8B105216DD1759326C25A2 /* [CP] Embed Pods Frameworks */,
+				39FEB583F9A76780057ED864 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -352,24 +371,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2C8B105216DD1759326C25A2 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Assistive Technology-Assistive TechnologyUITests/Pods-Assistive Technology-Assistive TechnologyUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Assistive Technology-Assistive TechnologyUITests/Pods-Assistive Technology-Assistive TechnologyUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Assistive Technology-Assistive TechnologyUITests/Pods-Assistive Technology-Assistive TechnologyUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		331AEC1A19ED48CE6FAF6B9B /* [CP] Embed Pods Frameworks */ = {
+		31C0868FEC1695D73C163D64 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -384,6 +386,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Assistive Technology/Pods-Assistive Technology-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		39FEB583F9A76780057ED864 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Assistive Technology-Assistive TechnologyUITests/Pods-Assistive Technology-Assistive TechnologyUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Assistive Technology-Assistive TechnologyUITests/Pods-Assistive Technology-Assistive TechnologyUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Assistive Technology-Assistive TechnologyUITests/Pods-Assistive Technology-Assistive TechnologyUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4623C2732C5AEF3F1F4FEB43 /* [CP] Check Pods Manifest.lock */ = {
@@ -437,7 +456,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5C3C67923E8382D00C18700 /* ConnectionService.swift in Sources */,
 				B5E8C7D023E07DE90099E555 /* View.swift in Sources */,
+				B559342C23E1EF31003D18EE /* Result.swift in Sources */,
+				B5F82CAE23E1EE6500C44FB3 /* ConnectionServiceErrors.swift in Sources */,
+				B559342E23E2380A003D18EE /* ViewModel.swift in Sources */,
 				B5E8C7CC23E07DE90099E555 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -550,6 +573,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -603,6 +627,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -615,6 +640,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 52835DXEU6;
 				INFOPLIST_FILE = "Assistive Technology/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -634,6 +660,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 52835DXEU6;
 				INFOPLIST_FILE = "Assistive Technology/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

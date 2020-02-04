@@ -6,7 +6,7 @@ target 'Assistive Technology' do
   use_frameworks!
 
   # Pods for Assistive Technology
-  pod 'SwiftSocket'
+  pod 'CocoaAsyncSocket'  
 
   target 'Assistive TechnologyTests' do
     inherit! :search_paths
