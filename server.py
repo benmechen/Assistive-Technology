@@ -32,7 +32,7 @@ hostname = fqdn.split('.')[0]
 desc = {'service': 'Assistive Technology Service', 'version': '1.0.0'}
 info = ServiceInfo('_assistive-tech._udp.local.',
                     hostname + ' Assistive Technology Server._assistive-tech._udp.local.',
-                    socket.inet_aton(ip_addr), 1025, 0, 0,
+                    socket.inet_aton(ip_addr), PORT, 0, 0,
                     desc, hostname + '.local.')
 try:
     zeroconf.register_service(info)
