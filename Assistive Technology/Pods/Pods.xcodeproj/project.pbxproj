@@ -7,24 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04CA96B24A5B6149B45321D2669CB0A2 /* Pods-Assistive TechnologyTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 666D9C128C5A864CE27898144B8A0C7F /* Pods-Assistive TechnologyTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0AF760F7D59C6319213C4C93DBE3EF02 /* Pods-Assistive Technology-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9830F91F9F69499337CE49F89D58EF0C /* Pods-Assistive Technology-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0EC1806437F66CC12F06DD7ACD1FBA4A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5359E8FB322457653E676483AB72D7B1 /* Security.framework */; };
-		14703875367641811BD5FE75ACD67C96 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B655093DDCC0176DEAC903ABA8E76527 /* Foundation.framework */; };
-		1F292B5410B16DBF60D1F47A48216622 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0D9393A92083DA9D32F56244F48A39 /* GCDAsyncSocket.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		20386C4BEBA1CEA6E5EDB1669B7ADD76 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC814063E47992E7A90FA41688C2A454 /* CFNetwork.framework */; };
-		2922C954DCA50DB1C087E9E9C9440393 /* CocoaAsyncSocket-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E8773045111A5CD08ECF026E48421F3B /* CocoaAsyncSocket-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3821A0FE8398DB2A9EF2A3D80CB15448 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B655093DDCC0176DEAC903ABA8E76527 /* Foundation.framework */; };
-		411EE6BA92B228BF3497175C14FC7A90 /* GCDAsyncUdpSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = AA5A665204A6EB0247240DDA87819CB4 /* GCDAsyncUdpSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6C237B7AA6F4A2DD17CA05EB90C83362 /* CocoaAsyncSocket-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 99BD1B356EA29219B7BDC08082938B68 /* CocoaAsyncSocket-dummy.m */; };
-		857161B8A9C18DC17B0098AE7E7C15E0 /* Pods-Assistive Technology-Assistive TechnologyUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 70818E6D822E33E56BCFB8B1019B01CA /* Pods-Assistive Technology-Assistive TechnologyUITests-dummy.m */; };
-		9D3E8D72BF07E004736F6A0DEB00E1BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B655093DDCC0176DEAC903ABA8E76527 /* Foundation.framework */; };
-		A252E8C47200C343A430F2B33B959C59 /* Pods-Assistive TechnologyTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C6C218C675B4E98C50930A86535840 /* Pods-Assistive TechnologyTests-dummy.m */; };
-		BF0E4454B28437897BC092AE02CD0C13 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = A64404F0A4CC1801E1409DF393AB248B /* GCDAsyncUdpSocket.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		D3BE015E97D720760E0F4CC8535593C0 /* Pods-Assistive Technology-Assistive TechnologyUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4853E6074036A21F1CAA6B0FE44D3C9C /* Pods-Assistive Technology-Assistive TechnologyUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DF77DA76BD5962EE7DD383126BBBBAC8 /* GCDAsyncSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 8DA293C446B580EEC70F631B729C1078 /* GCDAsyncSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FB325F5A4BB13AEB209A6D91D644C0DD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B655093DDCC0176DEAC903ABA8E76527 /* Foundation.framework */; };
-		FFF5F1109B3ACEDEBC771B4F1FCE2BA7 /* Pods-Assistive Technology-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 48593205C849EB30D63A8E509B532045 /* Pods-Assistive Technology-dummy.m */; };
+		04CA96B24A5B6149B45321D2669CB0A2 /* Pods-Assistive TechnologyTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B3A90E82F623EB15C448B26CB2FC17C /* Pods-Assistive TechnologyTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43E9C2DD3F7613752BF8EAB2F2F22243 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		79FA5B0FC66B86A81DF3F32847513E00 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		A252E8C47200C343A430F2B33B959C59 /* Pods-Assistive TechnologyTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EE96B614C3EEC88CA38AB1BCDD39572 /* Pods-Assistive TechnologyTests-dummy.m */; };
+		C26211BBD120DFA9961EF2457AD01192 /* Pods-Assistive Technology-Assistive TechnologyUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 68236AB013C90E69600C9CC328032D13 /* Pods-Assistive Technology-Assistive TechnologyUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D14537E4D12F9CB66C495D82FAC5D942 /* Pods-Assistive Technology-Assistive TechnologyUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F53D0A001F46B33E08574D72927533FD /* Pods-Assistive Technology-Assistive TechnologyUITests-dummy.m */; };
+		D280A9F227788EEAB35A0BCC56AFC880 /* Pods-Assistive Technology-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 649CB324D1A3E8CEE10755A221969553 /* Pods-Assistive Technology-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F67A4FCFBBF04B3043764D3CD7DA7D2E /* Pods-Assistive Technology-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0200188BE9AE00320A0221F8ABFA4654 /* Pods-Assistive Technology-dummy.m */; };
+		FB325F5A4BB13AEB209A6D91D644C0DD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,88 +26,41 @@
 			remoteGlobalIDString = 8667D0A85467F3EE77741F3BD7E61126;
 			remoteInfo = "Pods-Assistive Technology";
 		};
-		93A8300A5BC9CC92BA6E999A57464E75 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6083682834ABE0AE7BD1CBF06CADD036;
-			remoteInfo = CocoaAsyncSocket;
-		};
-		CE1736DCB677FF67D3DA0ECE382DF9EE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6083682834ABE0AE7BD1CBF06CADD036;
-			remoteInfo = CocoaAsyncSocket;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		117C24DDB25F5393192E651C8A539DB3 /* Pods-Assistive Technology-Assistive TechnologyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Assistive Technology-Assistive TechnologyUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		12D2BC450C4A6B05397075508D93D9CE /* CocoaAsyncSocket.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CocoaAsyncSocket.modulemap; sourceTree = "<group>"; };
-		14C6A7EF13A6FBCF9E90B35C3C21AAF4 /* Pods-Assistive TechnologyTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Assistive TechnologyTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		1637D761B26F5D8E5FFF6655C56EF621 /* Pods-Assistive TechnologyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Assistive TechnologyTests.release.xcconfig"; sourceTree = "<group>"; };
-		1C293EB0E780AAD7BD3353A9064FBBC4 /* Pods-Assistive Technology-Assistive TechnologyUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Assistive Technology-Assistive TechnologyUITests-Info.plist"; sourceTree = "<group>"; };
-		2D6F1EE274898A16FD60395EE825C8E0 /* Pods-Assistive Technology.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Assistive Technology.modulemap"; sourceTree = "<group>"; };
-		3B872991DB92A553B56D875D466D7542 /* Pods-Assistive Technology.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Assistive Technology.debug.xcconfig"; sourceTree = "<group>"; };
-		4853E6074036A21F1CAA6B0FE44D3C9C /* Pods-Assistive Technology-Assistive TechnologyUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Assistive Technology-Assistive TechnologyUITests-umbrella.h"; sourceTree = "<group>"; };
-		48593205C849EB30D63A8E509B532045 /* Pods-Assistive Technology-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Assistive Technology-dummy.m"; sourceTree = "<group>"; };
-		4C7ED40536E1C7DFD4FD57D1FDB0DDF9 /* Pods-Assistive Technology.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Assistive Technology.release.xcconfig"; sourceTree = "<group>"; };
-		51F6B5B2CFF2162731F5C15A587B8617 /* Pods-Assistive Technology-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Assistive Technology-frameworks.sh"; sourceTree = "<group>"; };
-		5359E8FB322457653E676483AB72D7B1 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
-		581A4DDEDB92EA1B8BD26255E16AC373 /* Pods-Assistive Technology-Assistive TechnologyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Assistive Technology-Assistive TechnologyUITests.release.xcconfig"; sourceTree = "<group>"; };
-		61B7E1385C6A77E31CD5A5F6B3A34982 /* Pods-Assistive Technology-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Assistive Technology-acknowledgements.markdown"; sourceTree = "<group>"; };
-		626BFEDCA8F5B590C4F2738E38DEECB4 /* Pods-Assistive Technology-Assistive TechnologyUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Assistive Technology-Assistive TechnologyUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		6333800AFDF80F43CFCEA96C44FCC58F /* Pods-Assistive TechnologyTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Assistive TechnologyTests-Info.plist"; sourceTree = "<group>"; };
-		63C6C218C675B4E98C50930A86535840 /* Pods-Assistive TechnologyTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Assistive TechnologyTests-dummy.m"; sourceTree = "<group>"; };
-		666D9C128C5A864CE27898144B8A0C7F /* Pods-Assistive TechnologyTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Assistive TechnologyTests-umbrella.h"; sourceTree = "<group>"; };
-		6CBEFE4F9E22AFDC6347A739BB35FF8C /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CocoaAsyncSocket.framework; path = CocoaAsyncSocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6D0D9393A92083DA9D32F56244F48A39 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDAsyncSocket.m; path = Source/GCD/GCDAsyncSocket.m; sourceTree = "<group>"; };
-		6DC6123471CB3E1F1072DA5C5943DE73 /* Pods-Assistive Technology-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Assistive Technology-acknowledgements.plist"; sourceTree = "<group>"; };
-		70818E6D822E33E56BCFB8B1019B01CA /* Pods-Assistive Technology-Assistive TechnologyUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Assistive Technology-Assistive TechnologyUITests-dummy.m"; sourceTree = "<group>"; };
-		7227715764DA55AC20575A7CEE130D54 /* Pods-Assistive TechnologyTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Assistive TechnologyTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		85B686CFAB542400135ACE0C23847EBF /* CocoaAsyncSocket.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CocoaAsyncSocket.xcconfig; sourceTree = "<group>"; };
-		8DA293C446B580EEC70F631B729C1078 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDAsyncSocket.h; path = Source/GCD/GCDAsyncSocket.h; sourceTree = "<group>"; };
+		00CF8DEAE19A8575291EC1811568BF28 /* Pods-Assistive Technology-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Assistive Technology-Info.plist"; sourceTree = "<group>"; };
+		0200188BE9AE00320A0221F8ABFA4654 /* Pods-Assistive Technology-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Assistive Technology-dummy.m"; sourceTree = "<group>"; };
+		0266F5D925A5F30A396CE64D382A621B /* Pods-Assistive Technology-Assistive TechnologyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Assistive Technology-Assistive TechnologyUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		0B6BDE7138BE6A50671C81FB06436CD2 /* Pods-Assistive TechnologyTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Assistive TechnologyTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		1B3A90E82F623EB15C448B26CB2FC17C /* Pods-Assistive TechnologyTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Assistive TechnologyTests-umbrella.h"; sourceTree = "<group>"; };
+		29D1D5305D9EDC6ED9D7415996DBC75E /* Pods-Assistive Technology.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Assistive Technology.debug.xcconfig"; sourceTree = "<group>"; };
+		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		343D818138B394245281AF8E631350AD /* Pods-Assistive Technology-Assistive TechnologyUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Assistive Technology-Assistive TechnologyUITests-Info.plist"; sourceTree = "<group>"; };
+		4A422DBA42D5DE46EDB80A889131B7C6 /* Pods-Assistive TechnologyTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Assistive TechnologyTests.modulemap"; sourceTree = "<group>"; };
+		649CB324D1A3E8CEE10755A221969553 /* Pods-Assistive Technology-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Assistive Technology-umbrella.h"; sourceTree = "<group>"; };
+		66D92D8467CF69159EB40F0C99615D5D /* Pods-Assistive TechnologyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Assistive TechnologyTests.release.xcconfig"; sourceTree = "<group>"; };
+		68236AB013C90E69600C9CC328032D13 /* Pods-Assistive Technology-Assistive TechnologyUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Assistive Technology-Assistive TechnologyUITests-umbrella.h"; sourceTree = "<group>"; };
+		6D0BAC610F1A550F2544802D00D32C54 /* Pods-Assistive TechnologyTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Assistive TechnologyTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		7216492BE6F9B154D162AF4CC8B81DA8 /* Pods-Assistive TechnologyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Assistive TechnologyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8C1CED362CAEFEA43090E9EF3B200E5E /* Pods-Assistive Technology.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Assistive Technology.modulemap"; sourceTree = "<group>"; };
+		8EE96B614C3EEC88CA38AB1BCDD39572 /* Pods-Assistive TechnologyTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Assistive TechnologyTests-dummy.m"; sourceTree = "<group>"; };
+		8F10C2E6D8D507527EC91EF560442B1D /* Pods-Assistive TechnologyTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Assistive TechnologyTests-Info.plist"; sourceTree = "<group>"; };
 		974E486CD146020460143E66F5103F4D /* Pods_Assistive_TechnologyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Assistive_TechnologyTests.framework; path = "Pods-Assistive TechnologyTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		97C0C6380D2A0D3A9D2BBA672B7399F1 /* Pods-Assistive Technology-Assistive TechnologyUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Assistive Technology-Assistive TechnologyUITests-acknowledgements.plist"; sourceTree = "<group>"; };
-		9830F91F9F69499337CE49F89D58EF0C /* Pods-Assistive Technology-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Assistive Technology-umbrella.h"; sourceTree = "<group>"; };
-		9884ABFFEB349B0B02DC32826E882EB1 /* Pods-Assistive TechnologyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Assistive TechnologyTests.debug.xcconfig"; sourceTree = "<group>"; };
-		99BD1B356EA29219B7BDC08082938B68 /* CocoaAsyncSocket-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CocoaAsyncSocket-dummy.m"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A64404F0A4CC1801E1409DF393AB248B /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDAsyncUdpSocket.m; path = Source/GCD/GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
-		A905023E6DEC0CB3ACF18BC768C59C2E /* CocoaAsyncSocket-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CocoaAsyncSocket-prefix.pch"; sourceTree = "<group>"; };
-		AA5A665204A6EB0247240DDA87819CB4 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDAsyncUdpSocket.h; path = Source/GCD/GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
-		AAEAF12AB2321AFFD7C77F64A910E033 /* Pods-Assistive Technology-Assistive TechnologyUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Assistive Technology-Assistive TechnologyUITests-frameworks.sh"; sourceTree = "<group>"; };
-		B655093DDCC0176DEAC903ABA8E76527 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		CC814063E47992E7A90FA41688C2A454 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
-		D6C62F69865477C2FA1B3A909A71C743 /* Pods-Assistive Technology-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Assistive Technology-Info.plist"; sourceTree = "<group>"; };
+		A862FC0B771386B0663A9E11470D2248 /* Pods-Assistive Technology-Assistive TechnologyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Assistive Technology-Assistive TechnologyUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B18BBB7D8E44D7FD89A8CF4C0ACF181E /* Pods-Assistive Technology-Assistive TechnologyUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Assistive Technology-Assistive TechnologyUITests.modulemap"; sourceTree = "<group>"; };
+		C19562DA770354B94A722C57FD5311A9 /* Pods-Assistive Technology-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Assistive Technology-acknowledgements.markdown"; sourceTree = "<group>"; };
+		CD59AA2E588F2B019198982EED2F0774 /* Pods-Assistive Technology.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Assistive Technology.release.xcconfig"; sourceTree = "<group>"; };
+		CF2393604AAA5C37986100BDCC396755 /* Pods-Assistive Technology-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Assistive Technology-acknowledgements.plist"; sourceTree = "<group>"; };
 		DA8C943170A8843901CAEEDE375F208D /* Pods_Assistive_Technology_Assistive_TechnologyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Assistive_Technology_Assistive_TechnologyUITests.framework; path = "Pods-Assistive Technology-Assistive TechnologyUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DEA17E24F689BAD69B80C9E2639F6EE9 /* CocoaAsyncSocket-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CocoaAsyncSocket-Info.plist"; sourceTree = "<group>"; };
-		E1F04AA9CFB89FF14D6CB823329E7CB5 /* Pods-Assistive TechnologyTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Assistive TechnologyTests.modulemap"; sourceTree = "<group>"; };
-		E3321C35216F33971A1DD602CCB49EEA /* Pods-Assistive Technology-Assistive TechnologyUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Assistive Technology-Assistive TechnologyUITests.modulemap"; sourceTree = "<group>"; };
+		E13FEED4D3A258C672892CA706735F9A /* Pods-Assistive Technology-Assistive TechnologyUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Assistive Technology-Assistive TechnologyUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		E3D50A9CFD08D216A6222725D70A4973 /* Pods_Assistive_Technology.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Assistive_Technology.framework; path = "Pods-Assistive Technology.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E8773045111A5CD08ECF026E48421F3B /* CocoaAsyncSocket-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CocoaAsyncSocket-umbrella.h"; sourceTree = "<group>"; };
+		E916D7EF2FAB7D9C5ADA6FE12D123C49 /* Pods-Assistive Technology-Assistive TechnologyUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Assistive Technology-Assistive TechnologyUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		F53D0A001F46B33E08574D72927533FD /* Pods-Assistive Technology-Assistive TechnologyUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Assistive Technology-Assistive TechnologyUITests-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0D7CA83761C3AF791CF254F56754FF2C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9D3E8D72BF07E004736F6A0DEB00E1BD /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		160EF26C734A27A9436CAB7143AF8F15 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				20386C4BEBA1CEA6E5EDB1669B7ADD76 /* CFNetwork.framework in Frameworks */,
-				14703875367641811BD5FE75ACD67C96 /* Foundation.framework in Frameworks */,
-				0EC1806437F66CC12F06DD7ACD1FBA4A /* Security.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		60A4F83F30938514F84C729B607D6DEE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -125,72 +69,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A09DF7921C6C200E617AA84323580C9B /* Frameworks */ = {
+		7349CBD9CDC7DCA665B43CC29001706C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3821A0FE8398DB2A9EF2A3D80CB15448 /* Foundation.framework in Frameworks */,
+				43E9C2DD3F7613752BF8EAB2F2F22243 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0091D8649486DE788BCF3B5AEF7913B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79FA5B0FC66B86A81DF3F32847513E00 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		03C5C200A0787E300053CFA8F53CA094 /* Frameworks */ = {
+		129DEE485293BB4FEF37D1DDAE8F9733 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BDB0DD9DF2184EAAFFD00F527DE67764 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		352E2FF6EE81ABAA2D8885DF4FA25DB2 /* Pods-Assistive TechnologyTests */ = {
-			isa = PBXGroup;
-			children = (
-				E1F04AA9CFB89FF14D6CB823329E7CB5 /* Pods-Assistive TechnologyTests.modulemap */,
-				14C6A7EF13A6FBCF9E90B35C3C21AAF4 /* Pods-Assistive TechnologyTests-acknowledgements.markdown */,
-				7227715764DA55AC20575A7CEE130D54 /* Pods-Assistive TechnologyTests-acknowledgements.plist */,
-				63C6C218C675B4E98C50930A86535840 /* Pods-Assistive TechnologyTests-dummy.m */,
-				6333800AFDF80F43CFCEA96C44FCC58F /* Pods-Assistive TechnologyTests-Info.plist */,
-				666D9C128C5A864CE27898144B8A0C7F /* Pods-Assistive TechnologyTests-umbrella.h */,
-				9884ABFFEB349B0B02DC32826E882EB1 /* Pods-Assistive TechnologyTests.debug.xcconfig */,
-				1637D761B26F5D8E5FFF6655C56EF621 /* Pods-Assistive TechnologyTests.release.xcconfig */,
-			);
-			name = "Pods-Assistive TechnologyTests";
-			path = "Target Support Files/Pods-Assistive TechnologyTests";
-			sourceTree = "<group>";
-		};
-		4EEB49FFE144607662B05E32011479F8 /* Pods-Assistive Technology-Assistive TechnologyUITests */ = {
-			isa = PBXGroup;
-			children = (
-				E3321C35216F33971A1DD602CCB49EEA /* Pods-Assistive Technology-Assistive TechnologyUITests.modulemap */,
-				626BFEDCA8F5B590C4F2738E38DEECB4 /* Pods-Assistive Technology-Assistive TechnologyUITests-acknowledgements.markdown */,
-				97C0C6380D2A0D3A9D2BBA672B7399F1 /* Pods-Assistive Technology-Assistive TechnologyUITests-acknowledgements.plist */,
-				70818E6D822E33E56BCFB8B1019B01CA /* Pods-Assistive Technology-Assistive TechnologyUITests-dummy.m */,
-				AAEAF12AB2321AFFD7C77F64A910E033 /* Pods-Assistive Technology-Assistive TechnologyUITests-frameworks.sh */,
-				1C293EB0E780AAD7BD3353A9064FBBC4 /* Pods-Assistive Technology-Assistive TechnologyUITests-Info.plist */,
-				4853E6074036A21F1CAA6B0FE44D3C9C /* Pods-Assistive Technology-Assistive TechnologyUITests-umbrella.h */,
-				117C24DDB25F5393192E651C8A539DB3 /* Pods-Assistive Technology-Assistive TechnologyUITests.debug.xcconfig */,
-				581A4DDEDB92EA1B8BD26255E16AC373 /* Pods-Assistive Technology-Assistive TechnologyUITests.release.xcconfig */,
-			);
-			name = "Pods-Assistive Technology-Assistive TechnologyUITests";
-			path = "Target Support Files/Pods-Assistive Technology-Assistive TechnologyUITests";
-			sourceTree = "<group>";
-		};
-		73ADFA6E992673F703CC6E1A6652C622 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				B62434CB6A61D81752D7941F6E643759 /* Pods-Assistive Technology */,
-				4EEB49FFE144607662B05E32011479F8 /* Pods-Assistive Technology-Assistive TechnologyUITests */,
-				352E2FF6EE81ABAA2D8885DF4FA25DB2 /* Pods-Assistive TechnologyTests */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		9E32652403F93E3F2BE77602B76F2857 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				6CBEFE4F9E22AFDC6347A739BB35FF8C /* CocoaAsyncSocket.framework */,
 				E3D50A9CFD08D216A6222725D70A4973 /* Pods_Assistive_Technology.framework */,
 				DA8C943170A8843901CAEEDE375F208D /* Pods_Assistive_Technology_Assistive_TechnologyUITests.framework */,
 				974E486CD146020460143E66F5103F4D /* Pods_Assistive_TechnologyTests.framework */,
@@ -198,64 +98,52 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A49791B92A7781B859EAEEF581EE6D8B /* CocoaAsyncSocket */ = {
+		54A5A5E93A9A1859C5C0C4C845AA5CD3 /* Pods-Assistive TechnologyTests */ = {
 			isa = PBXGroup;
 			children = (
-				8DA293C446B580EEC70F631B729C1078 /* GCDAsyncSocket.h */,
-				6D0D9393A92083DA9D32F56244F48A39 /* GCDAsyncSocket.m */,
-				AA5A665204A6EB0247240DDA87819CB4 /* GCDAsyncUdpSocket.h */,
-				A64404F0A4CC1801E1409DF393AB248B /* GCDAsyncUdpSocket.m */,
-				B862B4264C2F1D9F87C12772C46C54AE /* Support Files */,
+				4A422DBA42D5DE46EDB80A889131B7C6 /* Pods-Assistive TechnologyTests.modulemap */,
+				6D0BAC610F1A550F2544802D00D32C54 /* Pods-Assistive TechnologyTests-acknowledgements.markdown */,
+				0B6BDE7138BE6A50671C81FB06436CD2 /* Pods-Assistive TechnologyTests-acknowledgements.plist */,
+				8EE96B614C3EEC88CA38AB1BCDD39572 /* Pods-Assistive TechnologyTests-dummy.m */,
+				8F10C2E6D8D507527EC91EF560442B1D /* Pods-Assistive TechnologyTests-Info.plist */,
+				1B3A90E82F623EB15C448B26CB2FC17C /* Pods-Assistive TechnologyTests-umbrella.h */,
+				7216492BE6F9B154D162AF4CC8B81DA8 /* Pods-Assistive TechnologyTests.debug.xcconfig */,
+				66D92D8467CF69159EB40F0C99615D5D /* Pods-Assistive TechnologyTests.release.xcconfig */,
 			);
-			name = CocoaAsyncSocket;
-			path = CocoaAsyncSocket;
+			name = "Pods-Assistive TechnologyTests";
+			path = "Target Support Files/Pods-Assistive TechnologyTests";
 			sourceTree = "<group>";
 		};
-		B62434CB6A61D81752D7941F6E643759 /* Pods-Assistive Technology */ = {
+		712832A0A6E6C947CE1813F1B978F4A8 /* Pods-Assistive Technology */ = {
 			isa = PBXGroup;
 			children = (
-				2D6F1EE274898A16FD60395EE825C8E0 /* Pods-Assistive Technology.modulemap */,
-				61B7E1385C6A77E31CD5A5F6B3A34982 /* Pods-Assistive Technology-acknowledgements.markdown */,
-				6DC6123471CB3E1F1072DA5C5943DE73 /* Pods-Assistive Technology-acknowledgements.plist */,
-				48593205C849EB30D63A8E509B532045 /* Pods-Assistive Technology-dummy.m */,
-				51F6B5B2CFF2162731F5C15A587B8617 /* Pods-Assistive Technology-frameworks.sh */,
-				D6C62F69865477C2FA1B3A909A71C743 /* Pods-Assistive Technology-Info.plist */,
-				9830F91F9F69499337CE49F89D58EF0C /* Pods-Assistive Technology-umbrella.h */,
-				3B872991DB92A553B56D875D466D7542 /* Pods-Assistive Technology.debug.xcconfig */,
-				4C7ED40536E1C7DFD4FD57D1FDB0DDF9 /* Pods-Assistive Technology.release.xcconfig */,
+				8C1CED362CAEFEA43090E9EF3B200E5E /* Pods-Assistive Technology.modulemap */,
+				C19562DA770354B94A722C57FD5311A9 /* Pods-Assistive Technology-acknowledgements.markdown */,
+				CF2393604AAA5C37986100BDCC396755 /* Pods-Assistive Technology-acknowledgements.plist */,
+				0200188BE9AE00320A0221F8ABFA4654 /* Pods-Assistive Technology-dummy.m */,
+				00CF8DEAE19A8575291EC1811568BF28 /* Pods-Assistive Technology-Info.plist */,
+				649CB324D1A3E8CEE10755A221969553 /* Pods-Assistive Technology-umbrella.h */,
+				29D1D5305D9EDC6ED9D7415996DBC75E /* Pods-Assistive Technology.debug.xcconfig */,
+				CD59AA2E588F2B019198982EED2F0774 /* Pods-Assistive Technology.release.xcconfig */,
 			);
 			name = "Pods-Assistive Technology";
 			path = "Target Support Files/Pods-Assistive Technology";
 			sourceTree = "<group>";
 		};
-		B862B4264C2F1D9F87C12772C46C54AE /* Support Files */ = {
+		89626CB5000BCFCF0F1D5960B3A94E5E /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				12D2BC450C4A6B05397075508D93D9CE /* CocoaAsyncSocket.modulemap */,
-				85B686CFAB542400135ACE0C23847EBF /* CocoaAsyncSocket.xcconfig */,
-				99BD1B356EA29219B7BDC08082938B68 /* CocoaAsyncSocket-dummy.m */,
-				DEA17E24F689BAD69B80C9E2639F6EE9 /* CocoaAsyncSocket-Info.plist */,
-				A905023E6DEC0CB3ACF18BC768C59C2E /* CocoaAsyncSocket-prefix.pch */,
-				E8773045111A5CD08ECF026E48421F3B /* CocoaAsyncSocket-umbrella.h */,
+				712832A0A6E6C947CE1813F1B978F4A8 /* Pods-Assistive Technology */,
+				E6E77E6F549D9798E24A1DADFB77460B /* Pods-Assistive Technology-Assistive TechnologyUITests */,
+				54A5A5E93A9A1859C5C0C4C845AA5CD3 /* Pods-Assistive TechnologyTests */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/CocoaAsyncSocket";
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		BB2BDAA8DB999C491DAC5EAE1CFDC78F /* Pods */ = {
+		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				A49791B92A7781B859EAEEF581EE6D8B /* CocoaAsyncSocket */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		BDB0DD9DF2184EAAFFD00F527DE67764 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				CC814063E47992E7A90FA41688C2A454 /* CFNetwork.framework */,
-				B655093DDCC0176DEAC903ABA8E76527 /* Foundation.framework */,
-				5359E8FB322457653E676483AB72D7B1 /* Security.framework */,
+				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
@@ -264,21 +152,44 @@
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				03C5C200A0787E300053CFA8F53CA094 /* Frameworks */,
-				BB2BDAA8DB999C491DAC5EAE1CFDC78F /* Pods */,
-				9E32652403F93E3F2BE77602B76F2857 /* Products */,
-				73ADFA6E992673F703CC6E1A6652C622 /* Targets Support Files */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				129DEE485293BB4FEF37D1DDAE8F9733 /* Products */,
+				89626CB5000BCFCF0F1D5960B3A94E5E /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E6E77E6F549D9798E24A1DADFB77460B /* Pods-Assistive Technology-Assistive TechnologyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B18BBB7D8E44D7FD89A8CF4C0ACF181E /* Pods-Assistive Technology-Assistive TechnologyUITests.modulemap */,
+				E916D7EF2FAB7D9C5ADA6FE12D123C49 /* Pods-Assistive Technology-Assistive TechnologyUITests-acknowledgements.markdown */,
+				E13FEED4D3A258C672892CA706735F9A /* Pods-Assistive Technology-Assistive TechnologyUITests-acknowledgements.plist */,
+				F53D0A001F46B33E08574D72927533FD /* Pods-Assistive Technology-Assistive TechnologyUITests-dummy.m */,
+				343D818138B394245281AF8E631350AD /* Pods-Assistive Technology-Assistive TechnologyUITests-Info.plist */,
+				68236AB013C90E69600C9CC328032D13 /* Pods-Assistive Technology-Assistive TechnologyUITests-umbrella.h */,
+				0266F5D925A5F30A396CE64D382A621B /* Pods-Assistive Technology-Assistive TechnologyUITests.debug.xcconfig */,
+				A862FC0B771386B0663A9E11470D2248 /* Pods-Assistive Technology-Assistive TechnologyUITests.release.xcconfig */,
+			);
+			name = "Pods-Assistive Technology-Assistive TechnologyUITests";
+			path = "Target Support Files/Pods-Assistive Technology-Assistive TechnologyUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		27F5C15507DFE9E2D2BCD88B7477B96C /* Headers */ = {
+		267493029075876BA9592EB5B8C0EFCD /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3BE015E97D720760E0F4CC8535593C0 /* Pods-Assistive Technology-Assistive TechnologyUITests-umbrella.h in Headers */,
+				C26211BBD120DFA9961EF2457AD01192 /* Pods-Assistive Technology-Assistive TechnologyUITests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,21 +201,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8D959A824F1293E70B2365EE34F7F460 /* Headers */ = {
+		D37AF9DA10EBCE1A1E0D7CA97E459618 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0AF760F7D59C6319213C4C93DBE3EF02 /* Pods-Assistive Technology-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F82807D639FCFDF56A607D3970098A87 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2922C954DCA50DB1C087E9E9C9440393 /* CocoaAsyncSocket-umbrella.h in Headers */,
-				DF77DA76BD5962EE7DD383126BBBBAC8 /* GCDAsyncSocket.h in Headers */,
-				411EE6BA92B228BF3497175C14FC7A90 /* GCDAsyncUdpSocket.h in Headers */,
+				D280A9F227788EEAB35A0BCC56AFC880 /* Pods-Assistive Technology-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,37 +231,18 @@
 			productReference = 974E486CD146020460143E66F5103F4D /* Pods_Assistive_TechnologyTests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		6083682834ABE0AE7BD1CBF06CADD036 /* CocoaAsyncSocket */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 65B2BBD8991DD61ACE6737AADB85AB43 /* Build configuration list for PBXNativeTarget "CocoaAsyncSocket" */;
-			buildPhases = (
-				F82807D639FCFDF56A607D3970098A87 /* Headers */,
-				398D9830C2C4A6872C9EEC588214E124 /* Sources */,
-				160EF26C734A27A9436CAB7143AF8F15 /* Frameworks */,
-				B7B5EDC45A81FF70431CFBFB2ABDFFEB /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = CocoaAsyncSocket;
-			productName = CocoaAsyncSocket;
-			productReference = 6CBEFE4F9E22AFDC6347A739BB35FF8C /* CocoaAsyncSocket.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		8667D0A85467F3EE77741F3BD7E61126 /* Pods-Assistive Technology */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 056729DEA91085FF6411B7310A353285 /* Build configuration list for PBXNativeTarget "Pods-Assistive Technology" */;
+			buildConfigurationList = C13139BD47E391D3E54CA33253A5BBF4 /* Build configuration list for PBXNativeTarget "Pods-Assistive Technology" */;
 			buildPhases = (
-				8D959A824F1293E70B2365EE34F7F460 /* Headers */,
-				151AF7A5263CEADB6D24B6B332A72DE5 /* Sources */,
-				A09DF7921C6C200E617AA84323580C9B /* Frameworks */,
-				C39D28CF17BB50B7C3BADCD3E47FBC1E /* Resources */,
+				D37AF9DA10EBCE1A1E0D7CA97E459618 /* Headers */,
+				CD8EF5262E7FF8288E529DBE1D0AE31D /* Sources */,
+				E0091D8649486DE788BCF3B5AEF7913B /* Frameworks */,
+				6268DE1E6F58115853DF3069C85FA506 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				4E9C2A5DE29797F13C90C36B1F0051C1 /* PBXTargetDependency */,
 			);
 			name = "Pods-Assistive Technology";
 			productName = "Pods-Assistive Technology";
@@ -369,17 +251,16 @@
 		};
 		E71D4FFD7AE047FAC6BDF5BDDC3BE4BD /* Pods-Assistive Technology-Assistive TechnologyUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D678714998C6FC21249E0BE36889027B /* Build configuration list for PBXNativeTarget "Pods-Assistive Technology-Assistive TechnologyUITests" */;
+			buildConfigurationList = 45AE2A0C197474F6D847AE2714B52D13 /* Build configuration list for PBXNativeTarget "Pods-Assistive Technology-Assistive TechnologyUITests" */;
 			buildPhases = (
-				27F5C15507DFE9E2D2BCD88B7477B96C /* Headers */,
-				0A13C2E604BB763D8680B916BE6244FC /* Sources */,
-				0D7CA83761C3AF791CF254F56754FF2C /* Frameworks */,
-				16676D7AB083B407BD106A4634124BEA /* Resources */,
+				267493029075876BA9592EB5B8C0EFCD /* Headers */,
+				ED6E54D358208A1160C306EF39785CD2 /* Sources */,
+				7349CBD9CDC7DCA665B43CC29001706C /* Frameworks */,
+				3F75248F5231842760CB0B0C88217FE4 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				95759BFC45EBACC02E9AAEADD31A5179 /* PBXTargetDependency */,
 			);
 			name = "Pods-Assistive Technology-Assistive TechnologyUITests";
 			productName = "Pods-Assistive Technology-Assistive TechnologyUITests";
@@ -404,11 +285,10 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 9E32652403F93E3F2BE77602B76F2857 /* Products */;
+			productRefGroup = 129DEE485293BB4FEF37D1DDAE8F9733 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6083682834ABE0AE7BD1CBF06CADD036 /* CocoaAsyncSocket */,
 				8667D0A85467F3EE77741F3BD7E61126 /* Pods-Assistive Technology */,
 				E71D4FFD7AE047FAC6BDF5BDDC3BE4BD /* Pods-Assistive Technology-Assistive TechnologyUITests */,
 				47EF63C79AB735047DED83CA6C168AE2 /* Pods-Assistive TechnologyTests */,
@@ -417,7 +297,14 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		16676D7AB083B407BD106A4634124BEA /* Resources */ = {
+		3F75248F5231842760CB0B0C88217FE4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6268DE1E6F58115853DF3069C85FA506 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -431,39 +318,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B7B5EDC45A81FF70431CFBFB2ABDFFEB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C39D28CF17BB50B7C3BADCD3E47FBC1E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0A13C2E604BB763D8680B916BE6244FC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				857161B8A9C18DC17B0098AE7E7C15E0 /* Pods-Assistive Technology-Assistive TechnologyUITests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		151AF7A5263CEADB6D24B6B332A72DE5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FFF5F1109B3ACEDEBC771B4F1FCE2BA7 /* Pods-Assistive Technology-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		2A5F2319F7A56BEA1E7D3235773BCE72 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -472,31 +329,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		398D9830C2C4A6872C9EEC588214E124 /* Sources */ = {
+		CD8EF5262E7FF8288E529DBE1D0AE31D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C237B7AA6F4A2DD17CA05EB90C83362 /* CocoaAsyncSocket-dummy.m in Sources */,
-				1F292B5410B16DBF60D1F47A48216622 /* GCDAsyncSocket.m in Sources */,
-				BF0E4454B28437897BC092AE02CD0C13 /* GCDAsyncUdpSocket.m in Sources */,
+				F67A4FCFBBF04B3043764D3CD7DA7D2E /* Pods-Assistive Technology-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED6E54D358208A1160C306EF39785CD2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D14537E4D12F9CB66C495D82FAC5D942 /* Pods-Assistive Technology-Assistive TechnologyUITests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4E9C2A5DE29797F13C90C36B1F0051C1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CocoaAsyncSocket;
-			target = 6083682834ABE0AE7BD1CBF06CADD036 /* CocoaAsyncSocket */;
-			targetProxy = CE1736DCB677FF67D3DA0ECE382DF9EE /* PBXContainerItemProxy */;
-		};
-		95759BFC45EBACC02E9AAEADD31A5179 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CocoaAsyncSocket;
-			target = 6083682834ABE0AE7BD1CBF06CADD036 /* CocoaAsyncSocket */;
-			targetProxy = 93A8300A5BC9CC92BA6E999A57464E75 /* PBXContainerItemProxy */;
-		};
 		D2D85F7BCDA548DDC610EAA9177B718C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-Assistive Technology";
@@ -506,9 +357,9 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		036B583347904514702E4E282804C809 /* Debug */ = {
+		047A3C3FAFB3D2FB3AA217E063D48E2F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 117C24DDB25F5393192E651C8A539DB3 /* Pods-Assistive Technology-Assistive TechnologyUITests.debug.xcconfig */;
+			baseConfigurationReference = 29D1D5305D9EDC6ED9D7415996DBC75E /* Pods-Assistive Technology.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -521,7 +372,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Assistive Technology-Assistive TechnologyUITests/Pods-Assistive Technology-Assistive TechnologyUITests-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-Assistive Technology/Pods-Assistive Technology-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -530,7 +381,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Assistive Technology-Assistive TechnologyUITests/Pods-Assistive Technology-Assistive TechnologyUITests.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-Assistive Technology/Pods-Assistive Technology.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -546,7 +397,7 @@
 		};
 		0948C6EAD8D0AE089EFBCEDC81E8B023 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1637D761B26F5D8E5FFF6655C56EF621 /* Pods-Assistive TechnologyTests.release.xcconfig */;
+			baseConfigurationReference = 66D92D8467CF69159EB40F0C99615D5D /* Pods-Assistive TechnologyTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -647,9 +498,9 @@
 			};
 			name = Debug;
 		};
-		1C8D8D52D12622F3F52A35DBED4D5D0A /* Debug */ = {
+		536B8C6DE8BFF7615FE49905D1AFF399 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B872991DB92A553B56D875D466D7542 /* Pods-Assistive Technology.debug.xcconfig */;
+			baseConfigurationReference = 0266F5D925A5F30A396CE64D382A621B /* Pods-Assistive Technology-Assistive TechnologyUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -662,7 +513,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Assistive Technology/Pods-Assistive Technology-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-Assistive Technology-Assistive TechnologyUITests/Pods-Assistive Technology-Assistive TechnologyUITests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -671,7 +522,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Assistive Technology/Pods-Assistive Technology.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-Assistive Technology-Assistive TechnologyUITests/Pods-Assistive Technology-Assistive TechnologyUITests.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -687,7 +538,7 @@
 		};
 		B12C48289C94168AB4A8E3D337BE14EE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9884ABFFEB349B0B02DC32826E882EB1 /* Pods-Assistive TechnologyTests.debug.xcconfig */;
+			baseConfigurationReference = 7216492BE6F9B154D162AF4CC8B81DA8 /* Pods-Assistive TechnologyTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -723,84 +574,9 @@
 			};
 			name = Debug;
 		};
-		B5CD3D24A229A29BA788D074A2B9013B /* Release */ = {
+		D10E597CB2A81D525AF8595D206BB0F0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4C7ED40536E1C7DFD4FD57D1FDB0DDF9 /* Pods-Assistive Technology.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Assistive Technology/Pods-Assistive Technology-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Assistive Technology/Pods-Assistive Technology.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		C0B6FBCA3688C653B65F53B381AD63C2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 85B686CFAB542400135ACE0C23847EBF /* CocoaAsyncSocket.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/CocoaAsyncSocket/CocoaAsyncSocket-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/CocoaAsyncSocket/CocoaAsyncSocket-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/CocoaAsyncSocket/CocoaAsyncSocket.modulemap";
-				PRODUCT_MODULE_NAME = CocoaAsyncSocket;
-				PRODUCT_NAME = CocoaAsyncSocket;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		C2BF69527845275FAAB1BACE4C57CA6C /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 581A4DDEDB92EA1B8BD26255E16AC373 /* Pods-Assistive Technology-Assistive TechnologyUITests.release.xcconfig */;
+			baseConfigurationReference = A862FC0B771386B0663A9E11470D2248 /* Pods-Assistive Technology-Assistive TechnologyUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -837,10 +613,12 @@
 			};
 			name = Release;
 		};
-		E45797F4BED86466FE122E04B84DC612 /* Debug */ = {
+		DC85037DF825DE43B964084E6028652B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 85B686CFAB542400135ACE0C23847EBF /* CocoaAsyncSocket.xcconfig */;
+			baseConfigurationReference = CD59AA2E588F2B019198982EED2F0774 /* Pods-Assistive Technology.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -850,27 +628,29 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/CocoaAsyncSocket/CocoaAsyncSocket-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/CocoaAsyncSocket/CocoaAsyncSocket-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-Assistive Technology/Pods-Assistive Technology-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MODULEMAP_FILE = "Target Support Files/CocoaAsyncSocket/CocoaAsyncSocket.modulemap";
-				PRODUCT_MODULE_NAME = CocoaAsyncSocket;
-				PRODUCT_NAME = CocoaAsyncSocket;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Assistive Technology/Pods-Assistive Technology.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		F090CD07A80273D5A73C8EA19224ADDB /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -935,11 +715,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		056729DEA91085FF6411B7310A353285 /* Build configuration list for PBXNativeTarget "Pods-Assistive Technology" */ = {
+		45AE2A0C197474F6D847AE2714B52D13 /* Build configuration list for PBXNativeTarget "Pods-Assistive Technology-Assistive TechnologyUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1C8D8D52D12622F3F52A35DBED4D5D0A /* Debug */,
-				B5CD3D24A229A29BA788D074A2B9013B /* Release */,
+				536B8C6DE8BFF7615FE49905D1AFF399 /* Debug */,
+				D10E597CB2A81D525AF8595D206BB0F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -953,15 +733,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		65B2BBD8991DD61ACE6737AADB85AB43 /* Build configuration list for PBXNativeTarget "CocoaAsyncSocket" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E45797F4BED86466FE122E04B84DC612 /* Debug */,
-				C0B6FBCA3688C653B65F53B381AD63C2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		80C81065C3EFCA1E3323BDC53759AC25 /* Build configuration list for PBXNativeTarget "Pods-Assistive TechnologyTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -971,11 +742,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D678714998C6FC21249E0BE36889027B /* Build configuration list for PBXNativeTarget "Pods-Assistive Technology-Assistive TechnologyUITests" */ = {
+		C13139BD47E391D3E54CA33253A5BBF4 /* Build configuration list for PBXNativeTarget "Pods-Assistive Technology" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				036B583347904514702E4E282804C809 /* Debug */,
-				C2BF69527845275FAAB1BACE4C57CA6C /* Release */,
+				047A3C3FAFB3D2FB3AA217E063D48E2F /* Debug */,
+				DC85037DF825DE43B964084E6028652B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
