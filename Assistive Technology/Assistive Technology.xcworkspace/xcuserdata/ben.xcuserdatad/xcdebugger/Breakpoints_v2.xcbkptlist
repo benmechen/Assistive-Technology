@@ -7,240 +7,48 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3DEC2EC6-6127-4EA4-8D55-F440B2E1AFA4"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Assistive Technology/Utilities/ConnectionService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "249"
-            endingLineNumber = "249"
-            landmarkName = "resolveIPv4(addresses:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D6912A89-0831-4E43-AEB8-E8A8C19A90E2"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Assistive Technology/Utilities/ConnectionService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "249"
-            endingLineNumber = "249"
-            landmarkName = "resolveIPv4(addresses:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "D6912A89-0831-4E43-AEB8-E8A8C19A90E2 - d0e2bc35f90d03d7"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Assistive_Technology.ConnectionService.init(withPort: Swift.UInt16, completion: (Network.NWConnection) -&gt; ()) -&gt; Assistive_Technology.ConnectionService"
-                  moduleName = "Assistive Technology"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ben/Documents/Programming/Swift/team30_project/Assistive%20Technology/Assistive%20Technology/Utilities/ConnectionService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "41"
-                  endingLineNumber = "41"
-                  offsetFromSymbolStart = "1224">
-               </Location>
-               <Location
-                  uuid = "D6912A89-0831-4E43-AEB8-E8A8C19A90E2 - 756550d6a5174256"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Network.NWConnection) -&gt; () in Assistive_Technology.ConnectionService.init(withPort: Swift.UInt16, completion: (Network.NWConnection) -&gt; ()) -&gt; Assistive_Technology.ConnectionService"
-                  moduleName = "Assistive Technology"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ben/Documents/Programming/Swift/team30_project/Assistive%20Technology/Assistive%20Technology/Utilities/ConnectionService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "42"
-                  endingLineNumber = "42"
-                  offsetFromSymbolStart = "112">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A4CD3081-E11C-4074-93A1-C4B3E785B9A6"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Assistive Technology/Utilities/ConnectionService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "249"
-            endingLineNumber = "249"
-            landmarkName = "resolveIPv4(addresses:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "343AF92B-FB69-45B0-B285-4DA2C5AFE646"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Assistive Technology/Utilities/ConnectionService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "249"
-            endingLineNumber = "249"
-            landmarkName = "resolveIPv4(addresses:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D632760E-4C6A-441E-B2DF-C8BDCACACAEB"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Assistive Technology/Utilities/ConnectionService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "249"
-            endingLineNumber = "249"
-            landmarkName = "resolveIPv4(addresses:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "D632760E-4C6A-441E-B2DF-C8BDCACACAEB - a14f8388a1009da9"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Network.NWConnection) -&gt; () in Assistive_Technology.ConnectionService.(discover in _99170E021876D6D17E53A750703A2E00)(onPort: Network.NWEndpoint.Port, completion: (Network.NWConnection) -&gt; ()) -&gt; ()"
-                  moduleName = "Assistive Technology"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ben/Documents/Programming/Swift/team30_project/Assistive%20Technology/Assistive%20Technology/Utilities/ConnectionService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "104"
-                  endingLineNumber = "104"
-                  offsetFromSymbolStart = "304">
-               </Location>
-               <Location
-                  uuid = "D632760E-4C6A-441E-B2DF-C8BDCACACAEB - ecfd2ec43424aa76"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.String&gt;) -&gt; () in closure #2 (Network.NWConnection) -&gt; () in Assistive_Technology.ConnectionService.(discover in _99170E021876D6D17E53A750703A2E00)(onPort: Network.NWEndpoint.Port, completion: (Network.NWConnection) -&gt; ()) -&gt; ()"
-                  moduleName = "Assistive Technology"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ben/Documents/Programming/Swift/team30_project/Assistive%20Technology/Assistive%20Technology/Utilities/ConnectionService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "85"
-                  endingLineNumber = "85"
-                  offsetFromSymbolStart = "252">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "68350001-8522-4D41-A6FF-996EA613AB8F"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Assistive Technology/Utilities/ConnectionService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "249"
-            endingLineNumber = "249"
-            landmarkName = "resolveIPv4(addresses:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "68350001-8522-4D41-A6FF-996EA613AB8F - 6cd3f0b6582c3754"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Assistive_Technology.ConnectionService.(listen in _99170E021876D6D17E53A750703A2E00)(on: Network.NWConnection, completion: (Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Assistive Technology"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ben/Documents/Programming/Swift/team30_project/Assistive%20Technology/Assistive%20Technology/Utilities/ConnectionService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "139"
-                  endingLineNumber = "139"
-                  offsetFromSymbolStart = "324">
-               </Location>
-               <Location
-                  uuid = "68350001-8522-4D41-A6FF-996EA613AB8F - 5899538725b46908"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Network.NWConnection.ContentContext&gt;, Swift.Bool, Swift.Optional&lt;Network.NWError&gt;) -&gt; () in Assistive_Technology.ConnectionService.(listen in _99170E021876D6D17E53A750703A2E00)(on: Network.NWConnection, completion: (Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Assistive Technology"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ben/Documents/Programming/Swift/team30_project/Assistive%20Technology/Assistive%20Technology/Utilities/ConnectionService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "140"
-                  endingLineNumber = "140"
-                  offsetFromSymbolStart = "396">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B4D9B0BE-D5AB-4BAB-BD48-42F357B0C933"
+            uuid = "32AF28E6-9C93-4F80-BCF6-A37E3FED37A8"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Assistive Technology/Utilities/ConnectionService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "249"
-            endingLineNumber = "249"
-            landmarkName = "resolveIPv4(addresses:)"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "connect(to:on:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E527EE5A-452F-41D8-8F71-2C60451F8D11"
+            uuid = "36B95FF8-73A2-43C4-AD49-73D82213551D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Assistive Technology/Utilities/ConnectionService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "249"
-            endingLineNumber = "249"
-            landmarkName = "resolveIPv4(addresses:)"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "send(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "925E2374-0CAF-4C97-A872-401A6C6FB0A0"
-            shouldBeEnabled = "No"
+            uuid = "1A5CED50-9203-41F5-A5D9-B1BB321FA125"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Assistive Technology/Utilities/ConnectionService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "249"
-            endingLineNumber = "249"
-            landmarkName = "resolveIPv4(addresses:)"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
+            landmarkName = "listen(on:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -56,10 +56,15 @@ class View: UIViewController, ViewModelDelegate {
         self.enableDirectionalButtons()
     }
     
-    func disconnected() {
-        
+    func disconnected(_ message: [String: String]? = nil) {
         self.start.setTitle("Start Client", for: .normal)
         self.disableDirectionalButtons()
+        
+        if let title = message?["title"], let body = message?["body"] {
+            let alert = UIAlertController(title: title, message: body, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     func set25Bar(_ on: Bool) {

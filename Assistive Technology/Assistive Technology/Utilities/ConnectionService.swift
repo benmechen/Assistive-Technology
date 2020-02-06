@@ -8,6 +8,7 @@
 
 import Foundation
 import Network
+import os.log
 
 enum AssistiveTechnologyProtocol: String {
     case up = "astv_up"
@@ -22,7 +23,7 @@ enum AssistiveTechnologyProtocol: String {
 }
 
 protocol ConnectionServiceDelegate {
-    func connectionStatus(status: Bool)
+    func connectionState(state: ConnectionService.State)
     func connectionStrength(strength: Float)
 }
 
@@ -38,6 +39,12 @@ class ConnectionService: NSObject {
     private var lastSentClock: Timer?
     private var previousClocks: [Timer] = []
     private var open: Bool = false
+    
+    enum State: Equatable {
+        case connected
+        case disconnected
+        case failed(ConnectionServiceError)
+    }
     
     deinit {
         killClocks()
@@ -64,13 +71,37 @@ class ConnectionService: NSObject {
                 self.open = true
                 self.listen(on: connection)
                 self.send(AssistiveTechnologyProtocol.discover.rawValue)
-            case .setup:
-                print("State: Setup\n")
-            case .cancelled:
-                self.open = false
-                print("State: Cancelled\n")
-            case .preparing:
-                print("State: Preparing\n")
+            case .failed(let error):
+                switch error {
+                case .posix(let code):
+                    switch code {
+                    case .EADDRINUSE, .EADDRNOTAVAIL:
+                        self.delegate?.connectionState(state: .failed(.connectAddressUnavailable))
+                    case .EACCES, .EPERM:
+                        self.delegate?.connectionState(state: .failed(.connectPermissionDenied))
+                    case .EBUSY:
+                        self.delegate?.connectionState(state: .failed(.connectDeviceBusy))
+                    case .ECANCELED:
+                        self.delegate?.connectionState(state: .failed(.connectCanceled))
+                    case .ECONNREFUSED:
+                        self.delegate?.connectionState(state: .failed(.connectRefused))
+                    case .EHOSTDOWN, .EHOSTUNREACH:
+                        self.delegate?.connectionState(state: .failed(.connectHostDown))
+                    case .EISCONN:
+                        self.delegate?.connectionState(state: .failed(.connectAlreadyConnected))
+                    case .ENOTCONN:
+                        self.delegate?.connectionState(state: .disconnected)
+                    case .ETIMEDOUT:
+                        self.delegate?.connectionState(state: .failed(.connectTimeout))
+                    case .ENETDOWN, .ENETUNREACH, .ENETRESET:
+                        self.delegate?.connectionState(state: .failed(.connectNetworkDown))
+                    default:
+                        os_log(.error, "POSIX connection error: %@", code.rawValue)
+                        self.delegate?.connectionState(state: .failed(.connectOther))
+                    }
+                default:
+                    self.delegate?.connectionState(state: .failed(.connectOther))
+                }
             default:
                 print("ERROR! State not defined!\n")
             }
@@ -114,7 +145,7 @@ class ConnectionService: NSObject {
             self.send(AssistiveTechnologyProtocol.disconnect.rawValue)
         }
         self.killClocks()
-        delegate?.connectionStatus(status: false)
+        delegate?.connectionState(state: .disconnected)
         self.connection?.cancel()
     }
     
@@ -124,16 +155,13 @@ class ConnectionService: NSObject {
         connection.receiveMessage { (data, context, isComplete, error) in
             if (isComplete) {
                 if let data = data, let message = String(data: data, encoding: .utf8) {
-                    self.open = true
-                    self.delegate?.connectionStatus(status: true)
-                    
                     self.received += 1
                     
                     self.killClocks()
                     
                     if message.contains(AssistiveTechnologyProtocol.handshake.rawValue) {
                         self.open = true
-                        self.delegate?.connectionStatus(status: true)
+                        self.delegate?.connectionState(state: .connected)
                     }
                     
                     if message.contains(AssistiveTechnologyProtocol.disconnect.rawValue) {
