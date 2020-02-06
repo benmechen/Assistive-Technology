@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import CocoaAsyncSocket
+import Network
 
 enum AssistiveTechnologyProtocol: String {
     case up = "astv_up"
@@ -22,88 +22,162 @@ enum AssistiveTechnologyProtocol: String {
 }
 
 protocol ConnectionServiceDelegate {
-    func connectionUpdate(connected: Bool)
+    func connectionStatus(status: Bool)
+    func connectionStrength(strength: Float)
 }
 
-class ConnectionService: NSObject, GCDAsyncUdpSocketDelegate {
-    static let shared = ConnectionService()
+class ConnectionService: NSObject {
     var delegate: ConnectionServiceDelegate?
-    private var subscribers: [ConnectionServiceDelegate] = []
-    private var socket: GCDAsyncUdpSocket?
+    private var connection: NWConnection?
     private var browser = NetServiceBrowser()
     private var service: NetService?
     private var queue = DispatchQueue(label: "ConnectionServiceQueue")
-    private var server: Server?
     private var sent: Float = 0.0
     private var received: Float = 0.0
+    private var strengthBuffer: [Float] = []
+    private var lastSentClock: Timer?
+    private var previousClocks: [Timer] = []
     private var open: Bool = false
     
-    struct Server {
-        var host: NSString = NSString(string: "255.255.255.255")
-        var port: UInt16
-    }
-
-    override init() {
-        super.init()
-        
-        socket = GCDAsyncUdpSocket(delegate: self, delegateQueue: queue)
-        socket?.setIPv4Enabled(true)
-        socket?.setIPv6Enabled(false)
+    deinit {
+        killClocks()
     }
     
     public func connect(to host: String, on port: UInt16) {
-        self.server = Server(host: NSString(string: host), port: port)
-        
-        do {
-            try socket?.bind(toPort: port)
-            try socket?.enableBroadcast(true)
-            try socket?.beginReceiving()
-            try socket?.connect(toHost: host, onPort: port)
-            
-            print(" > Connection started on \(socket?.connectedHost() ?? "-")")
-            self.send(AssistiveTechnologyProtocol.discover.rawValue)
-        } catch let error as NSError {
-            print(error)
+        let host = NWEndpoint.Host(host)
+        guard let port = NWEndpoint.Port(rawValue: port) else {
+            return
         }
+        
+        self.strengthBuffer.removeAll()
+        
+        self.connection = NWConnection(host: host, port: port, using: .udp)
+        
+        self.connection?.stateUpdateHandler = { (newState) in
+            switch (newState) {
+            case .ready:
+                print("State: Ready\n")
+                guard let connection = self.connection else {
+                    return
+                }
+                
+                self.open = true
+                self.listen(on: connection)
+                self.send(AssistiveTechnologyProtocol.discover.rawValue)
+            case .setup:
+                print("State: Setup\n")
+            case .cancelled:
+                self.open = false
+                print("State: Cancelled\n")
+            case .preparing:
+                print("State: Preparing\n")
+            default:
+                print("ERROR! State not defined!\n")
+            }
+        }
+        
+        connection?.start(queue: queue)
+        
+        print(" > Connection started on \(self.connection?.endpoint.debugDescription ?? "-")")
     }
     
     public func send(_ value: String) {
-//        guard self.open else { return }
-        guard let data = value.data(using: .utf8), let addressData = server?.host.data(using: String.Encoding.utf8.rawValue) else { return }
+        guard self.open else { return }
+        guard let data = value.data(using: .utf8) else { return }
         
-        self.socket?.send(data, toAddress: addressData, withTimeout: 2, tag: 0)
-        print(" > Sent: \(data as NSData) string: \(value) to: \(server?.host)")
-
-        self.sent += 1
-    }
-    
-    public func close() {
-        self.send(AssistiveTechnologyProtocol.disconnect.rawValue)
-        delegate?.connectionUpdate(connected: false)
-        self.socket?.close()
-    }
-    
-    func udpSocket(_ sock: GCDAsyncUdpSocket, didReceive data: Data, fromAddress address: Data, withFilterContext filterContext: Any?) {
-        
-        if let message = NSString(data: data, encoding: String.Encoding.utf8.rawValue) as String? {
-            if message.contains(AssistiveTechnologyProtocol.acknowledge.rawValue) {
-                self.received += 1
+        self.connection?.send(content: data, completion: .contentProcessed( { error in
+            if let error = error {
+                print(error)
+                return
             }
             
-            if message.contains(AssistiveTechnologyProtocol.handshake.rawValue) {
-                self.open = true
-                delegate?.connectionUpdate(connected: true)
+            if let previousClock = self.lastSentClock {
+                self.previousClocks.append(previousClock)
             }
             
-            let percent: Float = (self.received / self.sent) * 100
+            DispatchQueue.main.async {
+                self.lastSentClock = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { timer in
+                    // No response received after 5 seconds, update connection status
+                    if self.calculateStrength(rate: 0.0) < 5 {
+                        self.close(false)
+                    }
+                }
+            }
             
-            print(" > Received: \(data as NSData) string: \(message) -- \(percent)% successfull transmission")
+            self.sent += 1
+            print(" > Sent: \(data as NSData) string: \(value)")
+        }))
+    }
+    
+    public func close(_ killServer: Bool = true) {
+        if killServer {
+            self.send(AssistiveTechnologyProtocol.disconnect.rawValue)
+        }
+        self.killClocks()
+        delegate?.connectionStatus(status: false)
+        self.connection?.cancel()
+    }
+    
+    private func listen(on connection: NWConnection) {
+        guard self.open else { return }
+        
+        connection.receiveMessage { (data, context, isComplete, error) in
+            if (isComplete) {
+                if let data = data, let message = String(data: data, encoding: .utf8) {
+                    self.open = true
+                    self.delegate?.connectionStatus(status: true)
+                    
+                    self.received += 1
+                    
+                    self.killClocks()
+                    
+                    if message.contains(AssistiveTechnologyProtocol.handshake.rawValue) {
+                        self.open = true
+                        self.delegate?.connectionStatus(status: true)
+                    }
+                    
+                    if message.contains(AssistiveTechnologyProtocol.disconnect.rawValue) {
+                        self.close()
+                    }
+                    
+                    let percent: Float = (self.received / self.sent) * 100
+                    
+                    print(" > Received: \(data as NSData) string: \(message) -- \(self.calculateStrength(rate: percent))% successfull transmission")
+                }
+                
+                if let error = error {
+                    print(error)
+                } else {
+                    self.listen(on: connection)
+                }
+            }
+        }
+    }
+    
+    private func calculateStrength(rate percent: Float) -> Float {
+        self.strengthBuffer.append(percent)
+        
+        self.strengthBuffer = Array(self.strengthBuffer.suffix(5))
+        
+        let average = self.strengthBuffer.average ?? 100.0
+        self.delegate?.connectionStrength(strength: average)
+        print(average)
+        return average
+    }
+    
+    private func killClocks() {
+        for i in 0...self.previousClocks.count {
+            // Concurrency fix
+            guard i < self.previousClocks.count else { return }
+            self.previousClocks[i].invalidate()
+            self.previousClocks.remove(at: i)
         }
     }
 }
 
 extension ConnectionService: NetServiceBrowserDelegate, NetServiceDelegate {
     public func discover() {
+        delegate?.connectionStrength(strength: -1)
         service = nil
         browser.delegate = self
         browser.stop()
@@ -116,11 +190,13 @@ extension ConnectionService: NetServiceBrowserDelegate, NetServiceDelegate {
     }
     
     func netService(_ sender: NetService, didNotResolve errorDict: [String : NSNumber]) {
-      print("Resolve error:", sender, errorDict)
+        self.delegate?.connectionStrength(strength: 0)
+        print("Resolve error:", sender, errorDict)
     }
 
     func netServiceBrowserDidStopSearch(_ browser: NetServiceBrowser) {
       print("Search stopped")
+        self.delegate?.connectionStrength(strength: 0)
     }
     
     func netServiceBrowser(_ browser: NetServiceBrowser, didFind service: NetService, moreComing: Bool) {

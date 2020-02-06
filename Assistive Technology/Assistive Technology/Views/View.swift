@@ -15,6 +15,10 @@ class View: UIViewController, ViewModelDelegate {
     @IBOutlet weak var down: UIButton!
     @IBOutlet weak var left: UIButton!
     @IBOutlet weak var right: UIButton!
+    @IBOutlet weak var bar25: UIView!
+    @IBOutlet weak var bar50: UIView!
+    @IBOutlet weak var bar75: UIView!
+    @IBOutlet weak var bar100: UIView!
     
     var viewModel = ViewModel()
     
@@ -48,16 +52,45 @@ class View: UIViewController, ViewModelDelegate {
     
     // MARK: Protocol functions
     func connected() {
-        DispatchQueue.main.async {
-            self.start.setTitle("Stop Client", for: .normal)
-            self.enableDirectionalButtons()
-        }
+        self.start.setTitle("Stop Client", for: .normal)
+        self.enableDirectionalButtons()
     }
     
     func disconnected() {
-        DispatchQueue.main.async {
-            self.start.setTitle("Start Client", for: .normal)
-            self.disableDirectionalButtons()
+        
+        self.start.setTitle("Start Client", for: .normal)
+        self.disableDirectionalButtons()
+    }
+    
+    func set25Bar(_ on: Bool) {
+        if on {
+            self.bar25.backgroundColor = .systemPink
+        } else {
+            self.bar25.backgroundColor = .lightGray
+        }
+    }
+    
+    func set50Bar(_ on: Bool) {
+        if on {
+            self.bar50.backgroundColor = .systemPink
+        } else {
+            self.bar50.backgroundColor = .lightGray
+        }
+    }
+    
+    func set75Bar(_ on: Bool) {
+        if on {
+            self.bar75.backgroundColor = .systemPink
+        } else {
+            self.bar75.backgroundColor = .lightGray
+        }
+    }
+    
+    func set100Bar(_ on: Bool) {
+        if on {
+            self.bar100.backgroundColor = .systemPink
+        } else {
+            self.bar100.backgroundColor = .lightGray
         }
     }
     

@@ -87,13 +87,53 @@
                                     <action selector="startStopClient:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pdf-2i-2gf"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="bottom" distribution="equalSpacing" alignment="bottom" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="v5P-Oh-vg9">
+                                <rect key="frame" x="182" y="822" width="50" height="40"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xdt-Wa-4t4">
+                                        <rect key="frame" x="0.0" y="30" width="5" height="10"/>
+                                        <color key="backgroundColor" systemColor="tertiarySystemFillColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.50196078430000002" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="10" id="Fum-aU-BKR"/>
+                                            <constraint firstAttribute="width" constant="5" id="Ii0-s0-ztR"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lJk-be-BbS">
+                                        <rect key="frame" x="15" y="20" width="5" height="20"/>
+                                        <color key="backgroundColor" systemColor="tertiarySystemFillColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.50196078430000002" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="LVJ-7Q-g0T"/>
+                                            <constraint firstAttribute="width" constant="5" id="fYF-XT-1K5"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eoa-tM-d5A">
+                                        <rect key="frame" x="30" y="10" width="5" height="30"/>
+                                        <color key="backgroundColor" systemColor="tertiarySystemFillColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.50196078430000002" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Jle-n6-Bmx"/>
+                                            <constraint firstAttribute="width" constant="5" id="mbr-LJ-Q7t"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4YY-2j-Rhy">
+                                        <rect key="frame" x="45" y="0.0" width="5" height="40"/>
+                                        <color key="backgroundColor" systemColor="tertiarySystemFillColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.50196078430000002" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="JUx-Tp-CCm"/>
+                                            <constraint firstAttribute="width" constant="5" id="w0b-Ea-MfE"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="wOZ-ef-JSc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6Nc-1w-Yqy"/>
                             <constraint firstItem="YPn-KH-r1I" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="BEk-bh-nc0"/>
                             <constraint firstItem="wOZ-ef-JSc" firstAttribute="top" secondItem="W13-Pg-h41" secondAttribute="bottom" constant="89" id="Clf-3q-9ed"/>
+                            <constraint firstItem="v5P-Oh-vg9" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ELu-gx-75K"/>
                             <constraint firstItem="W13-Pg-h41" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="123" id="FC7-gG-dxs"/>
+                            <constraint firstItem="v5P-Oh-vg9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="182" id="J66-hD-f4e"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="v5P-Oh-vg9" secondAttribute="trailing" constant="182" id="LxR-Ua-jEx"/>
                             <constraint firstItem="7Li-CF-iGu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="PZo-7n-sMZ"/>
                             <constraint firstItem="GhY-fM-Y3l" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QxS-Ou-tmi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YPn-KH-r1I" secondAttribute="trailing" constant="20" id="YYU-Hm-JJQ"/>
@@ -106,6 +146,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="bar100" destination="4YY-2j-Rhy" id="EWu-09-l0R"/>
+                        <outlet property="bar25" destination="xdt-Wa-4t4" id="QNK-31-V3d"/>
+                        <outlet property="bar50" destination="lJk-be-BbS" id="elb-0f-FRC"/>
+                        <outlet property="bar75" destination="Eoa-tM-d5A" id="XGm-tj-DXX"/>
                         <outlet property="down" destination="GhY-fM-Y3l" id="Xrp-2o-WQu"/>
                         <outlet property="left" destination="7Li-CF-iGu" id="3yf-Oj-GMx"/>
                         <outlet property="right" destination="YPn-KH-r1I" id="B84-99-KUy"/>

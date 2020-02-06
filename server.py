@@ -52,6 +52,7 @@ try:
         elif string == "astv_disconnect":
             break
 finally:
+    serverSocket.sendto("astv_disconnect".encode('utf-8'), address)
     zeroconf.unregister_service(info)
     zeroconf.close()
     serverSocket.close()

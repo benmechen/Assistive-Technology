@@ -1,16 +1,16 @@
 PODS:
-  - SwiftSocket (2.0.2)
+  - CocoaAsyncSocket (7.6.3)
 
 DEPENDENCIES:
-  - SwiftSocket
+  - CocoaAsyncSocket
 
 SPEC REPOS:
   trunk:
-    - SwiftSocket
+    - CocoaAsyncSocket
 
 SPEC CHECKSUMS:
-  SwiftSocket: 6f4c9c63fbc5c1d61188936bb3c599fd546f40ae
+  CocoaAsyncSocket: eafaa68a7e0ec99ead0a7b35015e0bf25d2c8987
 
-PODFILE CHECKSUM: 59b8e10d4ebb4b2b3dc118285ebd24901a4e70c3
+PODFILE CHECKSUM: 1cf294e21071604c9fdc0a5762cdd88aa8246aeb
 
 COCOAPODS: 1.8.4

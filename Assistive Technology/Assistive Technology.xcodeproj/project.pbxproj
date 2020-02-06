@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B546D06523EAFD6100E70C17 /* Collection+Average.swift in Sources */ = {isa = PBXBuildFile; fileRef = B546D06423EAFD6100E70C17 /* Collection+Average.swift */; };
 		B559342C23E1EF31003D18EE /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = B559342B23E1EF31003D18EE /* Result.swift */; };
 		B559342E23E2380A003D18EE /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B559342D23E2380A003D18EE /* ViewModel.swift */; };
 		B5C3C67923E8382D00C18700 /* ConnectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C3C67823E8382D00C18700 /* ConnectionService.swift */; };
@@ -48,6 +49,7 @@
 		877097609324216D347D483E /* Pods-Assistive Technology-Assistive TechnologyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assistive Technology-Assistive TechnologyUITests.debug.xcconfig"; path = "Target Support Files/Pods-Assistive Technology-Assistive TechnologyUITests/Pods-Assistive Technology-Assistive TechnologyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		95735DFDF843F6674FFD07B2 /* Pods-Assistive TechnologyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assistive TechnologyTests.release.xcconfig"; path = "Target Support Files/Pods-Assistive TechnologyTests/Pods-Assistive TechnologyTests.release.xcconfig"; sourceTree = "<group>"; };
 		9A8F5BEDBEFD1B87024162F9 /* Pods_Assistive_Technology_Assistive_TechnologyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Assistive_Technology_Assistive_TechnologyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B546D06423EAFD6100E70C17 /* Collection+Average.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Average.swift"; sourceTree = "<group>"; };
 		B559342B23E1EF31003D18EE /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		B559342D23E2380A003D18EE /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		B5C3C67823E8382D00C18700 /* ConnectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionService.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				B5C3C67823E8382D00C18700 /* ConnectionService.swift */,
+				B546D06423EAFD6100E70C17 /* Collection+Average.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 				B5E8C7D023E07DE90099E555 /* View.swift in Sources */,
 				B559342C23E1EF31003D18EE /* Result.swift in Sources */,
 				B5F82CAE23E1EE6500C44FB3 /* ConnectionServiceErrors.swift in Sources */,
+				B546D06523EAFD6100E70C17 /* Collection+Average.swift in Sources */,
 				B559342E23E2380A003D18EE /* ViewModel.swift in Sources */,
 				B5E8C7CC23E07DE90099E555 /* AppDelegate.swift in Sources */,
 			);

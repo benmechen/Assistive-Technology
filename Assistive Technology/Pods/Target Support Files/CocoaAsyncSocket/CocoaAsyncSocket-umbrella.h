@@ -10,7 +10,9 @@
 #endif
 #endif
 
+#import "GCDAsyncSocket.h"
+#import "GCDAsyncUdpSocket.h"
 
-FOUNDATION_EXPORT double SwiftSocketVersionNumber;
-FOUNDATION_EXPORT const unsigned char SwiftSocketVersionString[];
+FOUNDATION_EXPORT double CocoaAsyncSocketVersionNumber;
+FOUNDATION_EXPORT const unsigned char CocoaAsyncSocketVersionString[];
 
