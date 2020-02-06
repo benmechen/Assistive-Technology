@@ -1,0 +1,11 @@
+C:\Development\Programs\team30_project\Windows\Server\Server\bin\Debug\netcoreapp3.1\Server.exe
+C:\Development\Programs\team30_project\Windows\Server\Server\bin\Debug\netcoreapp3.1\Server.deps.json
+C:\Development\Programs\team30_project\Windows\Server\Server\bin\Debug\netcoreapp3.1\Server.runtimeconfig.json
+C:\Development\Programs\team30_project\Windows\Server\Server\bin\Debug\netcoreapp3.1\Server.runtimeconfig.dev.json
+C:\Development\Programs\team30_project\Windows\Server\Server\bin\Debug\netcoreapp3.1\Server.dll
+C:\Development\Programs\team30_project\Windows\Server\Server\bin\Debug\netcoreapp3.1\Server.pdb
+C:\Development\Programs\team30_project\Windows\Server\Server\obj\Debug\netcoreapp3.1\Server.vbprojAssemblyReference.cache
+C:\Development\Programs\team30_project\Windows\Server\Server\obj\Debug\netcoreapp3.1\Server.AssemblyInfoInputs.cache
+C:\Development\Programs\team30_project\Windows\Server\Server\obj\Debug\netcoreapp3.1\Server.AssemblyInfo.vb
+C:\Development\Programs\team30_project\Windows\Server\Server\obj\Debug\netcoreapp3.1\Server.dll
+C:\Development\Programs\team30_project\Windows\Server\Server\obj\Debug\netcoreapp3.1\Server.pdb
