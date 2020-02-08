@@ -24,7 +24,6 @@ extension ViewModelDelegate {
 }
 
 class ViewModel: ConnectionServiceDelegate {
-    
     var delegate: ViewModelDelegate?
     var connectionService: ConnectionService?
     var connectionState: ConnectionService.State = .disconnected
@@ -46,7 +45,12 @@ class ViewModel: ConnectionServiceDelegate {
             }
         case .disconnected:
             DispatchQueue.main.async {
+                self.connectionStrength(strength: 0)
                 self.delegate?.disconnected()
+            }
+        case .connecting:
+            DispatchQueue.main.async {
+                self.connectingBars()
             }
         case .failed(let error):
             guard error != .connectAlreadyConnected else {
@@ -74,46 +78,38 @@ class ViewModel: ConnectionServiceDelegate {
                 message = "The connection was refused by the server. Make sure no other devices are connected already"
             case .connectTimeout:
                 message = "The connection timed out. Please try again later, or reconnect to the sever if the issue continues."
+            case .connectShakeNoResponse:
+                message = "Did not receive a response from the server to initial handshake request. Please restart both the mobile and server applications."
+            case .discoverTimeout:
+                message = "Could not find the server on the local network. Please ensure the server application on the other device is running."
+            case .discoverResolveServiceNotFound:
+                message = "The resolve service could not be found. Please try again."
+            case .discoverResolveBusy:
+                message = "The resolve service is busy at this time. Please try again, or restart the mobile app if the issue persists."
+            case .discoverIncorrectConfiguration:
+                message = "The resolve service was incorrectly configured. Please try again."
+            case .discoverResolveCanceled:
+                message = "The resolve service was canceled. Please try again."
+            case .discoverResolveTimeout:
+                message = "The resolve service could not discover the server address in time. Please restart both the mobile and server applications."
+            case .discoverResolveFailed:
+                message = "Unable to resolve the server's address. Please try again, or restart both the mobile and server applications if the issue persists."
+            case .discoverResolveUnknown:
+                message = "An error occured while resolving the server IP. Please try again."
             default:
                 message = "Please try again. If the issue persists, restart both your mobile device and the server device."
             }
             
             DispatchQueue.main.async {
-                self.delegate?.disconnected(["title": title, "message": message])
+                self.connectionStrength(strength: 0)
+                self.delegate?.disconnected(["title": title, "body": message])
             }
         }
     }
     
     func connectionStrength(strength: Float) {
-        if strength == -1 {
-            DispatchQueue.main.async {
-                self.loadingTimer = Timer.scheduledTimer(withTimeInterval: 0.25, repeats: true) { (timer) in
-                    var bar25 = false
-                    var bar50 = false
-                    var bar75 = false
-                    var bar100 = false
-                    
-                    if self.loadingBar == 0 {
-                        bar25 = true
-                        self.loadingBar += 1
-                    } else if self.loadingBar == 1 {
-                        bar50 = true
-                        self.loadingBar += 1
-                    } else if self.loadingBar == 2 {
-                        bar75 = true
-                        self.loadingBar += 1
-                    } else if self.loadingBar == 3 {
-                        bar100 = true
-                        self.loadingBar = 0
-                    }
-                    
-                    self.delegate?.set25Bar(bar25)
-                    self.delegate?.set50Bar(bar50)
-                    self.delegate?.set75Bar(bar75)
-                    self.delegate?.set100Bar(bar100)
-                }
-            }
-            
+        guard self.connectionState != .connecting else {
+            // Wait until connection secured
             return
         }
         
@@ -170,13 +166,34 @@ class ViewModel: ConnectionServiceDelegate {
     }
     
     private func stop() {
-        DispatchQueue.main.async {
-            self.delegate?.set25Bar(false)
-            self.delegate?.set50Bar(false)
-            self.delegate?.set75Bar(false)
-            self.delegate?.set100Bar(false)
-        }
-
         connectionService?.close()
+    }
+    
+    private func connectingBars() {
+        self.loadingTimer = Timer.scheduledTimer(withTimeInterval: 0.25, repeats: true) { (timer) in
+            var bar25 = false
+            var bar50 = false
+            var bar75 = false
+            var bar100 = false
+            
+            if self.loadingBar == 0 {
+                bar25 = true
+                self.loadingBar += 1
+            } else if self.loadingBar == 1 {
+                bar50 = true
+                self.loadingBar += 1
+            } else if self.loadingBar == 2 {
+                bar75 = true
+                self.loadingBar += 1
+            } else if self.loadingBar == 3 {
+                bar100 = true
+                self.loadingBar = 0
+            }
+            
+            self.delegate?.set25Bar(bar25)
+            self.delegate?.set50Bar(bar50)
+            self.delegate?.set75Bar(bar75)
+            self.delegate?.set100Bar(bar100)
+        }
     }
 }

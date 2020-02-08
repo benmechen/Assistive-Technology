@@ -30,4 +30,23 @@ enum ConnectionServiceError: Error {
     case connectTimeout
     /// POSIX network is down, unreachable, or has been reset
     case connectNetworkDown
+    /// Connection server discovery failed
+    case connectShakeNoResponse
+    
+    /// Discovery search did not find service in time
+    case discoverTimeout
+    /// Service not found while resolving IP
+    case discoverResolveServiceNotFound
+    /// Resolve service activity in progress
+    case discoverResolveBusy
+    /// Resolve service not setup correctly or given bad argument (e.g. bad IP)
+    case discoverIncorrectConfiguration
+    /// Resolve service was canceled
+    case discoverResolveCanceled
+    /// Resolve service did not get IP in time
+    case discoverResolveTimeout
+    /// Unable to resolve IP address from sender
+    case discoverResolveFailed
+    /// Other, unknown error during IP resolve
+    case discoverResolveUnknown
 }

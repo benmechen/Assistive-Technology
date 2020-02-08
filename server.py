@@ -6,6 +6,7 @@ from zeroconf import ServiceInfo, Zeroconf
 
 HOST = ''          # Open server up on local network
 PORT = 1024        # Port to listen on (non-privileged ports are > 1023)
+address = ""
 
 def get_ip_address(ifname):
     ni.ifaddresses(ifname)
@@ -52,7 +53,9 @@ try:
         elif string == "astv_disconnect":
             break
 finally:
-    serverSocket.sendto("astv_disconnect".encode('utf-8'), address)
+    print("\n > Shutting down server [" + str(datetime.datetime.now()) + "]")
+    if address != "":
+        serverSocket.sendto("astv_disconnect".encode('utf-8'), address)
     zeroconf.unregister_service(info)
     zeroconf.close()
     serverSocket.close()
