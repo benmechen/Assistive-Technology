@@ -10,6 +10,7 @@ import Foundation
 import Network
 import os.log
 
+/// Connection protocol with set messages to interact with the corresponding server
 enum AssistiveTechnologyProtocol: String {
     case up = "astv_up"
     case down = "astv_down"
@@ -22,11 +23,17 @@ enum AssistiveTechnologyProtocol: String {
     case greet = "astv_greet"
 }
 
+/// Protocol for ConnectionService caller to conform to in order to received updates about the connection state and strength
 protocol ConnectionServiceDelegate {
     func connectionState(state: ConnectionService.State)
     func connectionStrength(strength: Float)
 }
 
+/**
+ Automatically discover, connect and communicate with a server comforming to the Assistive Technology protocol
+ 
+ Caller must conform to the ConnectionServiceDelegate protocol to receive status updates
+ */
 class ConnectionService: NSObject {
     var delegate: ConnectionServiceDelegate?
     var state: ConnectionService.State = .disconnected
@@ -42,6 +49,7 @@ class ConnectionService: NSObject {
     private var discoverTimeout: Int = 0
     private var _discovered = false
     
+    /// The state of the connection handled by the service instance
     enum State: Equatable {
         case connected
         case connecting
@@ -49,10 +57,18 @@ class ConnectionService: NSObject {
         case failed(ConnectionServiceError)
     }
     
+    
+    /// Remove any timeout clocks to save memory and avoid trying to close a dead connection
     deinit {
         killClocks()
     }
     
+    /// Open a Network connection and greet the server
+    ///
+    /// Errors passed to delegate
+    /// - Parameters:
+    ///   - host: IP address to connect to
+    ///   - port: Port on which to bind connection
     public func connect(to host: String, on port: UInt16) {
         let host = NWEndpoint.Host(host)
         guard let port = NWEndpoint.Port(rawValue: port) else {
@@ -85,6 +101,12 @@ class ConnectionService: NSObject {
         print(" > Connection started on \(self.connection?.endpoint.debugDescription ?? "-")")
     }
     
+    /// Send a message to the server on the open connection
+    ///
+    /// When sending a message, wait 2 seconds before either trying to discover again or close the connection when the connection strength is less than threshold
+    /// Errors passed to delegate
+    /// - Warning: Will only send data if the connection is in the connected or connecting state
+    /// - Parameter value: String to send to the server
     public func send(_ value: String) {
         guard self.state == .connected || self.state == .connecting else { return }
         guard let data = value.data(using: .utf8) else { return }
@@ -125,6 +147,13 @@ class ConnectionService: NSObject {
         }))
     }
     
+    /// Close the connection
+    ///
+    /// Removes all timers waiting for server response
+    /// - Warning: Will only close the connection if in the connected or connecting states
+    /// - Parameters:
+    ///   - killServer: Send shutdown command to the server to stop the application (default true)
+    ///   - state: State to set the connection to once killed (default disconnected state)
     public func close(_ killServer: Bool = true, state: ConnectionService.State = .disconnected) {
         guard self.state == .connected || self.state == .connecting else {
             // Connection closed already
@@ -139,6 +168,13 @@ class ConnectionService: NSObject {
         self.connection?.cancel()
     }
     
+    /// Listen on open connection for incomming messages
+    ///
+    /// Interpret incomming messages according to AssistiveTechnologyProtocol
+    /// Remove timeout
+    /// Update strength
+    /// Errors passed to delegate
+    /// - Parameter connection: Open NWConnection to listen on
     private func listen(on connection: NWConnection) {
         connection.receiveMessage { (data, context, isComplete, error) in
             if (isComplete) {
@@ -170,6 +206,11 @@ class ConnectionService: NSObject {
         }
     }
     
+    /// Calculate success rate of sent packets based on acknowledgement packets received from server
+    ///
+    /// Average of the last 5 strength values
+    /// Update the delegate with the connection strength
+    /// - Parameter percent: Current success percentage calculated from the number of sent and received packets
     private func calculateStrength(rate percent: Float) -> Float {
         guard self.state == .connected else {
             self.delegate?.connectionStrength(strength: 0)
@@ -185,6 +226,7 @@ class ConnectionService: NSObject {
         return average
     }
     
+    /// Remove all timeout clocks currently awaiting a response
     private func killClocks() {
         for i in 0...self.previousClocks.count {
             // Concurrency fix
@@ -194,11 +236,15 @@ class ConnectionService: NSObject {
         }
     }
     
+    /// Update current state and inform delegate
+    /// - Parameter state: New state
     private func set(state: ConnectionService.State) {
         self.state = state
         self.delegate?.connectionState(state: state)
     }
     
+    /// Handle errors in the NWError format and set the service state
+    /// - Parameter error: Error received from NWConnection
     private func handle(NWError error: NWError) {
         switch error {
         case .posix(let code):
@@ -234,6 +280,7 @@ class ConnectionService: NSObject {
     }
 }
 
+// MARK: NetService extension
 extension ConnectionService: NetServiceBrowserDelegate, NetServiceBrowserDelegateExtension, NetServiceDelegate {
     var discovered: Bool {
         get {
@@ -244,41 +291,41 @@ extension ConnectionService: NetServiceBrowserDelegate, NetServiceBrowserDelegat
         }
     }
     
-    public func discover() {
+    /// Begin looking for the server advertising with the Bonjour protocol
+    ///
+    /// Set state to connecting
+    /// Start browsing for services
+    /// - Parameter type: Type of service to discover
+    public func discover(type: String) {
         self.set(state: .connecting)
         service = nil
         _discovered = false
         browser.delegate = self
         browser.stop()
-        browser.searchForServices(ofType: "_assistive-tech._udp", inDomain: "", withTimeout: 5.0)
+        browser.searchForServices(ofType: type, inDomain: "", withTimeout: 5.0)
     }
     
     // MARK: Service Discovery
-    func netService(_ sender: NetService, didNotResolve errorDict: [String : NSNumber]) {
-        for key in errorDict.keys {
-            switch errorDict[key] {
-            case -72002:
-                self.set(state: .failed(.discoverResolveServiceNotFound))
-            case -72003:
-                self.set(state: .failed(.discoverResolveBusy))
-            case -72004, -72006:
-                self.set(state: .failed(.discoverIncorrectConfiguration))
-            case -72005:
-                self.set(state: .failed(.discoverResolveCanceled))
-            case -72007:
-                self.set(state: .failed(.discoverResolveTimeout))
-            default:
-                self.set(state: .failed(.discoverResolveUnknown))
-            }
-        }
-    }
-
+    /// Browser stopped searching for service
+    ///
+    /// Modified to add success parameter to set state to failed if the search timed out
+    /// - Parameters:
+    ///   - browser: Browser instance
+    ///   - success: Did the browser discover the service in time
     func netServiceBrowserDidStopSearch(_ browser: NetServiceBrowser, success: Bool) {
         if !success {
             self.set(state: .failed(.discoverTimeout))
         }
     }
     
+    /// Browser found a matching service
+    ///
+    /// Set discovered parameter for NetServiceBrowser for success parameter in `netServiceBrowserDidStopSearch()`
+    /// Resolve server's IP
+    /// - Parameters:
+    ///   - browser: Browser instance
+    ///   - service: Service found
+    ///   - moreComing: Were more services discovered
     func netServiceBrowser(_ browser: NetServiceBrowser, didFind service: NetService, moreComing: Bool) {
         self._discovered = true
         
@@ -302,6 +349,32 @@ extension ConnectionService: NetServiceBrowserDelegate, NetServiceBrowserDelegat
         self.service?.resolve(withTimeout: 5)
     }
     
+    // MARK: Resolve IP Service
+    /// Handle NetService errors, set connection state according to given error
+    /// - Parameters:
+    ///   - sender: Resolve service
+    ///   - errorDict: Errors from NetService
+    func netService(_ sender: NetService, didNotResolve errorDict: [String : NSNumber]) {
+        for key in errorDict.keys {
+            switch errorDict[key] {
+            case -72002:
+                self.set(state: .failed(.discoverResolveServiceNotFound))
+            case -72003:
+                self.set(state: .failed(.discoverResolveBusy))
+            case -72004, -72006:
+                self.set(state: .failed(.discoverIncorrectConfiguration))
+            case -72005:
+                self.set(state: .failed(.discoverResolveCanceled))
+            case -72007:
+                self.set(state: .failed(.discoverResolveTimeout))
+            default:
+                self.set(state: .failed(.discoverResolveUnknown))
+            }
+        }
+    }
+    
+    /// Resolve service got an IP address of the discovered server and connect to the server at that address
+    /// - Parameter sender: Resolve service
     func netServiceDidResolveAddress(_ sender: NetService) {
         if let serviceIp = resolveIPv4(addresses: sender.addresses!) {
             self.connect(to: serviceIp, on: 1024)
@@ -310,6 +383,9 @@ extension ConnectionService: NetServiceBrowserDelegate, NetServiceBrowserDelegat
         }
     }
     
+    /// Get server IP address from list of address data
+    /// - Parameter addresses: List of address data
+    /// - Returns: Server IP address if found
     private func resolveIPv4(addresses: [Data]) -> String? {
         var result: String?
 

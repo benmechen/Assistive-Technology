@@ -9,6 +9,7 @@
 import Foundation
 import Network
 
+/// <#Description#>
 enum ConnectionServiceError: Error {
     /// Other connection error
     case connectOther

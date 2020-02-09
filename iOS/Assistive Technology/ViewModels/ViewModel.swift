@@ -162,7 +162,7 @@ class ViewModel: ConnectionServiceDelegate {
     }
     
     private func start() {
-        connectionService?.discover()
+        connectionService?.discover(type: "_assistive-tech._udp")
     }
     
     private func stop() {
