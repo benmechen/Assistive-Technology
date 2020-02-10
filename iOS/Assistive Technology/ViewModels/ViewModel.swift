@@ -8,28 +8,56 @@
 
 import Foundation
 
+/// Protocol for views to subscribe to in order to receive updates
 protocol ViewModelDelegate {
+    /// Connection successfully opened
     func connected()
+    /// Connection disconnected, either due to the user closing the connection or an error
+    /// - Parameter message: Error message to be displayed to user
     func disconnected(_ message: [String: String]?)
+    /// Set the 25% bar state
+    /// - Parameter on: Bar full or empty
     func set25Bar(_ on: Bool)
+    /// Set the 50% bar state
+    /// - Parameter on: Bar full or empty
     func set50Bar(_ on: Bool)
+    /// Set the 75% bar state
+    /// - Parameter on: Bar full or empty
     func set75Bar(_ on: Bool)
+    /// Set the 100% bar state
+    /// - Parameter on: Bar full or empty
     func set100Bar(_ on: Bool)
 }
 
 extension ViewModelDelegate {
+    /// Connection disconnected,  either due to the user closing the connection or an error.
+    /// - Note: Extension allows no message to be set
+    /// - Parameter message: Optional error message to be displayed to user
     func disconnected(_ message: [String: String]? = nil) {
         disconnected(message)
     }
 }
 
+/// Coordinates between the UIViewController and Models/Services
+/// - Note: Implement the ViewModelDelegate protocol in order to subscribe to updates
 class ViewModel: ConnectionServiceDelegate {
+    /// View subscribing to ViewModel, used to update UI
     var delegate: ViewModelDelegate?
+    /// The ConnectionService instance used for all views managed by this view model
     var connectionService: ConnectionService?
+    /// The current state of the `ConnectionService` connection. Used for `connectionStrength` updates and toggling the connection
     var connectionState: ConnectionService.State = .disconnected
+    /// Timer responsible for animating the loading bars
     var loadingTimer: Timer?
+    /// Currently set bar, for connection loading animation. Max 3, before going back to 0
     var loadingBar = 0
     
+    // MARK: Protoocl implementation
+    /// Updates the current state of the connection
+    /// Updates view according to new state
+    /// Handles errors and generates user facing messages for view to display
+    /// - Note: `ConnectionServiceDelegate` function implementation
+    /// - Parameter state: New state
     func connectionState(state: ConnectionService.State) {
         guard state != self.connectionState else {
             // Don't update if already know status
@@ -107,6 +135,10 @@ class ViewModel: ConnectionServiceDelegate {
         }
     }
     
+    /// Updates the connection strength
+    /// Updates view according to connection strength
+    /// - Note: `ConnectionServiceDelegate` function implementation
+    /// - Parameter strength: Strength percentage
     func connectionStrength(strength: Float) {
         guard self.connectionState != .connecting else {
             // Wait until connection secured
@@ -144,6 +176,9 @@ class ViewModel: ConnectionServiceDelegate {
         }
     }
     
+    // MARK: Public methods
+    /// Opens or closes connection, according to current state
+    /// Creates `ConnectionService` instance if not already created
     public func toggleConnection() {
         if connectionService == nil {
             connectionService = ConnectionService()
@@ -157,18 +192,28 @@ class ViewModel: ConnectionServiceDelegate {
         }
     }
     
+    /// Sends message to server using the `ConnectionService`
+    /// - Parameter message: Network protocol message to send
     public func sendDirection(_ message: AssistiveTechnologyProtocol) {
         connectionService?.send(message.rawValue)
     }
     
+    // MARK: Private methods
+    /// Starts search for connection
+    /// Calls the `discover()` function of the `ConnectionService` instance with the name of the custom Bonjour type
+    /// This automatically discovers the server if it is running & advertising, then opens a UDP connection to the server.
+    /// While discovering the server and until a handshake is received from the server, the state is `connecting`.
+    /// Once the connection is open, the state will be `connected`.
     private func start() {
         connectionService?.discover(type: "_assistive-tech._udp")
     }
     
+    /// Close the ConnectionSevice connection, shutdown the server
     private func stop() {
         connectionService?.close()
     }
     
+    /// Set each bar to its on state, one at a time every 0.25 seconds  while the connection is in the `connecting` state to show it is looking for the server
     private func connectingBars() {
         self.loadingTimer = Timer.scheduledTimer(withTimeInterval: 0.25, repeats: true) { (timer) in
             var bar25 = false

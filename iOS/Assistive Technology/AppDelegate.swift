@@ -9,6 +9,8 @@
 import UIKit
 
 @UIApplicationMain
+/// A set of methods that you use to manage shared behaviors for your app.
+/// Default iOS project class
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?

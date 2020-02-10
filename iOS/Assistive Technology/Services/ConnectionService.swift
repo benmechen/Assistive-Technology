@@ -12,20 +12,31 @@ import os.log
 
 /// Connection protocol with set messages to interact with the corresponding server
 enum AssistiveTechnologyProtocol: String {
+    /// Move player up
     case up = "astv_up"
+    /// Move player down
     case down = "astv_down"
+    /// Move player left
     case left = "astv_left"
+    /// Move player right
     case right = "astv_right"
+    /// Disconnect & shut down server
     case disconnect = "astv_disconnect"
+    /// Send greeting to server
     case discover = "astv_discover"
+    /// Handshake response received from server
     case handshake = "astv_shake"
+    /// Acknowledgment message
     case acknowledge = "astv_ack"
-    case greet = "astv_greet"
 }
 
 /// Protocol for ConnectionService caller to conform to in order to received updates about the connection state and strength
 protocol ConnectionServiceDelegate {
+    /// Updates the current state of the connection
+    /// - Parameter state: New state
     func connectionState(state: ConnectionService.State)
+    /// Updates the connection strength
+    /// - Parameter strength: Strength percentage
     func connectionStrength(strength: Float)
 }
 
@@ -35,25 +46,42 @@ protocol ConnectionServiceDelegate {
  Caller must conform to the ConnectionServiceDelegate protocol to receive status updates
  */
 class ConnectionService: NSObject {
+    /// Delegate class implementing `ConnectionServiceDelegate` protocol. Used to send connction status updates to.
     var delegate: ConnectionServiceDelegate?
+    /// The current connection state
     var state: ConnectionService.State = .disconnected
+    /// Raw connection, used for sending and receiving the UDP connection component of the connection
     private var connection: NWConnection?
+    /// Bonjour service browser, used for discovering the server advertising locally on the Bonjour protocol
     private var browser = NetServiceBrowser()
+    /// Service given by the browser, used to resolve the server's IP address
     private var service: NetService?
+    /// Custom connection queue, used to asynchronously send and received UDP packets without operating on the main thread and stopping any UI updates
     private var queue = DispatchQueue(label: "ConnectionServiceQueue")
+    /// Number of UDP packets sent to the server
     private var sent: Float = 0.0
+    /// Number of UDP packets received from the server
     private var received: Float = 0.0
+    /// List of the last `n` calculated strength percentages
     private var strengthBuffer: [Float] = []
+    /// The clock representing the last sent packet, awaiting a response from the server in order to kill the timer
     private var lastSentClock: Timer?
+    /// Clocks currently waiting for their packets to receive a response from the server. Once a response is received, the clock is killed and removed from the list.
     private var previousClocks: [Timer] = []
+    /// The number of `AssistiveTechnologyProtocol.discover` messages sent to the server. Stop trying to communicate with the server when threshold is reached
     private var discoverTimeout: Int = 0
+    /// Local discovered variable, mirrored by the `NetServiceBrowserDelegateExtension`
     private var _discovered = false
     
     /// The state of the connection handled by the service instance
     enum State: Equatable {
+        /// Connection currently open, sending and receiving data
         case connected
+        /// Connection in progress, no sending, only receiving data
         case connecting
+        /// Connection disconnected, can start new connection
         case disconnected
+        /// Error connecting to server, throws ConnectionServiceError
         case failed(ConnectionServiceError)
     }
     
