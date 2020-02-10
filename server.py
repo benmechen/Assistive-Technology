@@ -1,5 +1,4 @@
 import socket
-import netifaces as ni
 import datetime
 from zeroconf import ServiceInfo, Zeroconf
 
@@ -7,12 +6,6 @@ from zeroconf import ServiceInfo, Zeroconf
 HOST = ''          # Open server up on local network
 PORT = 1024        # Port to listen on (non-privileged ports are > 1023)
 address = ""
-
-def get_ip_address(ifname):
-    ni.ifaddresses(ifname)
-    # return "127.0.0.1"
-    return ni.ifaddresses(ifname)[ni.AF_INET][0]['addr']
-
 
 print("#####################################")
 print("#### ASSISTIVE TECHNOLOGY SERVER ####")
@@ -45,7 +38,7 @@ try:
         print(" > Received: " + message.decode('utf-8') + " from " + str(address))
         serverSocket.sendto("astv_ack".encode('utf-8'), address)
         if string == "astv_discover":
-            returnMessage = "astv_shake:" + get_ip_address('en0')
+            returnMessage = "astv_shake:" + ip_addr
             print(" > Discover call from client: " + str(address))
             print(" > Sending handshake: " + returnMessage + ", to address: " + str(address))
             serverSocket.sendto(returnMessage.encode('utf-8'), address)
