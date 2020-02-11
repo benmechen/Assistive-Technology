@@ -41,9 +41,19 @@ protocol ConnectionServiceDelegate {
 }
 
 /**
- Automatically discover, connect and communicate with a server comforming to the Assistive Technology protocol
+ Automatically discover, connect and communicate with a server comforming to the **Assistive Technology Communication Protocol** (`astv`)
+ This is based on UDP, however implements some TCP-like features to improve the connection resilience & feedback:
+    * When a packet is sent to the server, the server must reply with an acknowledgement response.
+    * If this acknowledgement is not received within the specified threshold (2 seconds), the strength is marked as 0. This will bring the average strength of the last 5 values down. Once the average strength is below the specified threshold (5%), the service will assume the connection has failed and will close the connetion.
+    * All protocol messages relating to connecting to the server (Bonjour discovery, `discover` packets) expect a response back from the server - if the service is not discovered or a response is not received, the system will try again for a maximum of 5 seconds (Bonjour) or 5 sends (`discover`).
+        * If either time out, the connection will be marked as `failed`
+    * When the connection is closed, either on the client (iOS) side or server (PC) side, each will send one last dying message to the other (`disconnect`). This will shut down the other member, closing both open connections and allowing each to accept a new connection, so that they are not stuck being bound to a dead connection.
  
  Caller must conform to the ConnectionServiceDelegate protocol to receive status updates
+ 
+ To use the service, either call the `connect(to host: String, on port: UInt16)` function to open a UDP connection with the server on the specified IP and port, or use the `discover(type: String)` function to automatically discover the server using Bonjour and connect to it, using the resolved host and default port 1024.
+ To automatically discover the server, it must be
+ advertising on the local mDNS network with the same name and type as supplied to the `discover(type: String)` function. If the service cannot find the server's advertisement within 5 seconds, the service will abort the search and return a `failed` state.
  */
 class ConnectionService: NSObject {
     /// Delegate class implementing `ConnectionServiceDelegate` protocol. Used to send connction status updates to.
@@ -322,7 +332,7 @@ extension ConnectionService: NetServiceBrowserDelegate, NetServiceBrowserDelegat
     /// Begin looking for the server advertising with the Bonjour protocol
     ///
     /// Set state to connecting
-    /// Start browsing for services
+    /// Start browsing for services, abort the search if no service discovered after 5 seconds
     /// - Parameter type: Type of service to discover
     public func discover(type: String) {
         self.set(state: .connecting)
