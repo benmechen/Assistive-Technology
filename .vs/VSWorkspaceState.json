@@ -1,9 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Windows",
-    "\\Windows\\Client"
+    "\\Windows"
   ],
-  "SelectedNode": "\\Windows\\Client\\Client.sln",
+  "SelectedNode": "\\Windows",
   "PreviewInSolutionExplorer": false
 }
