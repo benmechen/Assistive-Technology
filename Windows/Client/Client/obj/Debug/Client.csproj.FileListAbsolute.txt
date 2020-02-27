@@ -15,3 +15,20 @@ C:\Development\Programs\team30_project\team30_project\Windows\Client\Client\obj\
 C:\Development\Programs\team30_project\team30_project\Windows\Client\Client\obj\Debug\Client.csproj.CopyComplete
 C:\Development\Programs\team30_project\team30_project\Windows\Client\Client\obj\Debug\Client.exe
 C:\Development\Programs\team30_project\team30_project\Windows\Client\Client\obj\Debug\Client.pdb
+C:\Development\projects\team 30\Windows\Client\Client\bin\Debug\Client.exe.config
+C:\Development\projects\team 30\Windows\Client\Client\bin\Debug\Client.exe
+C:\Development\projects\team 30\Windows\Client\Client\bin\Debug\Client.pdb
+C:\Development\projects\team 30\Windows\Client\Client\bin\Debug\System.Reactive.dll
+C:\Development\projects\team 30\Windows\Client\Client\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Development\projects\team 30\Windows\Client\Client\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Development\projects\team 30\Windows\Client\Client\bin\Debug\System.ValueTuple.dll
+C:\Development\projects\team 30\Windows\Client\Client\bin\Debug\Zeroconf.dll
+C:\Development\projects\team 30\Windows\Client\Client\bin\Debug\System.Reactive.xml
+C:\Development\projects\team 30\Windows\Client\Client\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Development\projects\team 30\Windows\Client\Client\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Development\projects\team 30\Windows\Client\Client\bin\Debug\System.ValueTuple.xml
+C:\Development\projects\team 30\Windows\Client\Client\bin\Debug\Zeroconf.xml
+C:\Development\projects\team 30\Windows\Client\Client\obj\Debug\Client.csprojAssemblyReference.cache
+C:\Development\projects\team 30\Windows\Client\Client\obj\Debug\Client.csproj.CopyComplete
+C:\Development\projects\team 30\Windows\Client\Client\obj\Debug\Client.exe
+C:\Development\projects\team 30\Windows\Client\Client\obj\Debug\Client.pdb
