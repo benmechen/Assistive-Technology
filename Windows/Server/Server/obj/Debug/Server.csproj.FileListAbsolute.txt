@@ -22,13 +22,12 @@ C:\Development\projects\team 30\Windows\Server\Server\bin\Debug\System.Reactive.
 C:\Development\projects\team 30\Windows\Server\Server\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 C:\Development\projects\team 30\Windows\Server\Server\bin\Debug\System.Threading.Tasks.Extensions.dll
 C:\Development\projects\team 30\Windows\Server\Server\bin\Debug\System.ValueTuple.dll
-C:\Development\projects\team 30\Windows\Server\Server\bin\Debug\Zeroconf.dll
 C:\Development\projects\team 30\Windows\Server\Server\bin\Debug\System.Reactive.xml
 C:\Development\projects\team 30\Windows\Server\Server\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Development\projects\team 30\Windows\Server\Server\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Development\projects\team 30\Windows\Server\Server\bin\Debug\System.ValueTuple.xml
-C:\Development\projects\team 30\Windows\Server\Server\bin\Debug\Zeroconf.pdb
 C:\Development\projects\team 30\Windows\Server\Server\obj\Debug\Server.csprojAssemblyReference.cache
 C:\Development\projects\team 30\Windows\Server\Server\obj\Debug\Server.csproj.CopyComplete
 C:\Development\projects\team 30\Windows\Server\Server\obj\Debug\Server.exe
 C:\Development\projects\team 30\Windows\Server\Server\obj\Debug\Server.pdb
+C:\Development\projects\team 30\Windows\Server\Server\bin\Debug\Arkane.Zeroconf.dll

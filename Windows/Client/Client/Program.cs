@@ -1,23 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Zeroconf;
-using System.Net;
-using System.Net.Sockets;
 
 namespace Client
 {
     class NetworkServices
     {
         public async Task ProbeForServices()
-        {
+        {         
             IReadOnlyList<IZeroconfHost> results = await
                 ZeroconfResolver.ResolveAsync("_assistive-tech._udp.local.");
             foreach (var resp in results)
                 Console.WriteLine(resp);
-
         }
 
         public async Task EnumerateAllServicesFromAllHosts()
@@ -41,8 +37,8 @@ namespace Client
 
             Console.WriteLine("Probing for assistive tech services: \n");
             await p.ProbeForServices();
-            Console.WriteLine("General Probing: ");
-            await p.EnumerateAllServicesFromAllHosts();
+            //Console.WriteLine("General Probing: ");
+           // await p.EnumerateAllServicesFromAllHosts();
             Console.ReadLine();
         }
     }
