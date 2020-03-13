@@ -1,0 +1,8 @@
+C:\Users\ar_le\Downloads\ZeroconfSharp-master\ZeroconfSharp-master\Zeroconf\bin\Debug\netstandard2.0\Zeroconf.deps.json
+C:\Users\ar_le\Downloads\ZeroconfSharp-master\ZeroconfSharp-master\Zeroconf\bin\Debug\netstandard2.0\Zeroconf.dll
+C:\Users\ar_le\Downloads\ZeroconfSharp-master\ZeroconfSharp-master\Zeroconf\bin\Debug\netstandard2.0\Zeroconf.pdb
+C:\Users\ar_le\Downloads\ZeroconfSharp-master\ZeroconfSharp-master\Zeroconf\obj\Debug\netstandard2.0\Zeroconf.csprojAssemblyReference.cache
+C:\Users\ar_le\Downloads\ZeroconfSharp-master\ZeroconfSharp-master\Zeroconf\obj\Debug\netstandard2.0\Zeroconf.AssemblyInfoInputs.cache
+C:\Users\ar_le\Downloads\ZeroconfSharp-master\ZeroconfSharp-master\Zeroconf\obj\Debug\netstandard2.0\Zeroconf.AssemblyInfo.cs
+C:\Users\ar_le\Downloads\ZeroconfSharp-master\ZeroconfSharp-master\Zeroconf\obj\Debug\netstandard2.0\Zeroconf.dll
+C:\Users\ar_le\Downloads\ZeroconfSharp-master\ZeroconfSharp-master\Zeroconf\obj\Debug\netstandard2.0\Zeroconf.pdb
