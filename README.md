@@ -10,4 +10,4 @@
  * `experimental/$feature_name` – Used for testing features, not merged back in to staging
 
 When working on a new change, pull from staging first before making any changes and create a new branch.
-Once done with the change, create a new merge request and add people relevant to that change as a reviewer. If the change is all good we can approve it and merge.
+Once done with the change, create a new merge request and assign to Ben to review (as GitLab doesn't let you add multiple people as reviewers). If the change is all good we can approve it and merge.
