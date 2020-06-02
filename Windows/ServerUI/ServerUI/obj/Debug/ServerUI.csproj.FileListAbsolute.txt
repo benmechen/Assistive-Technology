@@ -1,0 +1,12 @@
+C:\Users\arley\source\repos\ServerUI\ServerUI\bin\Debug\ServerUI.exe.config
+C:\Users\arley\source\repos\ServerUI\ServerUI\bin\Debug\ServerUI.exe
+C:\Users\arley\source\repos\ServerUI\ServerUI\bin\Debug\ServerUI.pdb
+C:\Users\arley\source\repos\ServerUI\ServerUI\obj\Debug\ServerUI.csprojAssemblyReference.cache
+C:\Users\arley\source\repos\ServerUI\ServerUI\obj\Debug\ServerUI.Properties.Resources.resources
+C:\Users\arley\source\repos\ServerUI\ServerUI\obj\Debug\ServerUI.csproj.GenerateResource.cache
+C:\Users\arley\source\repos\ServerUI\ServerUI\obj\Debug\ServerUI.csproj.CoreCompileInputs.cache
+C:\Users\arley\source\repos\ServerUI\ServerUI\obj\Debug\ServerUI.exe
+C:\Users\arley\source\repos\ServerUI\ServerUI\obj\Debug\ServerUI.pdb
+C:\Users\arley\source\repos\ServerUI\ServerUI\bin\Debug\Arkane.Zeroconf.dll
+C:\Users\arley\source\repos\ServerUI\ServerUI\obj\Debug\ServerUI.fmServer.resources
+C:\Users\arley\source\repos\ServerUI\ServerUI\obj\Debug\ServerUI.csproj.CopyComplete
