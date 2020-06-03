@@ -22,6 +22,7 @@ namespace ServerUI
         IPEndPoint sender = new IPEndPoint(IPAddress.Any, 1024);
         string tcp_message;
         static readonly RegisterService service = new RegisterService();
+        bool serviceEnded = false;
         Thread ctThread;
 
         public fmServer()
@@ -36,6 +37,7 @@ namespace ServerUI
 
         private void btnStart_Click(object sender, EventArgs e)
         {
+            serviceEnded = false;
             Console.WriteLine("Sample service publisher using arkane.Mono.Zeroconf version\n");
             service.Name = "Assistive Technology Server";
             service.RegType = "_assistive-tech._udp";
@@ -88,22 +90,29 @@ namespace ServerUI
                         sendMessage("astv_shake:" + ipaddress, receiver, sender);
                         Console.WriteLine("Sent handshake: astv_shake to address:" + sender.Address.ToString());
                     }
-                    else if (smessage == "astv_disconnect") break;
+                    else if (smessage == "astv_disconnect")
+                    {
+                        endZeroconfService();
+                        break;
+                    }
                 }
             }
         }
 
         private void displayMessage(string message, bool fromServer)
         {
-            if(fromServer)
+            if(!string.IsNullOrEmpty(message))
             {
-                tcp_message = "Server: " + message;
+                if (fromServer)
+                {
+                    tcp_message = "Server: " + message;
+                }
+                else
+                {
+                    tcp_message = "Client: " + message;
+                }
+                msg();
             }
-            else
-            {
-                tcp_message = "Client: " + message;
-            }
-            msg();
         }
 
         private void sendMessage(string message, UdpClient udp, IPEndPoint end)
@@ -126,17 +135,32 @@ namespace ServerUI
             }
         }
 
+        private void endZeroconfService()
+        {
+            try
+            {
+                string closeMessage = "\n Shutting down assistive technology server [" + DateTime.Now + "]";
+                Console.WriteLine(closeMessage);
+                displayMessage(closeMessage, true);
+                if (this.sender.Address != null && this.sender.Address.ToString() != "0.0.0.0")
+                {
+                    sendMessage("astv_disconnect", receiver, this.sender);
+                }
+                if (ctThread.IsAlive) ctThread.Abort();
+                service.Dispose();
+                receiver.Close();
+                receiver.Dispose();
+                serviceEnded = true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Stopping Service Error: {0}", ex.ToString());
+            }
+        }
+
         private void fmServer_FormClosing(object sender, FormClosingEventArgs e)
         {
-            string closeMessage = "\n Shutting down assistive technology server [" + DateTime.Now + "]";
-            Console.WriteLine(closeMessage);
-            if (this.sender.Address != null && this.sender.Address.ToString() != "0.0.0.0")
-            {
-                sendMessage("astv_disconnect", receiver, this.sender);
-            }
-            if(ctThread.IsAlive) ctThread.Abort();
-            service.Dispose();
-            receiver.Close();
+            if(!serviceEnded) endZeroconfService();
         }
 
 
