@@ -31,7 +31,7 @@ namespace ServerUI
 
         private void fmServer_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnStart_Click(object sender, EventArgs e)
@@ -56,8 +56,7 @@ namespace ServerUI
                 
                 string txtmsg = "service has been registered";
                 Console.WriteLine("{0} " + txtmsg, service.Name);
-                tcp_message = txtmsg;
-                msg();
+                displayMessage(txtmsg, true);
 
             }
             catch (Exception ex)
@@ -81,17 +80,12 @@ namespace ServerUI
                 string smessage = System.Text.Encoding.UTF8.GetString(rmessage);
                 if(!string.IsNullOrEmpty(smessage))
                 {
-                    tcp_message = "Client: " + smessage;
-                    msg();
+                    displayMessage(smessage, false);
                     sendMessage("astv_ack", receiver, sender);
-                    tcp_message = "Server: astv_ack";
-                    msg();
                     if (smessage == "astv_discover")
                     {
                         Console.WriteLine("Discover call from client: " + sender.Address.ToString());
                         sendMessage("astv_shake:" + ipaddress, receiver, sender);
-                        tcp_message = "astv_shake:" + ipaddress;
-                        msg();
                         Console.WriteLine("Sent handshake: astv_shake to address:" + sender.Address.ToString());
                     }
                     else if (smessage == "astv_disconnect") break;
@@ -99,12 +93,24 @@ namespace ServerUI
             }
         }
 
+        private void displayMessage(string message, bool fromServer)
+        {
+            if(fromServer)
+            {
+                tcp_message = "Server: " + message;
+            }
+            else
+            {
+                tcp_message = "Client: " + message;
+            }
+            msg();
+        }
+
         private void sendMessage(string message, UdpClient udp, IPEndPoint end)
         {
             byte[] messageByte = System.Text.Encoding.UTF8.GetBytes(message);
             var byteSent = udp.Send(messageByte, messageByte.Length, end);
-            tcp_message = "Server: " + message;
-            msg();
+            displayMessage(message, true);
             Console.WriteLine("Sent to client: bytes: {0} - {1}", byteSent, message);
         }
 
@@ -132,5 +138,7 @@ namespace ServerUI
             service.Dispose();
             receiver.Close();
         }
+
+
     }
 }
