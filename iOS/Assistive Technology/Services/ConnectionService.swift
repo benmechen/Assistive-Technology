@@ -9,6 +9,7 @@
 import Foundation
 import Network
 import os.log
+import UIKit
 
 /// Connection protocol with set messages to interact with the corresponding server
 enum AssistiveTechnologyProtocol: String {
@@ -22,7 +23,7 @@ enum AssistiveTechnologyProtocol: String {
     case right = "astv_right"
     /// Disconnect & shut down server
     case disconnect = "astv_disconnect"
-    /// Send greeting to server
+    /// Send greeting to server, with device name appended in the format: ":device_name"
     case discover = "astv_discover"
     /// Handshake response received from server
     case handshake = "astv_shake"
@@ -126,7 +127,10 @@ class ConnectionService: NSObject {
 
                 self.listen(on: connection)
                 self.discoverTimeout = 0
-                self.send(AssistiveTechnologyProtocol.discover.rawValue)
+                
+                let device = UIDevice.current.name
+                
+                self.send(AssistiveTechnologyProtocol.discover.rawValue + ":" + device)
             case .failed(let error), .waiting(let error):
                 self.handle(NWError: error)
             default:
