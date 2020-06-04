@@ -14,7 +14,6 @@ C:\Development\Programs\team30_project\team30_project\Windows\ServerUI\ServerUI\
 C:\Development\Programs\team30_project\team30_project\Windows\ServerUI\ServerUI\bin\Debug\ServerUI.exe
 C:\Development\Programs\team30_project\team30_project\Windows\ServerUI\ServerUI\bin\Debug\ServerUI.pdb
 C:\Development\Programs\team30_project\team30_project\Windows\ServerUI\ServerUI\bin\Debug\Arkane.Zeroconf.dll
-C:\Development\Programs\team30_project\team30_project\Windows\ServerUI\ServerUI\obj\Debug\ServerUI.csprojAssemblyReference.cache
 C:\Development\Programs\team30_project\team30_project\Windows\ServerUI\ServerUI\obj\Debug\ServerUI.fmServer.resources
 C:\Development\Programs\team30_project\team30_project\Windows\ServerUI\ServerUI\obj\Debug\ServerUI.Properties.Resources.resources
 C:\Development\Programs\team30_project\team30_project\Windows\ServerUI\ServerUI\obj\Debug\ServerUI.csproj.GenerateResource.cache

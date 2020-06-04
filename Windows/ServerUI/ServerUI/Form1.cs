@@ -22,7 +22,7 @@ namespace ServerUI
         IPEndPoint sender = new IPEndPoint(IPAddress.Any, 1024);
         string tcp_message;
         static readonly RegisterService service = new RegisterService();
-        bool serviceEnded = false;
+        bool serviceRunning = false;
         Thread ctThread;
 
         public fmServer()
@@ -37,38 +37,44 @@ namespace ServerUI
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            serviceEnded = false;
-            Console.WriteLine("Sample service publisher using arkane.Mono.Zeroconf version\n");
-            service.Name = "Assistive Technology Server";
-            service.RegType = "_assistive-tech._udp";
-            service.ReplyDomain = "local.";
-            service.Port = 1024;
-
-
-            TxtRecord txt_record = new TxtRecord
+            if(serviceRunning == false)
             {
-                { "service", "Assistive Technology Technology" },
-                { "version", "1.0.0" }
-            };
-            service.TxtRecord = txt_record;
+                serviceRunning = true;
+                Console.WriteLine("Sample service publisher using arkane.Mono.Zeroconf version\n");
+                service.Name = "Assistive Technology Server";
+                service.RegType = "_assistive-tech._udp";
+                service.ReplyDomain = "local.";
+                service.Port = 1024;
 
-            try
-            {
-                service.Register();
-                
-                string txtmsg = "service has been registered";
-                Console.WriteLine("{0} " + txtmsg, service.Name);
-                displayMessage(txtmsg, true);
 
+                TxtRecord txt_record = new TxtRecord
+                {
+                    { "service", "Assistive Technology Technology" },
+                    { "version", "1.0.0" }
+                };
+                service.TxtRecord = txt_record;
+                try
+                {
+                    service.Register();
+
+                    string txtmsg = "service has been registered";
+                    Console.WriteLine("{0} " + txtmsg, service.Name);
+                    displayMessage(txtmsg, true);
+                    btnStart.Text = "Stop Service";
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Service Error: {0}", ex.ToString());
+                }
+
+                ctThread = new Thread(getMessage);
+                ctThread.Start();
             }
-            catch (Exception ex)
+            else
             {
-                Console.WriteLine("Service Error: {0}", ex.ToString());
+                endZeroconfService();
+                btnStart.Text = "Start Services";
             }
-
-            ctThread = new Thread(getMessage);
-            ctThread.Start();
-            btnStart.Enabled = false;
         }
 
 
@@ -93,6 +99,8 @@ namespace ServerUI
                     else if (smessage == "astv_disconnect")
                     {
                         endZeroconfService();
+                        btnStart.Name = "Start Services";
+                        btnStart.Enabled = true;
                         break;
                     }
                 }
@@ -146,21 +154,28 @@ namespace ServerUI
                 {
                     sendMessage("astv_disconnect", receiver, this.sender);
                 }
+
                 if (ctThread.IsAlive) ctThread.Abort();
-                service.Dispose();
-                receiver.Close();
-                receiver.Dispose();
-                serviceEnded = true;
+
+                service.Dispose();   
+                serviceRunning = false;
+                closeMessage = "Service Ended";
+                displayMessage(closeMessage, true);
+                Console.WriteLine(closeMessage);
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Stopping Service Error: {0}", ex.ToString());
             }
+
+            
         }
 
         private void fmServer_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if(!serviceEnded) endZeroconfService();
+            if(serviceRunning) endZeroconfService();
+            receiver.Close();
+            receiver.Dispose();
         }
 
 
