@@ -174,7 +174,8 @@ namespace ServerUI
         private void fmServer_FormClosing(object sender, FormClosingEventArgs e)
         {
             if(serviceRunning) endZeroconfService();
-            
+            receiver.Close();
+            receiver.Dispose();
         }
 
 
