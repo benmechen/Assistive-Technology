@@ -154,8 +154,8 @@ namespace ServerUI
                 {
                     sendMessage("astv_disconnect", receiver, this.sender);
                 }
-
-                if (ctThread.IsAlive) ctThread.Abort();
+                if(ctThread != null)
+                    if (ctThread.IsAlive) ctThread.Abort();
 
                 service.Dispose();   
                 serviceRunning = false;
@@ -174,8 +174,7 @@ namespace ServerUI
         private void fmServer_FormClosing(object sender, FormClosingEventArgs e)
         {
             if(serviceRunning) endZeroconfService();
-            receiver.Close();
-            receiver.Dispose();
+            
         }
 
 
