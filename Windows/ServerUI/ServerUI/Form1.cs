@@ -25,7 +25,7 @@ namespace ServerUI
         bool service_Running = false;
         bool service_registered = false;
         Thread ctThread;
-
+        string client_name = "";
         public fmServer()
         {
             InitializeComponent();
@@ -33,6 +33,7 @@ namespace ServerUI
 
         private void fmServer_Load(object sender, EventArgs e)
         {
+
             
         }
 
@@ -95,10 +96,17 @@ namespace ServerUI
                 {
                     displayMessage(smessage, false);
                     sendMessage("astv_ack", receiver, sender);
-                    if (smessage == "astv_discover")
+                    if (smessage.Contains("astv_discover"))
                     {
-                        Console.WriteLine("Discover call from client: " + sender.Address.ToString());
-                        sendMessage("astv_shake:" + ipaddress, receiver, sender);
+                        client_name = smessage.Substring(smessage.IndexOf(":") + 1);
+
+                        if (client_name.Length < 1) lblName.Text = "Error getting device name";
+                        else lblName.Text = client_name;
+
+                        string tempMessage = "Discover call from client " + client_name +": "+ sender.Address.ToString();
+                        Console.WriteLine(tempMessage);
+                        displayMessage(tempMessage, true);
+                        sendMessage("astv_shake:" + ipaddress, receiver, sender); 
                         Console.WriteLine("Sent handshake: astv_shake to address:" + sender.Address.ToString());
                     }
                     else if (smessage == "astv_disconnect")

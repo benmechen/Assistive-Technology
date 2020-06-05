@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.pnTop = new System.Windows.Forms.Panel();
+            this.lblName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.btnWASD = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.btnArrows = new System.Windows.Forms.Button();
             this.lstTranscript = new System.Windows.Forms.ListBox();
             this.btnStart = new System.Windows.Forms.Button();
@@ -46,7 +46,7 @@
             // pnTop
             // 
             this.pnTop.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pnTop.Controls.Add(this.label2);
+            this.pnTop.Controls.Add(this.lblName);
             this.pnTop.Controls.Add(this.label1);
             this.pnTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnTop.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -54,6 +54,15 @@
             this.pnTop.Name = "pnTop";
             this.pnTop.Size = new System.Drawing.Size(589, 54);
             this.pnTop.TabIndex = 0;
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(206, 13);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(0, 16);
+            this.lblName.TabIndex = 1;
             // 
             // label1
             // 
@@ -65,16 +74,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Input device connected:";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(206, 13);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 16);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Arley\'s Iphone";
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
@@ -85,6 +84,15 @@
             this.panel1.Size = new System.Drawing.Size(141, 171);
             this.panel1.TabIndex = 1;
             // 
+            // btnWASD
+            // 
+            this.btnWASD.Location = new System.Drawing.Point(3, 122);
+            this.btnWASD.Name = "btnWASD";
+            this.btnWASD.Size = new System.Drawing.Size(133, 44);
+            this.btnWASD.TabIndex = 3;
+            this.btnWASD.Text = "W, A, S, D";
+            this.btnWASD.UseVisualStyleBackColor = true;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLightLight;
@@ -94,15 +102,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(141, 171);
             this.panel2.TabIndex = 2;
-            // 
-            // btnWASD
-            // 
-            this.btnWASD.Location = new System.Drawing.Point(3, 122);
-            this.btnWASD.Name = "btnWASD";
-            this.btnWASD.Size = new System.Drawing.Size(133, 44);
-            this.btnWASD.TabIndex = 3;
-            this.btnWASD.Text = "W, A, S, D";
-            this.btnWASD.UseVisualStyleBackColor = true;
             // 
             // btnArrows
             // 
@@ -171,7 +170,7 @@
 
         private System.Windows.Forms.Panel pnTop;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnWASD;
