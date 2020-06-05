@@ -21,3 +21,4 @@ C:\Development\Programs\team30_project\team30_project\Windows\ServerUI\ServerUI\
 C:\Development\Programs\team30_project\team30_project\Windows\ServerUI\ServerUI\obj\Debug\ServerUI.csproj.CopyComplete
 C:\Development\Programs\team30_project\team30_project\Windows\ServerUI\ServerUI\obj\Debug\ServerUI.exe
 C:\Development\Programs\team30_project\team30_project\Windows\ServerUI\ServerUI\obj\Debug\ServerUI.pdb
+C:\Development\Programs\team30_project\team30_project\Windows\ServerUI\ServerUI\obj\Debug\ServerUI.csprojAssemblyReference.cache

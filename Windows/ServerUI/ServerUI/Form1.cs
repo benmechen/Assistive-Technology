@@ -22,7 +22,8 @@ namespace ServerUI
         IPEndPoint sender = new IPEndPoint(IPAddress.Any, 1024);
         string tcp_message;
         static readonly RegisterService service = new RegisterService();
-        bool serviceRunning = false;
+        bool service_Running = false;
+        bool service_registered = false;
         Thread ctThread;
 
         public fmServer()
@@ -37,9 +38,9 @@ namespace ServerUI
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            if(serviceRunning == false)
+            if(service_Running == false)
             {
-                serviceRunning = true;
+                service_Running = true;
                 Console.WriteLine("Sample service publisher using arkane.Mono.Zeroconf version\n");
                 service.Name = "Assistive Technology Server";
                 service.RegType = "_assistive-tech._udp";
@@ -55,8 +56,12 @@ namespace ServerUI
                 service.TxtRecord = txt_record;
                 try
                 {
-                    service.Register();
-
+                    
+                    if(!service_registered)
+                    {
+                        service.Register();
+                        service_registered = true;
+                    }
                     string txtmsg = "service has been registered";
                     Console.WriteLine("{0} " + txtmsg, service.Name);
                     displayMessage(txtmsg, true);
@@ -157,8 +162,8 @@ namespace ServerUI
                 if(ctThread != null)
                     if (ctThread.IsAlive) ctThread.Abort();
 
-                service.Dispose();   
-                serviceRunning = false;
+                
+                service_Running = false;
                 closeMessage = "Service Ended";
                 displayMessage(closeMessage, true);
                 Console.WriteLine(closeMessage);
@@ -173,7 +178,8 @@ namespace ServerUI
 
         private void fmServer_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if(serviceRunning) endZeroconfService();
+            if(service_Running) endZeroconfService();
+            service.Dispose();
             receiver.Close();
             receiver.Dispose();
         }
