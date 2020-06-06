@@ -92,6 +92,7 @@
             this.btnWASD.TabIndex = 3;
             this.btnWASD.Text = "W, A, S, D";
             this.btnWASD.UseVisualStyleBackColor = true;
+            this.btnWASD.Click += new System.EventHandler(this.btnWASD_Click);
             // 
             // panel2
             // 
@@ -111,6 +112,7 @@
             this.btnArrows.TabIndex = 4;
             this.btnArrows.Text = "Arrow Keys";
             this.btnArrows.UseVisualStyleBackColor = true;
+            this.btnArrows.Click += new System.EventHandler(this.btnArrows_Click);
             // 
             // lstTranscript
             // 

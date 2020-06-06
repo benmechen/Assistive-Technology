@@ -35,7 +35,8 @@ namespace ServerUI
 
         private void fmServer_Load(object sender, EventArgs e)
         {
-
+            btnWASD.Enabled = true;
+            btnArrows.Enabled = false;
             
         }
 
@@ -132,15 +133,31 @@ namespace ServerUI
         {
             try
             {
-                if (client_input == "astv_up") keyboard.Send(Keyboard.ScanCodeShort.KEY_W);
-                else if (client_input == "astv_down") keyboard.Send(Keyboard.ScanCodeShort.KEY_S);
-                else if (client_input == "astv_left") keyboard.Send(Keyboard.ScanCodeShort.KEY_A);
-                else if (client_input == "astv_right") keyboard.Send(Keyboard.ScanCodeShort.KEY_D);
-                else
+                if(btnArrows.Enabled == false)
                 {
-                    displayMessage("Input not recognised", true);
-                    Console.WriteLine("Input not recognised");
-                    return;
+                    if (client_input == "astv_up") keyboard.Send(Keyboard.ScanCodeShort.KEY_W);
+                    else if (client_input == "astv_down") keyboard.Send(Keyboard.ScanCodeShort.KEY_S);
+                    else if (client_input == "astv_left") keyboard.Send(Keyboard.ScanCodeShort.KEY_A);
+                    else if (client_input == "astv_right") keyboard.Send(Keyboard.ScanCodeShort.KEY_D);
+                    else
+                    {
+                        displayMessage("Input not recognised", true);
+                        Console.WriteLine("Input not recognised");
+                        return;
+                    }
+                }
+                else 
+                {
+                    if (client_input == "astv_up") keyboard.Send(Keyboard.ScanCodeShort.UP);
+                    else if (client_input == "astv_down") keyboard.Send(Keyboard.ScanCodeShort.DOWN);
+                    else if (client_input == "astv_left") keyboard.Send(Keyboard.ScanCodeShort.LEFT);
+                    else if (client_input == "astv_right") keyboard.Send(Keyboard.ScanCodeShort.RIGHT);
+                    else
+                    {
+                        displayMessage("Input not recognised", true);
+                        Console.WriteLine("Input not recognised");
+                        return;
+                    }
                 }
             }
             catch (Exception ex)
@@ -222,6 +239,22 @@ namespace ServerUI
             receiver.Dispose();
         }
 
+        private void btnWASD_Click(object sender, EventArgs e)
+        {
+            if(btnArrows.Enabled == false)
+            {
+                btnArrows.Enabled = true;
+                btnWASD.Enabled = false;
+            }
+        }
 
+        private void btnArrows_Click(object sender, EventArgs e)
+        {
+            if (btnWASD.Enabled == false)
+            {
+                btnWASD.Enabled = true;
+                btnArrows.Enabled = false;
+            }
+        }
     }
 }
