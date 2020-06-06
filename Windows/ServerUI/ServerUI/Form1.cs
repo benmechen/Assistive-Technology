@@ -12,6 +12,7 @@ using System.Net.Sockets;
 using System.Runtime.InteropServices;
 using ArkaneSystems.Arkane.Zeroconf;
 using System.Threading;
+using InputGenerator;
 
 namespace ServerUI
 {
@@ -25,7 +26,8 @@ namespace ServerUI
         bool service_Running = false;
         bool service_registered = false;
         Thread ctThread;
-        string client_name = "";
+        
+        Keyboard keyboard = new Keyboard();
         public fmServer()
         {
             InitializeComponent();
@@ -86,8 +88,10 @@ namespace ServerUI
 
         private void getMessage()
         {
+            string client_name = "";
             string hostName = Dns.GetHostName();
             string ipaddress = Dns.GetHostEntry(hostName).AddressList[0].ToString();
+            
             while (true)
             {
                 byte[] rmessage = receiver.Receive(ref sender);
@@ -116,7 +120,33 @@ namespace ServerUI
                         btnStart.Enabled = true;
                         break;
                     }
+                    else
+                    {
+                        generateInput(smessage);
+                    }
                 }
+            }
+        }
+
+        private void generateInput(string client_input)
+        {
+            try
+            {
+                if (client_input == "astv_up") keyboard.Send(Keyboard.ScanCodeShort.KEY_W);
+                else if (client_input == "astv_down") keyboard.Send(Keyboard.ScanCodeShort.KEY_S);
+                else if (client_input == "astv_left") keyboard.Send(Keyboard.ScanCodeShort.KEY_A);
+                else if (client_input == "astv_right") keyboard.Send(Keyboard.ScanCodeShort.KEY_D);
+                else
+                {
+                    displayMessage("Input not recognised", true);
+                    Console.WriteLine("Input not recognised");
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                displayMessage(ex.ToString(), true);
+                Console.WriteLine("Error generating input: {0}", ex.ToString());
             }
         }
 

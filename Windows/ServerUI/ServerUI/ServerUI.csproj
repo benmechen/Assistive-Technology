@@ -36,6 +36,9 @@
     <Reference Include="Arkane.Zeroconf, Version=1.2.18.0, Culture=neutral, PublicKeyToken=b8b190e47a4882b0, processorArchitecture=MSIL">
       <HintPath>..\packages\Arkane.Zeroconf.1.2.18\lib\netstandard2.0\Arkane.Zeroconf.dll</HintPath>
     </Reference>
+    <Reference Include="InputGenerator">
+      <HintPath>.\InputGenerator.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
