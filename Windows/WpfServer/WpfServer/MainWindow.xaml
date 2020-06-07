@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfServer"
         mc:Ignorable="d"
-        Title="Assistive Technology" Height="450" Width="800">
+        Title="Assistive Technology" Height="450" Width="800" Closing="Window_Closing">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
@@ -26,17 +26,20 @@
             <Grid Background="White">
                 <Button x:Name="btnStart" Content="Start Services" HorizontalAlignment="Left" 
                         VerticalAlignment="Top" Width="280" Margin="10,275,0,0" 
-                        Height="87" BorderBrush="#7ACDB4" Background="#97D8C4"/>
+                        Height="87" BorderBrush="#7ACDB4" Background="#97D8C4" Click="btnStart_Click">
+                    
+                </Button>
 
                 <Button x:Name="btnWASD" Content="WASD Keys" 
                         HorizontalAlignment="Left" Margin="10,79,0,0" 
                         VerticalAlignment="Top" Width="280" Height="65"
-                        BorderBrush="#FFF7CD78" Background="#FFF4B942" Click="btnWASD_Click"/>
+                        BorderBrush="#FFF7CD78" Background="#FFF4B942" Click="btnWASD_Click" IsEnabled="False"/>
 
                 <Button x:Name="btnArrowKeys" Content="Arrow Keys" 
                         HorizontalAlignment="Left" Margin="10,149,0,0"
                         VerticalAlignment="Top" Width="280" Height="65"
                         BorderBrush="#FFF7CD78" Background="#FFF4B942" Click="btnArrowKeys_Click"/>
+                <Label Content="Switch input type" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="99,48,0,0"/>
 
             </Grid>
             <Grid Grid.Column="1" Background="#EFF2F1">
@@ -44,7 +47,7 @@
 
             </Grid>
         </Grid>
-        <Label x:Name="lblDevice" Content="Ben's Iphone" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="94,1,0,0" Width="207"/>
+        <Label x:Name="lblDevice" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="94,1,0,0" Width="207"/>
 
 
 
