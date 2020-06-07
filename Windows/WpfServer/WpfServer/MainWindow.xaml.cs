@@ -113,6 +113,7 @@ namespace WpfServer
 
             while (true)
             {
+                
                 byte[] rmessage = receiver.Receive(ref sender);
                 string smessage = System.Text.Encoding.UTF8.GetString(rmessage);
                 if (!string.IsNullOrEmpty(smessage))
