@@ -125,7 +125,13 @@ namespace WpfServer
                         client_name = smessage.Substring(smessage.IndexOf(":") + 1);
 
                         if (client_name.Length < 1) lblDevice.Content = "Error getting device name";
-                        else lblDevice.Content = client_name;
+                        else
+                        {
+                            this.Dispatcher.Invoke(() =>
+                            {
+                                lblDevice.Content = client_name;
+                            });
+                        }
 
                         string tempMessage = "Discover call from client " + client_name + ": " + sender.Address.ToString();
                         Console.WriteLine(tempMessage);
