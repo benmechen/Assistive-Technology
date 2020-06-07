@@ -1,0 +1,17 @@
+C:\Users\arley\source\repos\WpfServer\WpfServer\bin\Debug\WpfServer.exe.config
+C:\Users\arley\source\repos\WpfServer\WpfServer\bin\Debug\WpfServer.exe
+C:\Users\arley\source\repos\WpfServer\WpfServer\bin\Debug\WpfServer.pdb
+C:\Users\arley\source\repos\WpfServer\WpfServer\obj\Debug\WpfServer.csprojAssemblyReference.cache
+C:\Users\arley\source\repos\WpfServer\WpfServer\obj\Debug\MainWindow.g.cs
+C:\Users\arley\source\repos\WpfServer\WpfServer\obj\Debug\App.g.cs
+C:\Users\arley\source\repos\WpfServer\WpfServer\obj\Debug\WpfServer_MarkupCompile.cache
+C:\Users\arley\source\repos\WpfServer\WpfServer\obj\Debug\WpfServer_MarkupCompile.lref
+C:\Users\arley\source\repos\WpfServer\WpfServer\obj\Debug\MainWindow.baml
+C:\Users\arley\source\repos\WpfServer\WpfServer\obj\Debug\WpfServer.g.resources
+C:\Users\arley\source\repos\WpfServer\WpfServer\obj\Debug\WpfServer.Properties.Resources.resources
+C:\Users\arley\source\repos\WpfServer\WpfServer\obj\Debug\WpfServer.csproj.GenerateResource.cache
+C:\Users\arley\source\repos\WpfServer\WpfServer\obj\Debug\WpfServer.csproj.CoreCompileInputs.cache
+C:\Users\arley\source\repos\WpfServer\WpfServer\obj\Debug\WpfServer.exe
+C:\Users\arley\source\repos\WpfServer\WpfServer\obj\Debug\WpfServer.pdb
+C:\Users\arley\source\repos\WpfServer\WpfServer\bin\Debug\Arkane.Zeroconf.dll
+C:\Users\arley\source\repos\WpfServer\WpfServer\obj\Debug\WpfServer.csproj.CopyComplete
