@@ -1,23 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Net;
 using System.Net.Sockets;
-using System.Runtime.InteropServices;
 using ArkaneSystems.Arkane.Zeroconf;
 using System.Threading;
-using InputGenerator;
 
 namespace WpfServer
 {
@@ -111,9 +97,8 @@ namespace WpfServer
             string hostName = Dns.GetHostName();
             string ipaddress = Dns.GetHostEntry(hostName).AddressList[0].ToString();
 
-            while (true)
+            while (service_Running)
             {
-                
                 byte[] rmessage = receiver.Receive(ref sender);
                 string smessage = System.Text.Encoding.UTF8.GetString(rmessage);
                 if (!string.IsNullOrEmpty(smessage))
@@ -243,7 +228,12 @@ namespace WpfServer
                     sendMessage("astv_disconnect", receiver, this.sender);
                 }
                 if (ctThread != null)
-                    if (ctThread.IsAlive) ctThread.Abort();
+                    if (ctThread.IsAlive)
+                    {
+                        receiver.Close();
+                        ctThread.Abort();
+                        ctThread.Join();
+                    }
 
 
                 service_Running = false;
