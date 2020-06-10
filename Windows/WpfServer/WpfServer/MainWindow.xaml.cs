@@ -27,6 +27,11 @@ namespace WpfServer
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Changes the input type to be simulated to W,A,S & D keys when BtnWASD is clicked.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected internal void BtnWASD_Click(object sender, RoutedEventArgs e)
         {
             if(BtnArrowKeys.IsEnabled == false)
@@ -36,6 +41,11 @@ namespace WpfServer
             }
         }
 
+        /// <summary>
+        /// Changes the input type to be simulated to the arrow keys when BtnArrowKeys is clicked.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected internal void BtnArrowKeys_Click(object sender, RoutedEventArgs e)
         {
             if (BtnWASD.IsEnabled == false)
@@ -45,6 +55,12 @@ namespace WpfServer
             }
         }
 
+        /// <summary>
+        /// Register the Zeroconf service and initialises the receiving thread for communication with the client.
+        /// If pressed again, the button will terminate the receiving thread to end communication with the client.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected internal void BtnStart_Click(object sender, RoutedEventArgs e)
         {
             if (service_Running == false)
@@ -96,6 +112,15 @@ namespace WpfServer
             }
         }
 
+        /// <summary>
+        /// Receives and handles message from client through a UDP connection on port:1024.
+        /// If message is ast_discover, the server will retrieve the sender's name and IP address and
+        /// send an acknowledgement message with the server's IP address.
+        /// 
+        /// If the message is astv_disconnect, the service will be ended.
+        /// 
+        /// Anything else received will be assumed to be an input and passed to the GenerateInput(string) method.
+        /// </summary>
         protected internal void GetMessage()
         {
             string client_name = "";
@@ -175,6 +200,12 @@ namespace WpfServer
             
         }
 
+        /// <summary>
+        /// Simluates keyboard inputs. 
+        /// Currently, it only generates W, A, S & D keys or Up, Down, Left & Right arrow keys.
+        /// anything else will not be recognised as a valid input.
+        /// </summary>
+        /// <param name="client_input">Client's message</param>
         protected internal void GenerateInput(string client_input)
         {
             try
@@ -213,6 +244,11 @@ namespace WpfServer
             }
         }
 
+        /// <summary>
+        /// Sets the message to be displayed in the server's list box.
+        /// </summary>
+        /// <param name="message">Message to be displayed</param>
+        /// <param name="fromServer">If the message is from the server or the client</param>
         protected internal void DisplayMessage(string message, bool fromServer)
         {
             if (!string.IsNullOrEmpty(message))
@@ -229,6 +265,12 @@ namespace WpfServer
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="message">Message to be sent to client</param>
+        /// <param name="udp">UDP client used to send message from server</param>
+        /// <param name="end">IP endpoint representing the client's machine</param>
         protected internal void SendMessage(string message, UdpClient udp, IPEndPoint end)
         {
             byte[] messageByte = System.Text.Encoding.UTF8.GetBytes(message);
@@ -237,6 +279,12 @@ namespace WpfServer
             Console.WriteLine("Sent to client: bytes: {0} - {1}", byteSent, message);
         }
 
+        /// <summary>
+        /// Updates the server's listbox.
+        /// Because this method is used in both, the main and receiving threads, it uses the Dispatcher.checkAccess()
+        /// to handle cases where thread cannot access the method.
+        /// This is handled by using Dispatcher.BeginInvoke().
+        /// </summary>
         protected internal void Msg()
         {
             //  If the method is unnaccessible to the calling thread invoke it.
@@ -253,6 +301,10 @@ namespace WpfServer
             }
         }
 
+        /// <summary>
+        /// Ends the Zeroconf service by closing the communication between the client and server through the termination
+        /// of the receiving thread.
+        /// </summary>
         protected internal void EndZeroconfService()
         {
             if (!service_Running) return;
