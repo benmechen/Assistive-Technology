@@ -55,7 +55,7 @@ namespace WpfServer
                 service.RegType = "_assistive-tech._udp";
                 service.ReplyDomain = "local.";
                 service.Port = 1024;
-
+                //set timeout time to 10 seconds
                 receiver.Client.ReceiveTimeout = 10000;
                 TxtRecord txt_record = new TxtRecord
                 {
@@ -120,6 +120,8 @@ namespace WpfServer
                 {
                     DisplayMessage(ex.Message, true);
                     Console.WriteLine("Failure to receive UDP message - {0}", ex.ToString());
+                    EndZeroconfService();
+                    break;
                 }
                 if (!string.IsNullOrEmpty(smessage))
                 {
@@ -152,8 +154,6 @@ namespace WpfServer
                     else if (smessage == "astv_disconnect")
                     {
                         EndZeroconfService();
-                        BtnStart.Name = "Start Services";
-                        BtnStart.IsEnabled = true;
                         break;
                     }
                     else
@@ -262,7 +262,11 @@ namespace WpfServer
                         ctThread.Abort();
                         ctThread.Join();
                     }
-
+                this.Dispatcher.Invoke(() =>
+                {
+                    BtnStart.Content = "Start Services";
+                    BtnStart.IsEnabled = true;
+                });
 
                 DisplayMessage("Service Ended", true);
             }
@@ -271,8 +275,6 @@ namespace WpfServer
                 DisplayMessage(ex.Message, true);
                 Console.WriteLine("Stopping Service Error: {0}", ex.ToString());
             }
-
-
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
