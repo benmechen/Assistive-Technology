@@ -44,6 +44,7 @@
 		B559342B23E1EF31003D18EE /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		B559342D23E2380A003D18EE /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		B5C3C67823E8382D00C18700 /* ConnectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionService.swift; sourceTree = "<group>"; };
+		B5D6C59124884A4A00A0A13A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B5E8C7C823E07DE90099E555 /* Assistive Technology.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Assistive Technology.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5E8C7CB23E07DE90099E555 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5E8C7CF23E07DE90099E555 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
@@ -96,6 +97,7 @@
 		B5E8C7BF23E07DE90099E555 = {
 			isa = PBXGroup;
 			children = (
+				B5D6C59124884A4A00A0A13A /* README.md */,
 				B5E8C7CA23E07DE90099E555 /* Assistive Technology */,
 				B5E8C7E123E07DEC0099E555 /* Assistive TechnologyTests */,
 				B5E8C7EC23E07DEC0099E555 /* Assistive TechnologyUITests */,
@@ -513,7 +515,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 52835DXEU6;
 				INFOPLIST_FILE = "Assistive Technology/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -532,7 +534,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 52835DXEU6;
 				INFOPLIST_FILE = "Assistive Technology/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (

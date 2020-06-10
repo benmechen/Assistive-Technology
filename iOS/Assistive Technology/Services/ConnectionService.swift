@@ -174,7 +174,9 @@ class ConnectionService: NSObject {
                                     return
                                 }
                                 
-                                self.send(AssistiveTechnologyProtocol.discover.rawValue)
+                                let device = UIDevice.current.name
+
+                                self.send(AssistiveTechnologyProtocol.discover.rawValue + ":" + device)
                                 self.discoverTimeout += 1
                             } else {
                                 self.close(false)
