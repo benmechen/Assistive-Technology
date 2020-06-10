@@ -121,9 +121,19 @@ namespace WpfServer
                     DisplayMessage(ex.Message, true);
                     Console.WriteLine("Failure to receive UDP message - {0}", ex.ToString());
                     EndZeroconfService();
+
+                    DisplayMessage("Service Ended", true);
+
+                    //  use dispatcher to access object from a different thread
+                    this.Dispatcher.Invoke(() =>
+                    {
+                        BtnStart.Content = "Start Services";
+                    });
+
                     break;
                 }
-                if (!string.IsNullOrEmpty(smessage))
+
+                if (!string.IsNullOrEmpty(smessage) && service_Running)
                 {
                     DisplayMessage(smessage, false);
                     SendMessage("astv_ack", receiver, sender);
@@ -162,6 +172,7 @@ namespace WpfServer
                     }
                 }
             }
+            
         }
 
         private void GenerateInput(string client_input)
@@ -244,37 +255,35 @@ namespace WpfServer
 
         private void EndZeroconfService()
         {
+            if (!service_Running) return;
             try
             {
                 string closeMessage = "\n Shutting down assistive technology server [" + DateTime.Now + "]";
                 Console.WriteLine(closeMessage);
                 DisplayMessage(closeMessage, true);
+
+                //  Send the last disconnect message if the client's information is still available
                 if (this.sender.Address != null && this.sender.Address.ToString() != "0.0.0.0")
                 {
                     SendMessage("astv_disconnect", receiver, this.sender);
                 }
 
                 service_Running = false;
+
+                //  Terminate thread
                 if (ctThread != null)
                     if (ctThread.IsAlive)
                     {
-                        
                         ctThread.Abort();
-                        ctThread.Join();
                     }
-                this.Dispatcher.Invoke(() =>
-                {
-                    BtnStart.Content = "Start Services";
-                    BtnStart.IsEnabled = true;
-                });
 
-                DisplayMessage("Service Ended", true);
+                
             }
             catch (Exception ex)
             {
                 DisplayMessage(ex.Message, true);
                 Console.WriteLine("Stopping Service Error: {0}", ex.ToString());
-            }
+            } 
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
