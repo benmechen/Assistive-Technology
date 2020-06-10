@@ -27,7 +27,7 @@ namespace WpfServer
             InitializeComponent();
         }
 
-        private void BtnWASD_Click(object sender, RoutedEventArgs e)
+        protected internal void BtnWASD_Click(object sender, RoutedEventArgs e)
         {
             if(BtnArrowKeys.IsEnabled == false)
             {
@@ -36,7 +36,7 @@ namespace WpfServer
             }
         }
 
-        private void BtnArrowKeys_Click(object sender, RoutedEventArgs e)
+        protected internal void BtnArrowKeys_Click(object sender, RoutedEventArgs e)
         {
             if (BtnWASD.IsEnabled == false)
             {
@@ -45,7 +45,7 @@ namespace WpfServer
             }
         }
 
-        private void BtnStart_Click(object sender, RoutedEventArgs e)
+        protected internal void BtnStart_Click(object sender, RoutedEventArgs e)
         {
             if (service_Running == false)
             {
@@ -96,7 +96,7 @@ namespace WpfServer
             }
         }
 
-        private void GetMessage()
+        protected internal void GetMessage()
         {
             string client_name = "";
 
@@ -175,7 +175,7 @@ namespace WpfServer
             
         }
 
-        private void GenerateInput(string client_input)
+        protected internal void GenerateInput(string client_input)
         {
             try
             {
@@ -213,7 +213,7 @@ namespace WpfServer
             }
         }
 
-        private void DisplayMessage(string message, bool fromServer)
+        protected internal void DisplayMessage(string message, bool fromServer)
         {
             if (!string.IsNullOrEmpty(message))
             {
@@ -229,7 +229,7 @@ namespace WpfServer
             }
         }
 
-        private void SendMessage(string message, UdpClient udp, IPEndPoint end)
+        protected internal void SendMessage(string message, UdpClient udp, IPEndPoint end)
         {
             byte[] messageByte = System.Text.Encoding.UTF8.GetBytes(message);
             var byteSent = udp.Send(messageByte, messageByte.Length, end);
@@ -237,7 +237,7 @@ namespace WpfServer
             Console.WriteLine("Sent to client: bytes: {0} - {1}", byteSent, message);
         }
 
-        private void Msg()
+        protected internal void Msg()
         {
             //  If the method is unnaccessible to the calling thread invoke it.
             if (!Dispatcher.CheckAccess())
@@ -253,7 +253,7 @@ namespace WpfServer
             }
         }
 
-        private void EndZeroconfService()
+        protected internal void EndZeroconfService()
         {
             if (!service_Running) return;
             try
