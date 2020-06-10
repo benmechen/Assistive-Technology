@@ -56,7 +56,7 @@ namespace WpfServer
                 service.ReplyDomain = "local.";
                 service.Port = 1024;
 
-
+                receiver.Client.ReceiveTimeout = 10000;
                 TxtRecord txt_record = new TxtRecord
                 {
                     { "service", "Assistive Technology Technology" },
@@ -65,7 +65,8 @@ namespace WpfServer
                 service.TxtRecord = txt_record;
                 try
                 {
-
+                    //  Register the service if it is not registered
+                    //  The if mainly serves to prevent a second registration
                     if (!service_registered)
                     {
                         service.Register();
@@ -74,13 +75,17 @@ namespace WpfServer
                     string txtMsg = "service has been registered";
                     Console.WriteLine("{0} " + txtMsg, service.Name);
                     DisplayMessage(txtMsg, true);
+
+                    //  Change the text of the Start button to Stop Services
                     BtnStart.Content = "Stop Service";
                 }
                 catch (Exception ex)
                 {
+                    DisplayMessage(ex.Message, true);
                     Console.WriteLine("Service Error: {0}", ex.ToString());
                 }
 
+                //  Start a thread with the method GetMessge
                 ctThread = new Thread(GetMessage);
                 ctThread.Start();
             }
@@ -94,19 +99,36 @@ namespace WpfServer
         private void GetMessage()
         {
             string client_name = "";
+
+            //  Get the current device's name and IP address
             string hostName = Dns.GetHostName();
             string ipaddress = Dns.GetHostEntry(hostName).AddressList[0].ToString();
 
             while (service_Running)
             {
-                byte[] rmessage = receiver.Receive(ref sender);
-                string smessage = System.Text.Encoding.UTF8.GetString(rmessage);
+                byte[] rmessage;
+                string smessage = "";
+                try
+                {
+                    //  Read data comming through port 1024 using UDP
+                    rmessage = receiver.Receive(ref sender);
+
+                    //  Convert byte mesage from client to string
+                    smessage = System.Text.Encoding.UTF8.GetString(rmessage);
+                }
+                catch(Exception ex)
+                {
+                    DisplayMessage(ex.Message, true);
+                    Console.WriteLine("Failure to receive UDP message - {0}", ex.ToString());
+                }
                 if (!string.IsNullOrEmpty(smessage))
                 {
                     DisplayMessage(smessage, false);
                     SendMessage("astv_ack", receiver, sender);
                     if (smessage.Contains("astv_discover"))
                     {
+                        //  Retreives substring of client message starting from ":"
+                        //  This should contain the client's name
                         client_name = smessage.Substring(smessage.IndexOf(":") + 1);
 
                         if (client_name.Length < 1) lblDevice.Content = "Error getting device name";
@@ -118,9 +140,12 @@ namespace WpfServer
                             });
                         }
 
+                        //  Display name and IP address of client
                         string tempMessage = "Discover call from client " + client_name + ": " + sender.Address.ToString();
                         Console.WriteLine(tempMessage);
                         DisplayMessage(tempMessage, true);
+
+                        //  Send acknowledgement message back to client
                         SendMessage("astv_shake:" + ipaddress, receiver, sender);
                         Console.WriteLine("Sent handshake: astv_shake to address:" + sender.Address.ToString());
                     }
@@ -172,7 +197,7 @@ namespace WpfServer
             }
             catch (Exception ex)
             {
-                DisplayMessage(ex.ToString(), true);
+                DisplayMessage(ex.Message, true);
                 Console.WriteLine("Error generating input: {0}", ex.ToString());
             }
         }
@@ -203,6 +228,7 @@ namespace WpfServer
 
         private void Msg()
         {
+            //  If the method is unnaccessible to the calling thread invoke it.
             if (!Dispatcher.CheckAccess())
             {
                 Dispatcher.BeginInvoke(new Action(delegate
@@ -227,22 +253,22 @@ namespace WpfServer
                 {
                     SendMessage("astv_disconnect", receiver, this.sender);
                 }
+
+                service_Running = false;
                 if (ctThread != null)
                     if (ctThread.IsAlive)
                     {
-                        receiver.Close();
+                        
                         ctThread.Abort();
                         ctThread.Join();
                     }
 
 
-                service_Running = false;
-                closeMessage = "Service Ended";
-                DisplayMessage(closeMessage, true);
-                Console.WriteLine(closeMessage);
+                DisplayMessage("Service Ended", true);
             }
             catch (Exception ex)
             {
+                DisplayMessage(ex.Message, true);
                 Console.WriteLine("Stopping Service Error: {0}", ex.ToString());
             }
 
