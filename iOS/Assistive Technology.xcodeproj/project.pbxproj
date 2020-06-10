@@ -10,6 +10,7 @@
 		B546D06523EAFD6100E70C17 /* Collection+Average.swift in Sources */ = {isa = PBXBuildFile; fileRef = B546D06423EAFD6100E70C17 /* Collection+Average.swift */; };
 		B559342C23E1EF31003D18EE /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = B559342B23E1EF31003D18EE /* Result.swift */; };
 		B559342E23E2380A003D18EE /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B559342D23E2380A003D18EE /* ViewModel.swift */; };
+		B5AAA04224918E6500E17F13 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = B5AAA04124918E6500E17F13 /* .gitignore */; };
 		B5C3C67923E8382D00C18700 /* ConnectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C3C67823E8382D00C18700 /* ConnectionService.swift */; };
 		B5E8C7CC23E07DE90099E555 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E8C7CB23E07DE90099E555 /* AppDelegate.swift */; };
 		B5E8C7D023E07DE90099E555 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E8C7CF23E07DE90099E555 /* View.swift */; };
@@ -43,6 +44,7 @@
 		B546D06423EAFD6100E70C17 /* Collection+Average.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Average.swift"; sourceTree = "<group>"; };
 		B559342B23E1EF31003D18EE /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		B559342D23E2380A003D18EE /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		B5AAA04124918E6500E17F13 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		B5C3C67823E8382D00C18700 /* ConnectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionService.swift; sourceTree = "<group>"; };
 		B5D6C59124884A4A00A0A13A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B5E8C7C823E07DE90099E555 /* Assistive Technology.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Assistive Technology.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,6 +99,7 @@
 		B5E8C7BF23E07DE90099E555 = {
 			isa = PBXGroup;
 			children = (
+				B5AAA04124918E6500E17F13 /* .gitignore */,
 				B5D6C59124884A4A00A0A13A /* README.md */,
 				B5E8C7CA23E07DE90099E555 /* Assistive Technology */,
 				B5E8C7E123E07DEC0099E555 /* Assistive TechnologyTests */,
@@ -305,6 +308,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5AAA04224918E6500E17F13 /* .gitignore in Resources */,
 				B5E8C7D823E07DEC0099E555 /* LaunchScreen.storyboard in Resources */,
 				B5E8C7D523E07DEC0099E555 /* Assets.xcassets in Resources */,
 				B5E8C7D323E07DE90099E555 /* Main.storyboard in Resources */,
