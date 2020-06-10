@@ -24,26 +24,26 @@
             </Grid.ColumnDefinitions>
 
             <Grid Background="White">
-                <Button x:Name="btnStart" Content="Start Services" HorizontalAlignment="Left" 
+                <Button x:Name="BtnStart" Content="Start Services" HorizontalAlignment="Left" 
                         VerticalAlignment="Top" Width="280" Margin="10,275,0,0" 
-                        Height="87" BorderBrush="#7ACDB4" Background="#97D8C4" Click="btnStart_Click">
+                        Height="87" BorderBrush="#7ACDB4" Background="#97D8C4" Click="BtnStart_Click">
                     
                 </Button>
 
-                <Button x:Name="btnWASD" Content="WASD Keys" 
+                <Button x:Name="BtnWASD" Content="WASD Keys" 
                         HorizontalAlignment="Left" Margin="10,79,0,0" 
                         VerticalAlignment="Top" Width="280" Height="65"
-                        BorderBrush="#FFF7CD78" Background="#FFF4B942" Click="btnWASD_Click" IsEnabled="False"/>
+                        BorderBrush="#FFF7CD78" Background="#FFF4B942" Click="BtnWASD_Click" IsEnabled="False"/>
 
-                <Button x:Name="btnArrowKeys" Content="Arrow Keys" 
+                <Button x:Name="BtnArrowKeys" Content="Arrow Keys" 
                         HorizontalAlignment="Left" Margin="10,149,0,0"
                         VerticalAlignment="Top" Width="280" Height="65"
-                        BorderBrush="#FFF7CD78" Background="#FFF4B942" Click="btnArrowKeys_Click"/>
+                        BorderBrush="#FFF7CD78" Background="#FFF4B942" Click="BtnArrowKeys_Click"/>
                 <Label Content="Switch input type" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="99,48,0,0"/>
 
             </Grid>
             <Grid Grid.Column="1" Background="#EFF2F1">
-                <ListBox x:Name="lstTranscript" Background="{x:Null}" HorizontalAlignment="Left" Width="492"/>
+                <ListBox x:Name="LstTranscript" Background="{x:Null}" HorizontalAlignment="Left" Width="492"/>
 
             </Grid>
         </Grid>

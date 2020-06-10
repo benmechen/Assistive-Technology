@@ -20,32 +20,32 @@ namespace WpfServer
         bool service_registered = false;
         Thread ctThread;
 
-        InputGenerator.Keyboard keyboard = new InputGenerator.Keyboard();
+        readonly InputGenerator.Keyboard keyboard = new InputGenerator.Keyboard();
 
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void btnWASD_Click(object sender, RoutedEventArgs e)
+        private void BtnWASD_Click(object sender, RoutedEventArgs e)
         {
-            if(btnArrowKeys.IsEnabled == false)
+            if(BtnArrowKeys.IsEnabled == false)
             {
-                btnArrowKeys.IsEnabled = true;
-                btnWASD.IsEnabled = false;
+                BtnArrowKeys.IsEnabled = true;
+                BtnWASD.IsEnabled = false;
             }
         }
 
-        private void btnArrowKeys_Click(object sender, RoutedEventArgs e)
+        private void BtnArrowKeys_Click(object sender, RoutedEventArgs e)
         {
-            if (btnWASD.IsEnabled == false)
+            if (BtnWASD.IsEnabled == false)
             {
-                btnWASD.IsEnabled = true;
-                btnArrowKeys.IsEnabled = false;
+                BtnWASD.IsEnabled = true;
+                BtnArrowKeys.IsEnabled = false;
             }
         }
 
-        private void btnStart_Click(object sender, RoutedEventArgs e)
+        private void BtnStart_Click(object sender, RoutedEventArgs e)
         {
             if (service_Running == false)
             {
@@ -71,27 +71,27 @@ namespace WpfServer
                         service.Register();
                         service_registered = true;
                     }
-                    string txtmsg = "service has been registered";
-                    Console.WriteLine("{0} " + txtmsg, service.Name);
-                    displayMessage(txtmsg, true);
-                    btnStart.Content = "Stop Service";
+                    string txtMsg = "service has been registered";
+                    Console.WriteLine("{0} " + txtMsg, service.Name);
+                    DisplayMessage(txtMsg, true);
+                    BtnStart.Content = "Stop Service";
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine("Service Error: {0}", ex.ToString());
                 }
 
-                ctThread = new Thread(getMessage);
+                ctThread = new Thread(GetMessage);
                 ctThread.Start();
             }
             else
             {
-                endZeroconfService();
-                btnStart.Content = "Start Services";
+                EndZeroconfService();
+                BtnStart.Content = "Start Services";
             }
         }
 
-        private void getMessage()
+        private void GetMessage()
         {
             string client_name = "";
             string hostName = Dns.GetHostName();
@@ -103,8 +103,8 @@ namespace WpfServer
                 string smessage = System.Text.Encoding.UTF8.GetString(rmessage);
                 if (!string.IsNullOrEmpty(smessage))
                 {
-                    displayMessage(smessage, false);
-                    sendMessage("astv_ack", receiver, sender);
+                    DisplayMessage(smessage, false);
+                    SendMessage("astv_ack", receiver, sender);
                     if (smessage.Contains("astv_discover"))
                     {
                         client_name = smessage.Substring(smessage.IndexOf(":") + 1);
@@ -120,30 +120,30 @@ namespace WpfServer
 
                         string tempMessage = "Discover call from client " + client_name + ": " + sender.Address.ToString();
                         Console.WriteLine(tempMessage);
-                        displayMessage(tempMessage, true);
-                        sendMessage("astv_shake:" + ipaddress, receiver, sender);
+                        DisplayMessage(tempMessage, true);
+                        SendMessage("astv_shake:" + ipaddress, receiver, sender);
                         Console.WriteLine("Sent handshake: astv_shake to address:" + sender.Address.ToString());
                     }
                     else if (smessage == "astv_disconnect")
                     {
-                        endZeroconfService();
-                        btnStart.Name = "Start Services";
-                        btnStart.IsEnabled = true;
+                        EndZeroconfService();
+                        BtnStart.Name = "Start Services";
+                        BtnStart.IsEnabled = true;
                         break;
                     }
                     else
                     {
-                        generateInput(smessage);
+                        GenerateInput(smessage);
                     }
                 }
             }
         }
 
-        private void generateInput(string client_input)
+        private void GenerateInput(string client_input)
         {
             try
             {
-                if (btnArrowKeys.IsEnabled == false)
+                if (BtnArrowKeys.IsEnabled == false)
                 {
                     if (client_input == "astv_up") keyboard.Send(InputGenerator.Keyboard.ScanCodeShort.KEY_W);
                     else if (client_input == "astv_down") keyboard.Send(InputGenerator.Keyboard.ScanCodeShort.KEY_S);
@@ -151,7 +151,7 @@ namespace WpfServer
                     else if (client_input == "astv_right") keyboard.Send(InputGenerator.Keyboard.ScanCodeShort.KEY_D);
                     else
                     {
-                        displayMessage("Input not recognised", true);
+                        DisplayMessage("Input not recognised", true);
                         Console.WriteLine("Input not recognised");
                         return;
                     }
@@ -164,7 +164,7 @@ namespace WpfServer
                     else if (client_input == "astv_right") keyboard.Send(InputGenerator.Keyboard.ScanCodeShort.RIGHT);
                     else
                     {
-                        displayMessage("Input not recognised", true);
+                        DisplayMessage("Input not recognised", true);
                         Console.WriteLine("Input not recognised");
                         return;
                     }
@@ -172,12 +172,12 @@ namespace WpfServer
             }
             catch (Exception ex)
             {
-                displayMessage(ex.ToString(), true);
+                DisplayMessage(ex.ToString(), true);
                 Console.WriteLine("Error generating input: {0}", ex.ToString());
             }
         }
 
-        private void displayMessage(string message, bool fromServer)
+        private void DisplayMessage(string message, bool fromServer)
         {
             if (!string.IsNullOrEmpty(message))
             {
@@ -189,43 +189,43 @@ namespace WpfServer
                 {
                     tcp_message = "Client: " + message;
                 }
-                msg();
+                Msg();
             }
         }
 
-        private void sendMessage(string message, UdpClient udp, IPEndPoint end)
+        private void SendMessage(string message, UdpClient udp, IPEndPoint end)
         {
             byte[] messageByte = System.Text.Encoding.UTF8.GetBytes(message);
             var byteSent = udp.Send(messageByte, messageByte.Length, end);
-            displayMessage(message, true);
+            DisplayMessage(message, true);
             Console.WriteLine("Sent to client: bytes: {0} - {1}", byteSent, message);
         }
 
-        private void msg()
+        private void Msg()
         {
             if (!Dispatcher.CheckAccess())
             {
                 Dispatcher.BeginInvoke(new Action(delegate
                 {
-                    lstTranscript.Items.Add(tcp_message);
+                    LstTranscript.Items.Add(tcp_message);
                 }));
             }
             else
             {
-                lstTranscript.Items.Add(tcp_message);
+                LstTranscript.Items.Add(tcp_message);
             }
         }
 
-        private void endZeroconfService()
+        private void EndZeroconfService()
         {
             try
             {
                 string closeMessage = "\n Shutting down assistive technology server [" + DateTime.Now + "]";
                 Console.WriteLine(closeMessage);
-                displayMessage(closeMessage, true);
+                DisplayMessage(closeMessage, true);
                 if (this.sender.Address != null && this.sender.Address.ToString() != "0.0.0.0")
                 {
-                    sendMessage("astv_disconnect", receiver, this.sender);
+                    SendMessage("astv_disconnect", receiver, this.sender);
                 }
                 if (ctThread != null)
                     if (ctThread.IsAlive)
@@ -238,7 +238,7 @@ namespace WpfServer
 
                 service_Running = false;
                 closeMessage = "Service Ended";
-                displayMessage(closeMessage, true);
+                DisplayMessage(closeMessage, true);
                 Console.WriteLine(closeMessage);
             }
             catch (Exception ex)
@@ -251,7 +251,7 @@ namespace WpfServer
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (service_Running) endZeroconfService();
+            if (service_Running) EndZeroconfService();
             service.Dispose();
             receiver.Close();
             receiver.Dispose();
