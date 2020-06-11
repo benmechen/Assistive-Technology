@@ -1,4 +1,9 @@
 apiRules:
 - exclude:
-      uidRegex: ^System\.Object
-      type: Type
+    # inherited Object methods
+    uidRegex: ^System\.Object\..*$
+    type: Method
+- exclude:
+    # mentioning types from System.* namespace
+    uidRegex: ^System\..*$
+    type: Type
