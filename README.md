@@ -1,6 +1,7 @@
 # Team 30 - Assistive Technology
 
-[Documentation](https://team30.netlify.com/)
+[iOS Documentation](https://team30.netlify.com/ios/)
+[Windows Documentation](https://team30.netlify.com/windows/)
 
 ### Git Branches
  * `master` – Protected branch for stable & release versions
