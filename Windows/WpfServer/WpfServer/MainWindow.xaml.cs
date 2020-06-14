@@ -6,6 +6,7 @@ using ArkaneSystems.Arkane.Zeroconf;
 using System.Threading;
 using WindowsInput;
 using WindowsInput.Native;
+using System.Threading.Tasks;
 
 namespace WpfServer
 {
@@ -72,8 +73,7 @@ namespace WpfServer
                 service.RegType = "_assistive-tech._udp";
                 service.ReplyDomain = "local.";
                 service.Port = 1024;
-                //set timeout time to 10 seconds
-                receiver.Client.ReceiveTimeout = 10000;
+
                 TxtRecord txt_record = new TxtRecord
                 {
                     { "service", "Assistive Technology Technology" },
@@ -138,7 +138,7 @@ namespace WpfServer
                 {
                     //  Read data comming through port 1024 using UDP
                     rmessage = receiver.Receive(ref sender);
-
+                    
                     //  Convert byte mesage from client to string
                     smessage = System.Text.Encoding.UTF8.GetString(rmessage);
                 }
@@ -213,7 +213,7 @@ namespace WpfServer
             {
                 this.Dispatcher.Invoke(() =>
                 {
-                    if (BtnArrowKeys.IsEnabled == false)
+                    if (BtnArrowKeys.IsEnabled == true)
                     {
                         if (client_input == "astv_up") inputSimulator.Keyboard.KeyPress(VirtualKeyCode.VK_W);
                         else if (client_input == "astv_down") inputSimulator.Keyboard.KeyPress(VirtualKeyCode.VK_S);
@@ -232,6 +232,7 @@ namespace WpfServer
                         else if (client_input == "astv_down") inputSimulator.Keyboard.KeyPress(VirtualKeyCode.DOWN);
                         else if (client_input == "astv_left") inputSimulator.Keyboard.KeyPress(VirtualKeyCode.LEFT);
                         else if (client_input == "astv_right") inputSimulator.Keyboard.KeyPress(VirtualKeyCode.RIGHT);
+                        else
                         {
                             DisplayMessage("Input not recognised", true);
                             Console.WriteLine("Input not recognised");
