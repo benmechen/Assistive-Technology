@@ -4,6 +4,8 @@ using System.Net;
 using System.Net.Sockets;
 using ArkaneSystems.Arkane.Zeroconf;
 using System.Threading;
+using WindowsInput;
+using WindowsInput.Native;
 
 namespace WpfServer
 {
@@ -19,8 +21,7 @@ namespace WpfServer
         bool service_Running = false;
         bool service_registered = false;
         Thread ctThread;
-
-        readonly InputGenerator.Keyboard keyboard = new InputGenerator.Keyboard();
+        readonly InputSimulator inputSimulator = new InputSimulator();
 
         public MainWindow()
         {
@@ -212,10 +213,10 @@ namespace WpfServer
             {
                 if (BtnArrowKeys.IsEnabled == false)
                 {
-                    if (client_input == "astv_up") keyboard.Send(InputGenerator.Keyboard.ScanCodeShort.KEY_W);
-                    else if (client_input == "astv_down") keyboard.Send(InputGenerator.Keyboard.ScanCodeShort.KEY_S);
-                    else if (client_input == "astv_left") keyboard.Send(InputGenerator.Keyboard.ScanCodeShort.KEY_A);
-                    else if (client_input == "astv_right") keyboard.Send(InputGenerator.Keyboard.ScanCodeShort.KEY_D);
+                    if (client_input == "astv_up") inputSimulator.Keyboard.KeyPress(VirtualKeyCode.VK_W);
+                    else if (client_input == "astv_down") inputSimulator.Keyboard.KeyPress(VirtualKeyCode.VK_S);
+                    else if (client_input == "astv_left") inputSimulator.Keyboard.KeyPress(VirtualKeyCode.VK_A);
+                    else if (client_input == "astv_right") inputSimulator.Keyboard.KeyPress(VirtualKeyCode.VK_R);
                     else
                     {
                         DisplayMessage("Input not recognised", true);
@@ -225,11 +226,10 @@ namespace WpfServer
                 }
                 else
                 {
-                    if (client_input == "astv_up") keyboard.Send(InputGenerator.Keyboard.ScanCodeShort.UP);
-                    else if (client_input == "astv_down") keyboard.Send(InputGenerator.Keyboard.ScanCodeShort.DOWN);
-                    else if (client_input == "astv_left") keyboard.Send(InputGenerator.Keyboard.ScanCodeShort.LEFT);
-                    else if (client_input == "astv_right") keyboard.Send(InputGenerator.Keyboard.ScanCodeShort.RIGHT);
-                    else
+                    if (client_input == "astv_up") inputSimulator.Keyboard.KeyPress(VirtualKeyCode.UP);
+                    else if (client_input == "astv_down") inputSimulator.Keyboard.KeyPress(VirtualKeyCode.DOWN);
+                    else if (client_input == "astv_left") inputSimulator.Keyboard.KeyPress(VirtualKeyCode.LEFT);
+                    else if (client_input == "astv_right") inputSimulator.Keyboard.KeyPress(VirtualKeyCode.RIGHT);
                     {
                         DisplayMessage("Input not recognised", true);
                         Console.WriteLine("Input not recognised");

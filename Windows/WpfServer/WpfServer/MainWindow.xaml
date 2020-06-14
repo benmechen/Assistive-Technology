@@ -38,7 +38,7 @@
                 <Button x:Name="BtnArrowKeys" Content="Arrow Keys" 
                         HorizontalAlignment="Left" Margin="10,149,0,0"
                         VerticalAlignment="Top" Width="280" Height="65"
-                        BorderBrush="#FFF7CD78" Background="#FFF4B942" Click="BtnArrowKeys_Click"/>
+                        BorderBrush="#FFFFB011" Background="#FFF4B942" Click="BtnArrowKeys_Click"/>
                 <Label Content="Switch input type" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="99,48,0,0"/>
 
             </Grid>
