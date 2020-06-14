@@ -1,2 +1,4 @@
-# PLACEHOLDER
-TODO: Add .NET projects to the *src* folder and run `docfx` to generate **REAL** *API Documentation*!
+# API documentation for Windows server
+
+
+**Use the side navigation to travel between the different classes that are found inside the WpfServer project.**
