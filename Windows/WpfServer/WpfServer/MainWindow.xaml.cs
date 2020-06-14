@@ -211,31 +211,35 @@ namespace WpfServer
         {
             try
             {
-                if (BtnArrowKeys.IsEnabled == false)
+                this.Dispatcher.Invoke(() =>
                 {
-                    if (client_input == "astv_up") inputSimulator.Keyboard.KeyPress(VirtualKeyCode.VK_W);
-                    else if (client_input == "astv_down") inputSimulator.Keyboard.KeyPress(VirtualKeyCode.VK_S);
-                    else if (client_input == "astv_left") inputSimulator.Keyboard.KeyPress(VirtualKeyCode.VK_A);
-                    else if (client_input == "astv_right") inputSimulator.Keyboard.KeyPress(VirtualKeyCode.VK_R);
+                    if (BtnArrowKeys.IsEnabled == false)
+                    {
+                        if (client_input == "astv_up") inputSimulator.Keyboard.KeyPress(VirtualKeyCode.VK_W);
+                        else if (client_input == "astv_down") inputSimulator.Keyboard.KeyPress(VirtualKeyCode.VK_S);
+                        else if (client_input == "astv_left") inputSimulator.Keyboard.KeyPress(VirtualKeyCode.VK_A);
+                        else if (client_input == "astv_right") inputSimulator.Keyboard.KeyPress(VirtualKeyCode.VK_R);
+                        else
+                        {
+                            DisplayMessage("Input not recognised", true);
+                            Console.WriteLine("Input not recognised");
+                            return;
+                        }
+                    }
                     else
                     {
-                        DisplayMessage("Input not recognised", true);
-                        Console.WriteLine("Input not recognised");
-                        return;
+                        if (client_input == "astv_up") inputSimulator.Keyboard.KeyPress(VirtualKeyCode.UP);
+                        else if (client_input == "astv_down") inputSimulator.Keyboard.KeyPress(VirtualKeyCode.DOWN);
+                        else if (client_input == "astv_left") inputSimulator.Keyboard.KeyPress(VirtualKeyCode.LEFT);
+                        else if (client_input == "astv_right") inputSimulator.Keyboard.KeyPress(VirtualKeyCode.RIGHT);
+                        {
+                            DisplayMessage("Input not recognised", true);
+                            Console.WriteLine("Input not recognised");
+                            return;
+                        }
                     }
-                }
-                else
-                {
-                    if (client_input == "astv_up") inputSimulator.Keyboard.KeyPress(VirtualKeyCode.UP);
-                    else if (client_input == "astv_down") inputSimulator.Keyboard.KeyPress(VirtualKeyCode.DOWN);
-                    else if (client_input == "astv_left") inputSimulator.Keyboard.KeyPress(VirtualKeyCode.LEFT);
-                    else if (client_input == "astv_right") inputSimulator.Keyboard.KeyPress(VirtualKeyCode.RIGHT);
-                    {
-                        DisplayMessage("Input not recognised", true);
-                        Console.WriteLine("Input not recognised");
-                        return;
-                    }
-                }
+                });
+                
             }
             catch (Exception ex)
             {
