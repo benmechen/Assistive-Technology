@@ -77,8 +77,9 @@ namespace WpfServer
                     { "service", "Assistive Technology Technology" },
                     { "version", "1.0.0" }
                 };
+
                 service.TxtRecord = txt_record;
-                receiver.Client.ReceiveTimeout = 120000;‬
+                receiver.Client.ReceiveTimeout = 120000;
                 try
                 {
                     //  Register the service if it is not registered
