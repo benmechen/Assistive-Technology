@@ -22,7 +22,7 @@ namespace WpfServer
         bool service_registered = false;
         Thread ctThread;
         readonly InputSimulator inputSimulator = new InputSimulator();
-
+        
         public MainWindow()
         {
             InitializeComponent();
@@ -78,6 +78,7 @@ namespace WpfServer
                     { "version", "1.0.0" }
                 };
                 service.TxtRecord = txt_record;
+                receiver.Client.ReceiveTimeout = 120000;‬
                 try
                 {
                     //  Register the service if it is not registered
@@ -123,7 +124,7 @@ namespace WpfServer
         protected internal void GetMessage()
         {
             string client_name = "";
-
+            bool discovered = false;
             //  Get the current device's name and IP address
             string hostName = Dns.GetHostName();
             string ipaddress = Dns.GetHostEntry(hostName).AddressList[0].ToString();
@@ -161,38 +162,47 @@ namespace WpfServer
                 {
                     DisplayMessage(smessage, false);
                     SendMessage("astv_ack", receiver, sender);
-                    if (smessage.Contains("astv_discover"))
-                    {
-                        //  Retreives substring of client message starting from ":"
-                        //  This should contain the client's name
-                        client_name = smessage.Substring(smessage.IndexOf(":") + 1);
 
-                        if (client_name.Length < 1) lblDevice.Content = "Error getting device name";
+                    if (discovered)
+                    {
+                        if (smessage == "astv_disconnect")
+                        {
+                            EndZeroconfService();
+                            break;
+                        }
                         else
                         {
-                            this.Dispatcher.Invoke(() =>
-                            {
-                                lblDevice.Content = client_name;
-                            });
+                            GenerateInput(smessage);
                         }
-
-                        //  Display name and IP address of client
-                        string tempMessage = "Discover call from client " + client_name + ": " + sender.Address.ToString();
-                        Console.WriteLine(tempMessage);
-                        DisplayMessage(tempMessage, true);
-
-                        //  Send acknowledgement message back to client
-                        SendMessage("astv_shake:" + ipaddress, receiver, sender);
-                        Console.WriteLine("Sent handshake: astv_shake to address:" + sender.Address.ToString());
-                    }
-                    else if (smessage == "astv_disconnect")
-                    {
-                        EndZeroconfService();
-                        break;
                     }
                     else
                     {
-                        GenerateInput(smessage);
+                        if (smessage.Contains("astv_discover"))
+                        {
+                            //  Retreives substring of client message starting from ":"
+                            //  This should contain the client's name
+                            client_name = smessage.Substring(smessage.IndexOf(":") + 1);
+
+                            if (client_name.Length < 1) lblDevice.Content = "Error getting device name";
+                            else
+                            {
+                                this.Dispatcher.Invoke(() =>
+                                {
+                                    lblDevice.Content = client_name;
+                                });
+                            }
+
+                            //  Display name and IP address of client
+                            string tempMessage = "Discover call from client " + client_name + ": " + sender.Address.ToString();
+                            Console.WriteLine(tempMessage);
+                            DisplayMessage(tempMessage, true);
+
+                            //  Send acknowledgement message back to client
+                            SendMessage("astv_shake:" + ipaddress, receiver, sender);
+                            Console.WriteLine("Sent handshake: astv_shake to address:" + sender.Address.ToString());
+                            discovered = true;
+
+                        }
                     }
                 }
             }
