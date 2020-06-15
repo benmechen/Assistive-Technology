@@ -6,7 +6,6 @@ using ArkaneSystems.Arkane.Zeroconf;
 using System.Threading;
 using WindowsInput;
 using WindowsInput.Native;
-using System.Threading.Tasks;
 
 namespace WpfServer
 {
@@ -15,7 +14,7 @@ namespace WpfServer
     /// </summary>
     public partial class MainWindow : Window
     {
-        readonly UdpClient receiver = new UdpClient(1024);
+        UdpClient receiver = new UdpClient(1024);
         IPEndPoint sender = new IPEndPoint(IPAddress.Any, 1024);
         string tcp_message;
         static readonly RegisterService service = new RegisterService();
@@ -73,7 +72,6 @@ namespace WpfServer
                 service.RegType = "_assistive-tech._udp";
                 service.ReplyDomain = "local.";
                 service.Port = 1024;
-
                 TxtRecord txt_record = new TxtRecord
                 {
                     { "service", "Assistive Technology Technology" },
@@ -347,7 +345,6 @@ namespace WpfServer
         {
             if (service_Running) EndZeroconfService();
             service.Dispose();
-            receiver.Close();
             receiver.Dispose();
             Console.WriteLine("Service and TCP receiver have been disposed!");
         }
