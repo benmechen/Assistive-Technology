@@ -340,7 +340,9 @@ namespace WpfServer
                 if (ctThread != null)
                     if (ctThread.IsAlive)
                     {
+                        receiver.Close();
                         ctThread.Abort();
+                        receiver = new UdpClient(1024);
                     }
 
                 
