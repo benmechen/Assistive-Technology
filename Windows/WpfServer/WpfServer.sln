@@ -5,6 +5,11 @@ VisualStudioVersion = 16.0.30128.74
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfServer", "WpfServer\WpfServer.csproj", "{720C329C-9E5B-483D-AFEC-007A86995DF4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6AF8901B-3B1A-49D1-AB5C-A4535B1205F9}"
+	ProjectSection(SolutionItems) = preProject
+		WpfServer\AssistiveTechnology.ico = WpfServer\AssistiveTechnology.ico
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
