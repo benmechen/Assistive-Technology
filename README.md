@@ -1,9 +1,9 @@
 # Team 30 - Assistive Technology
 
 [iOS Documentation](https://team30.netlify.com/ios/)
+
 [Windows Documentation](https://team30.netlify.com/windows/)
 
----
 
 ## iOS Apps
 
@@ -32,7 +32,7 @@ Windows server that handles the inputs sent from the client through the usage of
 
 To use it just press the start service button. This will register a Zeroconf service and stablish a UDP connection to the client. You have a 20 seconds to stablish a connection. If this fails the UDP thread will exit. to Re-stablish a connection, you must stop and restart the services.
 
----
+
 
 ## Git Branches
  * `master` – Protected branch for stable & release versions
