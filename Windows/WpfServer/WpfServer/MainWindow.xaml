@@ -43,7 +43,7 @@
 
             </Grid>
             <Grid Grid.Column="1" Background="#EFF2F1">
-                <ListBox x:Name="LstTranscript" Background="{x:Null}" HorizontalAlignment="Left" Width="484" ClipToBounds="True" Margin="0,0,0,10"/>
+                <ListBox x:Name="LstTranscript" Background="{x:Null}" HorizontalAlignment="Left" Width="484" ClipToBounds="True"/>
             </Grid>
         </Grid>
         <Label x:Name="lblDevice" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="94,1,0,0" Width="207"/>
