@@ -26,9 +26,7 @@ The app will only build for iOS 13+ due to the images used. A development certif
 
 ### Description
 
-Windows server that handles the inputs sent from the client through the usage of UDP. The initial discovery of the server is done by registering a Zeroconf service. The server simulates two inputs:
-* W, A, S & D keys
-*Up, Down, Left, Right arrow keys
+Windows server that handles the inputs sent from the client through the usage of UDP. The initial discovery of the server is done by registering a Zeroconf service.
 
 ### Usage
 
