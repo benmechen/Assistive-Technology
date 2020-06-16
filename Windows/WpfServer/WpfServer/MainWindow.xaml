@@ -1,0 +1,54 @@
+﻿<Window x:Class="WpfServer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfServer"
+        mc:Ignorable="d"
+        Title="Assistive Technology" Height="450" Width="800" Closing="Window_Closing" ResizeMode="CanMinimize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Background="#F4B942">
+            <Label Content="Input Device:" HorizontalAlignment="Left" Margin="10,1,0,0" VerticalAlignment="Top" Width="82"/>
+
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Background="White">
+                <Button x:Name="BtnStart" Content="Start Services" HorizontalAlignment="Left" 
+                        VerticalAlignment="Top" Width="280" Margin="10,275,0,0" 
+                        Height="87" BorderBrush="#7ACDB4" Background="#97D8C4" Click="BtnStart_Click">
+                    
+                </Button>
+
+                <Button x:Name="BtnWASD" Content="WASD Keys" 
+                        HorizontalAlignment="Left" Margin="10,79,0,0" 
+                        VerticalAlignment="Top" Width="280" Height="65"
+                        BorderBrush="#FFF7CD78" Background="#FFF4B942" Click="BtnWASD_Click" IsEnabled="False"/>
+
+                <Button x:Name="BtnArrowKeys" Content="Arrow Keys" 
+                        HorizontalAlignment="Left" Margin="10,149,0,0"
+                        VerticalAlignment="Top" Width="280" Height="65"
+                        BorderBrush="#FFFFB011" Background="#FFF4B942" Click="BtnArrowKeys_Click"/>
+                <Label Content="Switch input type" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="99,48,0,0"/>
+
+            </Grid>
+            <Grid Grid.Column="1" Background="#EFF2F1">
+                <ListBox x:Name="LstTranscript" Background="{x:Null}" HorizontalAlignment="Left" Width="484" ClipToBounds="True" Margin="0,0,0,10"/>
+            </Grid>
+        </Grid>
+        <Label x:Name="lblDevice" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="94,1,0,0" Width="207"/>
+
+
+
+    </Grid>
+</Window>
