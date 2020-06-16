@@ -6,7 +6,7 @@ target 'Assistive Technology' do
   use_frameworks!
 
   # Pods for Assistive Technology
-  
+  pod 'PulseController', '~> 0.1.4'  
 
   target 'Assistive TechnologyTests' do
     inherit! :search_paths

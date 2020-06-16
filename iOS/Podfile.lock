@@ -1,3 +1,16 @@
-PODFILE CHECKSUM: 580659bf8dce8d0b210089ac7994327b4740f64d
+PODS:
+  - PulseController (0.1.4)
 
-COCOAPODS: 1.5.2
+DEPENDENCIES:
+  - PulseController (~> 0.1.4)
+
+SPEC REPOS:
+  trunk:
+    - PulseController
+
+SPEC CHECKSUMS:
+  PulseController: 1c86b615be6fa50a35c9826e4f47a523132c6ac1
+
+PODFILE CHECKSUM: b399b906721d68a1cd52fd584c0e0352e8cb7880
+
+COCOAPODS: 1.8.4

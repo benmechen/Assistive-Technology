@@ -59,6 +59,8 @@ protocol ConnectionServiceDelegate {
 class ConnectionService: NSObject {
     /// Delegate class implementing `ConnectionServiceDelegate` protocol. Used to send connction status updates to.
     var delegate: ConnectionServiceDelegate?
+    /// Singleton instance to access the service from any screen
+    static var shared = ConnectionService()
     /// The current connection state
     var state: ConnectionService.State = .disconnected
     /// Raw connection, used for sending and receiving the UDP connection component of the connection
@@ -96,6 +98,10 @@ class ConnectionService: NSObject {
         case failed(ConnectionServiceError)
     }
     
+    /// Hide initialiser from other classes so they have to used shared instance
+    fileprivate override init() {
+        super.init()
+    }
     
     /// Remove any timeout clocks to save memory and avoid trying to close a dead connection
     deinit {
@@ -212,6 +218,11 @@ class ConnectionService: NSObject {
         self.connection?.cancel()
     }
     
+    /// Force service to tell delegate connection strength
+    public func fetchConnectionStrength() {
+        self.delegate?.connectionStrength(strength: self.strengthBuffer.average ?? 0)
+    }
+    
     /// Listen on open connection for incomming messages
     ///
     /// Interpret incomming messages according to AssistiveTechnologyProtocol
@@ -261,7 +272,12 @@ class ConnectionService: NSObject {
             return 0
         }
         
-        self.strengthBuffer.append(percent)
+        do {
+            try self.strengthBuffer.append(percent)
+        } catch _ {
+            print()
+        }
+        
         
         self.strengthBuffer = Array(self.strengthBuffer.suffix(5))
         
