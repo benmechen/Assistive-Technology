@@ -31,16 +31,9 @@ Windows server that handles the inputs sent from the client through the usage of
 * Up, Down, Left, Right arrow keys
 
 ### Usage
-To run the app you must have installed Bonjour Service for Windows on your system. 
-
-You can install the server as a regular application on your system if you use the provided installer (setup.exe) inside the installer folder.
-
-Otherwise, to build and run the application you must use Visual Studio 2019 with the 4.7.2 .NET framework (server is targeted to this version of the framework).
+To run the app you must have installed Bonjour Service for Windows on your system. You must open the the workspace using Visual Studio 2019 with the 4.7.2 .NET framework (server is targeted to this version of the framework). The app has been mainly designed to work with Windows 10.
 
 To use it just press the start service button. This will register a Zeroconf service and stablish a UDP connection to the client. If 2 minutes go by without communication between the server and client, the server will close the communication.
-
-#### Uninstall
-If you installed the application through the provided installer, you can go to the apps in settings and remove it from there.
 
 
 ## Git Branches
